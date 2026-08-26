@@ -1,0 +1,3442 @@
+{
+  "source_taxonomy": "Pasted markdown(20260824-123419).md",
+  "status": "definitivo_coerente_v4",
+  "principles": [
+    "Il menu rappresenta intenti di acquisto autonomi, non la struttura tecnica dei feed.",
+    "Nessun limite artificiale al numero di link: la profondità dipende dalla reale varietà merceologica.",
+    "Una tipologia di prodotto fisicamente/commercialmente distinta può entrare anche sotto soglia quando migliora davvero la navigazione.",
+    "Licenza, target, stampa, numero di supporti, edizione, packaging e residuali non diventano categorie quando sono attributi trasversali.",
+    "Un figlio che duplica semanticamente il padre non viene esposto; il padre resta cliccabile come landing.",
+    "Nodi tecnici diversi vengono consolidati quando il cliente li percepisce come un'unica famiglia.",
+    "I conteggi stock dei quattro feed sono evidenza di governance, non un totale SKU normalizzato di tutti i fornitori."
+  ],
+  "borderline_decisions": [
+    {
+      "area": "APPAREL > T-Shirts",
+      "node": "Standard T-Shirts",
+      "decision": "MENU",
+      "reason": "3.698 nel riferimento e rappresenta il sottoinsieme base rispetto a Long Sleeve/Tank/Jersey; non è duplicato del padre che contiene tutte le T-Shirts."
+    },
+    {
+      "area": "APPAREL > T-Shirts",
+      "node": "Tank Tops",
+      "decision": "MENU",
+      "reason": "tipologia di capo autonoma; eccezione semantica alla soglia."
+    },
+    {
+      "area": "APPAREL > T-Shirts",
+      "node": "Football-style Jerseys",
+      "decision": "MENU",
+      "reason": "tipologia di capo autonoma; eccezione semantica alla soglia."
+    },
+    {
+      "area": "APPAREL > Hats & Beanies",
+      "node": "Caps",
+      "decision": "MENU",
+      "reason": "tipologia autonoma e complementare a Beanies."
+    },
+    {
+      "area": "APPAREL > Accessories & Jewellery",
+      "node": "Pins & Badges",
+      "decision": "MENU CURATO",
+      "reason": "consolida Badge Packs e Pins & Badges nella stessa famiglia utente."
+    },
+    {
+      "area": "APPAREL",
+      "node": "Licensed / Women's / Kids / Front & Back Print",
+      "decision": "FILTER",
+      "reason": "licenza, target e stampa sono attributi trasversali."
+    },
+    {
+      "area": "ENTERTAINMENT",
+      "node": "Comics & Graphic Novels",
+      "decision": "FILTER/BACKOFFICE",
+      "reason": "semanticamente valido ma solo 3 nel riferimento dei 4 feed; non ancora destinazione stabile."
+    },
+    {
+      "area": "GAMES > Retro Gaming",
+      "node": "Wii U / PS Vita / Atari",
+      "decision": "FILTER",
+      "reason": "piattaforme valide ma sotto governance nel riferimento; la landing Retro le rende comunque raggiungibili."
+    },
+    {
+      "area": "MERCHANDISING > Figures & Statues",
+      "node": "Figures",
+      "decision": "PARENT LANDING",
+      "reason": "il figlio generico duplica il padre Figures & Statues; si mantengono i tipi specifici."
+    },
+    {
+      "area": "ELECTRONICS > Turntables & Hi-Fi",
+      "node": "Turntables",
+      "decision": "MENU",
+      "reason": "eccezione strategica coerente con il core MUSIC anche se il vecchio riferimento ha stock ridotto."
+    },
+    {
+      "area": "ELECTRONICS > Batteries & Torches",
+      "node": "Alkaline/Lithium/Rechargeable",
+      "decision": "FILTER/LANDING",
+      "reason": "chimica/tecnologia della batteria: utile per filtrare, non necessario nel mega-menu."
+    },
+    {
+      "area": "STATIONERY",
+      "node": "micro-voci sotto 30",
+      "decision": "FILTER",
+      "reason": "restano nelle landing; si mantengono invece tutte le famiglie forti e semanticamente autonome."
+    }
+  ],
+  "omitted_l2": [
+    {
+      "l1": "MUSIC",
+      "l2": "Vinyl Care",
+      "reason": "pianificato / nessun assortimento live nel riferimento"
+    },
+    {
+      "l1": "MUSIC",
+      "l2": "Accessories & Replacements",
+      "reason": "pianificato / nessun assortimento live nel riferimento"
+    },
+    {
+      "l1": "ENTERTAINMENT",
+      "l2": "Digital Entertainment",
+      "reason": "assortimento attuale troppo ridotto per il mega-menu"
+    },
+    {
+      "l1": "ELECTRONICS",
+      "l2": "Audio Accessories",
+      "reason": "nessuna famiglia live sufficientemente definita"
+    }
+  ],
+  "menu": [
+    {
+      "label": "MUSIC",
+      "href": "#/music",
+      "sections": [
+        {
+          "label": "Vinyl",
+          "href": "#/music/vinyl",
+          "items": [
+            {
+              "label": "LP Vinyl",
+              "href": "#/music/vinyl/lp",
+              "source_nodes": [
+                "LP"
+              ],
+              "source_evidence": [
+                {
+                  "source_node": "LP",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 10277
+                }
+              ]
+            },
+            {
+              "label": "7-inch Vinyl",
+              "href": "#/music/vinyl/7-inch-singles",
+              "source_nodes": [
+                "7-inch Singles"
+              ],
+              "source_evidence": [
+                {
+                  "source_node": "7-inch Singles",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 978
+                }
+              ]
+            },
+            {
+              "label": "10-inch Vinyl",
+              "href": "#/music/vinyl/10-inch-vinyl",
+              "source_nodes": [
+                "10-inch Vinyl"
+              ],
+              "source_evidence": [
+                {
+                  "source_node": "10-inch Vinyl",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 175
+                }
+              ]
+            },
+            {
+              "label": "12-inch Vinyl",
+              "href": "#/music/vinyl/12-inch-singles",
+              "source_nodes": [
+                "12-inch Singles"
+              ],
+              "source_evidence": [
+                {
+                  "source_node": "12-inch Singles",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 137
+                }
+              ]
+            },
+            {
+              "label": "Picture Discs",
+              "href": "#/music/vinyl/picture-discs",
+              "source_nodes": [
+                "Picture Discs"
+              ],
+              "source_evidence": [
+                {
+                  "source_node": "Picture Discs",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 190
+                }
+              ]
+            },
+            {
+              "label": "Vinyl Box Sets",
+              "href": "#/music/vinyl/vinyl-box-sets",
+              "source_nodes": [
+                "Vinyl Box Sets"
+              ],
+              "source_evidence": [
+                {
+                  "source_node": "Vinyl Box Sets",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 131
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "CD",
+          "href": "#/music/cd",
+          "items": [
+            {
+              "label": "CD Albums",
+              "href": "#/music/cd/cd-albums",
+              "source_nodes": [
+                "Standard CDs",
+                "Digipak CDs",
+                "Double CDs",
+                "CD EPs",
+                "CD Books / Mediabooks"
+              ],
+              "requires_curated_landing": true,
+              "source_evidence": [
+                {
+                  "source_node": "Standard CDs",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 20504
+                },
+                {
+                  "source_node": "Digipak CDs",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 3463
+                },
+                {
+                  "source_node": "Double CDs",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 1810
+                },
+                {
+                  "source_node": "CD EPs",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 110
+                },
+                {
+                  "source_node": "CD Books / Mediabooks",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 105
+                }
+              ]
+            },
+            {
+              "label": "CD Singles",
+              "href": "#/music/cd/cd-singles",
+              "source_nodes": [
+                "CD Singles"
+              ],
+              "source_evidence": [
+                {
+                  "source_node": "CD Singles",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 46
+                }
+              ]
+            },
+            {
+              "label": "CD Box Sets",
+              "href": "#/music/cd/cd-box-sets",
+              "source_nodes": [
+                "CD Box Sets"
+              ],
+              "source_evidence": [
+                {
+                  "source_node": "CD Box Sets",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 1189
+                }
+              ]
+            },
+            {
+              "label": "Mini CDs",
+              "href": "#/music/cd/mini-cds",
+              "source_nodes": [
+                "Mini CDs"
+              ],
+              "source_evidence": [
+                {
+                  "source_node": "Mini CDs",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 187
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Cassettes",
+          "href": "#/music/cassettes",
+          "items": []
+        },
+        {
+          "label": "Music Video",
+          "href": "#/music/music-video",
+          "items": [
+            {
+              "label": "Music DVD",
+              "href": "#/music/music-video/music-dvd",
+              "source_nodes": [
+                "Music DVD"
+              ],
+              "source_evidence": [
+                {
+                  "source_node": "Music DVD",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 605
+                }
+              ]
+            },
+            {
+              "label": "Music Blu-ray",
+              "href": "#/music/music-video/music-blu-ray",
+              "source_nodes": [
+                "Music Blu-ray"
+              ],
+              "source_evidence": [
+                {
+                  "source_node": "Music Blu-ray",
+                  "source_kind": "FILTER",
+                  "stock_reference_4_feeds": 19
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "ENTERTAINMENT",
+      "href": "#/entertainment",
+      "sections": [
+        {
+          "label": "Movies & TV",
+          "href": "#/entertainment/movies-tv",
+          "items": [
+            {
+              "label": "DVD",
+              "href": "#/entertainment/movies-tv/dvd",
+              "source_evidence": [
+                {
+                  "source_node": "DVD",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 1694
+                }
+              ]
+            },
+            {
+              "label": "Blu-ray",
+              "href": "#/entertainment/movies-tv/blu-ray",
+              "source_evidence": [
+                {
+                  "source_node": "Blu-ray",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 776
+                }
+              ]
+            },
+            {
+              "label": "4K UHD",
+              "href": "#/entertainment/movies-tv/4k-uhd",
+              "source_evidence": [
+                {
+                  "source_node": "4K UHD",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 43
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Books & Manga",
+          "href": "#/entertainment/books-manga",
+          "items": [
+            {
+              "label": "Manga",
+              "href": "#/entertainment/books-manga/manga",
+              "source_nodes": [
+                "Manga Series",
+                "Manga Standalone & Special Editions"
+              ],
+              "requires_curated_landing": true,
+              "source_evidence": [
+                {
+                  "source_node": "Manga Series",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 115
+                },
+                {
+                  "source_node": "Manga Standalone & Special Editions",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 58
+                }
+              ]
+            },
+            {
+              "label": "Books",
+              "href": "#/entertainment/books-manga/books",
+              "source_nodes": [
+                "Books"
+              ],
+              "source_evidence": [
+                {
+                  "source_node": "Books",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 38
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "GAMES",
+      "href": "#/games",
+      "sections": [
+        {
+          "label": "Videogames",
+          "href": "#/games/videogames",
+          "items": [
+            {
+              "label": "PS5",
+              "href": "#/games/videogames/ps5",
+              "source_evidence": [
+                {
+                  "source_node": "PS5",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 395
+                }
+              ]
+            },
+            {
+              "label": "Nintendo Switch 2",
+              "href": "#/games/videogames/nintendo-switch-2",
+              "source_evidence": [
+                {
+                  "source_node": "Nintendo Switch 2",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 53
+                }
+              ]
+            },
+            {
+              "label": "Nintendo Switch",
+              "href": "#/games/videogames/nintendo-switch",
+              "source_evidence": [
+                {
+                  "source_node": "Nintendo Switch",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 264
+                }
+              ]
+            },
+            {
+              "label": "Xbox Series X|S",
+              "href": "#/games/videogames/xbox-series-x-s",
+              "source_nodes": [
+                "Xbox Series X|S"
+              ],
+              "source_evidence": [
+                {
+                  "source_node": "Xbox Series X|S",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 290
+                }
+              ]
+            },
+            {
+              "label": "PS4",
+              "href": "#/games/videogames/ps4",
+              "source_evidence": [
+                {
+                  "source_node": "PS4",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 508
+                }
+              ]
+            },
+            {
+              "label": "PC",
+              "href": "#/games/videogames/pc",
+              "source_nodes": [
+                "PC"
+              ],
+              "note": "Eccezione: piattaforma autonoma anche con stock originario sotto soglia.",
+              "source_evidence": [
+                {
+                  "source_node": "PC",
+                  "source_kind": "FILTER",
+                  "stock_reference_4_feeds": 22
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Retro Gaming",
+          "href": "#/games/retro-gaming",
+          "items": [
+            {
+              "label": "Retro Accessories",
+              "href": "#/games/retro-gaming/retro-accessories",
+              "source_evidence": [
+                {
+                  "source_node": "Retro Accessories",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 320
+                }
+              ]
+            },
+            {
+              "label": "Xbox One Games",
+              "href": "#/games/retro-gaming/xbox-one-games",
+              "source_evidence": [
+                {
+                  "source_node": "Xbox One Games",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 295
+                }
+              ]
+            },
+            {
+              "label": "Legacy PC Games",
+              "href": "#/games/retro-gaming/legacy-pc-games",
+              "source_evidence": [
+                {
+                  "source_node": "Legacy PC Games",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 218
+                }
+              ]
+            },
+            {
+              "label": "PlayStation 3 Games",
+              "href": "#/games/retro-gaming/playstation-3-games",
+              "source_evidence": [
+                {
+                  "source_node": "PlayStation 3 Games",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 199
+                }
+              ]
+            },
+            {
+              "label": "Nintendo DS Games",
+              "href": "#/games/retro-gaming/nintendo-ds-games",
+              "source_evidence": [
+                {
+                  "source_node": "Nintendo DS Games",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 185
+                }
+              ]
+            },
+            {
+              "label": "Xbox 360 Games",
+              "href": "#/games/retro-gaming/xbox-360-games",
+              "source_evidence": [
+                {
+                  "source_node": "Xbox 360 Games",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 113
+                }
+              ]
+            },
+            {
+              "label": "Nintendo 3DS Games",
+              "href": "#/games/retro-gaming/nintendo-3ds-games",
+              "source_evidence": [
+                {
+                  "source_node": "Nintendo 3DS Games",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 108
+                }
+              ]
+            },
+            {
+              "label": "Nintendo Wii Games",
+              "href": "#/games/retro-gaming/nintendo-wii-games",
+              "source_evidence": [
+                {
+                  "source_node": "Nintendo Wii Games",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 98
+                }
+              ]
+            },
+            {
+              "label": "PSP Games",
+              "href": "#/games/retro-gaming/psp-games",
+              "source_evidence": [
+                {
+                  "source_node": "PSP Games",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 75
+                }
+              ]
+            },
+            {
+              "label": "PlayStation 2 Games",
+              "href": "#/games/retro-gaming/playstation-2-games",
+              "source_evidence": [
+                {
+                  "source_node": "PlayStation 2 Games",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 31
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Consoles",
+          "href": "#/games/consoles",
+          "items": []
+        },
+        {
+          "label": "Gaming Accessories",
+          "href": "#/games/gaming-accessories",
+          "items": [
+            {
+              "label": "Controllers & Gamepads",
+              "href": "#/games/gaming-accessories/controllers-gamepads",
+              "source_evidence": [
+                {
+                  "source_node": "Controllers & Gamepads",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 118
+                }
+              ]
+            },
+            {
+              "label": "Toys to Life",
+              "href": "#/games/gaming-accessories/toys-to-life",
+              "source_evidence": [
+                {
+                  "source_node": "Toys to Life",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 95
+                }
+              ]
+            },
+            {
+              "label": "Racing & Simulation Accessories",
+              "href": "#/games/gaming-accessories/racing-simulation-accessories",
+              "source_evidence": [
+                {
+                  "source_node": "Racing & Simulation Accessories",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 44
+                }
+              ]
+            },
+            {
+              "label": "Gaming Chairs",
+              "href": "#/games/gaming-accessories/gaming-chairs",
+              "source_evidence": [
+                {
+                  "source_node": "Gaming Chairs",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 37
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Board Games",
+          "href": "#/games/board-games",
+          "items": []
+        },
+        {
+          "label": "Role-playing Games",
+          "href": "#/games/role-playing-games",
+          "items": []
+        },
+        {
+          "label": "Trading Cards",
+          "href": "#/games/trading-cards",
+          "items": [
+            {
+              "label": "Playing Cards",
+              "href": "#/games/trading-cards/playing-cards",
+              "source_evidence": [
+                {
+                  "source_node": "Playing Cards",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 44
+                }
+              ]
+            },
+            {
+              "label": "Card Sleeves",
+              "href": "#/games/trading-cards/card-sleeves",
+              "source_evidence": [
+                {
+                  "source_node": "Card Sleeves",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 41
+                }
+              ]
+            },
+            {
+              "label": "Acrylic Cases",
+              "href": "#/games/trading-cards/acrylic-cases",
+              "source_evidence": [
+                {
+                  "source_node": "Acrylic Cases",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 33
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Puzzles",
+          "href": "#/games/puzzles",
+          "items": []
+        },
+        {
+          "label": "Guides & Books",
+          "href": "#/games/guides-books",
+          "items": [
+            {
+              "label": "Strategy Guides",
+              "href": "#/games/guides-books/strategy-guides",
+              "source_evidence": [
+                {
+                  "source_node": "Strategy Guides",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 33
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Digital Codes & Gift Cards",
+          "href": "#/games/digital-codes-gift-cards",
+          "items": [
+            {
+              "label": "Digital Games",
+              "href": "#/games/digital-codes-gift-cards/digital-games",
+              "source_nodes": [
+                "Nintendo Switch Digital Games",
+                "Xbox & PC Digital Games"
+              ],
+              "requires_curated_landing": true,
+              "source_evidence": [
+                {
+                  "source_node": "Nintendo Switch Digital Games",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 75
+                },
+                {
+                  "source_node": "Xbox & PC Digital Games",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 44
+                }
+              ]
+            },
+            {
+              "label": "Gift Cards",
+              "href": "#/games/digital-codes-gift-cards/gift-cards",
+              "source_nodes": [
+                "Nintendo Gift Cards",
+                "PlayStation Gift Cards",
+                "Xbox Gift Cards",
+                "Twitch Gift Cards",
+                "Roblox Gift Cards",
+                "Steam Gift Cards"
+              ],
+              "requires_curated_landing": true,
+              "source_evidence": [
+                {
+                  "source_node": "Nintendo Gift Cards",
+                  "source_kind": "FILTER",
+                  "stock_reference_4_feeds": 12
+                },
+                {
+                  "source_node": "PlayStation Gift Cards",
+                  "source_kind": "FILTER",
+                  "stock_reference_4_feeds": 9
+                },
+                {
+                  "source_node": "Xbox Gift Cards",
+                  "source_kind": "FILTER",
+                  "stock_reference_4_feeds": 8
+                },
+                {
+                  "source_node": "Twitch Gift Cards",
+                  "source_kind": "FILTER",
+                  "stock_reference_4_feeds": 3
+                },
+                {
+                  "source_node": "Roblox Gift Cards",
+                  "source_kind": "FILTER",
+                  "stock_reference_4_feeds": 2
+                },
+                {
+                  "source_node": "Steam Gift Cards",
+                  "source_kind": "FILTER",
+                  "stock_reference_4_feeds": 2
+                }
+              ]
+            },
+            {
+              "label": "Credits & Points",
+              "href": "#/games/digital-codes-gift-cards/credits-points",
+              "source_nodes": [
+                "Xbox Points & Credits"
+              ],
+              "requires_curated_landing": true,
+              "source_evidence": [
+                {
+                  "source_node": "Xbox Points & Credits",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 38
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "APPAREL",
+      "href": "#/apparel",
+      "sections": [
+        {
+          "label": "T-Shirts",
+          "href": "#/apparel/t-shirts",
+          "items": [
+            {
+              "label": "Standard T-Shirts",
+              "href": "#/apparel/t-shirts/standard-t-shirts",
+              "source_evidence": [
+                {
+                  "source_node": "Standard T-Shirts",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 3698
+                }
+              ]
+            },
+            {
+              "label": "Long Sleeve Shirts",
+              "href": "#/apparel/t-shirts/long-sleeve-shirts",
+              "source_evidence": [
+                {
+                  "source_node": "Long Sleeve Shirts",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 565
+                }
+              ]
+            },
+            {
+              "label": "Football-style Jerseys",
+              "href": "#/apparel/t-shirts/football-style-jerseys",
+              "source_nodes": [
+                "Football-style Jerseys"
+              ],
+              "source_evidence": [
+                {
+                  "source_node": "Football-style Jerseys",
+                  "source_kind": "FILTER",
+                  "stock_reference_4_feeds": 18
+                }
+              ]
+            },
+            {
+              "label": "Tank Tops",
+              "href": "#/apparel/t-shirts/tank-tops",
+              "source_nodes": [
+                "Tank Tops"
+              ],
+              "source_evidence": [
+                {
+                  "source_node": "Tank Tops",
+                  "source_kind": "FILTER",
+                  "stock_reference_4_feeds": 14
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Sweatshirts & Knitwear",
+          "href": "#/apparel/sweatshirts-knitwear",
+          "items": [
+            {
+              "label": "Hoodies",
+              "href": "#/apparel/sweatshirts-knitwear/hoodies",
+              "source_evidence": [
+                {
+                  "source_node": "Hoodies",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 589
+                }
+              ]
+            },
+            {
+              "label": "Zip Hoodies",
+              "href": "#/apparel/sweatshirts-knitwear/zip-hoodies",
+              "source_evidence": [
+                {
+                  "source_node": "Zip Hoodies",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 257
+                }
+              ]
+            },
+            {
+              "label": "Crew Neck Sweaters",
+              "href": "#/apparel/sweatshirts-knitwear/crew-neck-sweaters",
+              "source_evidence": [
+                {
+                  "source_node": "Crew Neck Sweaters",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 119
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Hats & Beanies",
+          "href": "#/apparel/hats-beanies",
+          "items": [
+            {
+              "label": "Beanies",
+              "href": "#/apparel/hats-beanies/beanies",
+              "source_evidence": [
+                {
+                  "source_node": "Beanies",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 32
+                }
+              ]
+            },
+            {
+              "label": "Caps",
+              "href": "#/apparel/hats-beanies/caps",
+              "source_nodes": [
+                "Caps"
+              ],
+              "source_evidence": [
+                {
+                  "source_node": "Caps",
+                  "source_kind": "FILTER",
+                  "stock_reference_4_feeds": 19
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Bags & Backpacks",
+          "href": "#/apparel/bags-backpacks",
+          "items": [
+            {
+              "label": "Laptop Bags",
+              "href": "#/apparel/bags-backpacks/notebook-laptop-bags",
+              "source_nodes": [
+                "Notebook & Laptop Bags"
+              ],
+              "source_evidence": [
+                {
+                  "source_node": "Notebook & Laptop Bags",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 338
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Accessories & Jewellery",
+          "href": "#/apparel/accessories-jewellery",
+          "items": [
+            {
+              "label": "Socks",
+              "href": "#/apparel/accessories-jewellery/socks",
+              "source_evidence": [
+                {
+                  "source_node": "Socks",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 82
+                }
+              ]
+            },
+            {
+              "label": "Wallets & Small Accessories",
+              "href": "#/apparel/accessories-jewellery/wallets-small-accessories",
+              "source_evidence": [
+                {
+                  "source_node": "Wallets & Small Accessories",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 65
+                }
+              ]
+            },
+            {
+              "label": "Jewellery",
+              "href": "#/apparel/accessories-jewellery/jewellery",
+              "source_evidence": [
+                {
+                  "source_node": "Jewellery",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 50
+                }
+              ]
+            },
+            {
+              "label": "Patches",
+              "href": "#/apparel/accessories-jewellery/patches",
+              "source_evidence": [
+                {
+                  "source_node": "Patches",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 33
+                }
+              ]
+            },
+            {
+              "label": "Pins & Badges",
+              "href": "#/apparel/accessories-jewellery/pins-badges",
+              "source_nodes": [
+                "Badge Packs",
+                "Pins & Badges"
+              ],
+              "requires_curated_landing": true,
+              "source_evidence": [
+                {
+                  "source_node": "Badge Packs",
+                  "source_kind": "FILTER",
+                  "stock_reference_4_feeds": 23
+                },
+                {
+                  "source_node": "Pins & Badges",
+                  "source_kind": "FILTER",
+                  "stock_reference_4_feeds": 1
+                }
+              ]
+            },
+            {
+              "label": "Umbrellas",
+              "href": "#/apparel/accessories-jewellery/umbrellas",
+              "source_nodes": [
+                "Umbrellas"
+              ],
+              "source_evidence": [
+                {
+                  "source_node": "Umbrellas",
+                  "source_kind": "FILTER",
+                  "stock_reference_4_feeds": 20
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "MERCHANDISING",
+      "href": "#/merchandising",
+      "sections": [
+        {
+          "label": "Funko",
+          "href": "#/merchandising/funko",
+          "items": [
+            {
+              "label": "Funko Pop!",
+              "href": "#/merchandising/funko/pop",
+              "source_nodes": [
+                "Pop! Classic",
+                "Pop! Special"
+              ],
+              "requires_curated_landing": true,
+              "source_evidence": [
+                {
+                  "source_node": "Pop! Classic",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 843
+                },
+                {
+                  "source_node": "Pop! Special",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 97
+                }
+              ]
+            },
+            {
+              "label": "Bitty Pop!",
+              "href": "#/merchandising/funko/bitty-pop",
+              "source_nodes": [
+                "Bitty Pop"
+              ],
+              "source_evidence": [
+                {
+                  "source_node": "Bitty Pop",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 86
+                }
+              ]
+            },
+            {
+              "label": "Loungefly",
+              "href": "#/merchandising/funko/loungefly",
+              "source_evidence": [
+                {
+                  "source_node": "Loungefly",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 44
+                }
+              ]
+            },
+            {
+              "label": "Funko Pins",
+              "href": "#/merchandising/funko/pins",
+              "source_nodes": [
+                "Pin"
+              ],
+              "source_evidence": [
+                {
+                  "source_node": "Pin",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 39
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Figures & Statues",
+          "href": "#/merchandising/figures-statues",
+          "items": [
+            {
+              "label": "Action Figures",
+              "href": "#/merchandising/figures-statues/action-figures",
+              "source_evidence": [
+                {
+                  "source_node": "Action Figures",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 191
+                }
+              ]
+            },
+            {
+              "label": "Minifigures",
+              "href": "#/merchandising/figures-statues/minifigures",
+              "source_evidence": [
+                {
+                  "source_node": "Minifigures",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 154
+                }
+              ]
+            },
+            {
+              "label": "Statues",
+              "href": "#/merchandising/figures-statues/statues",
+              "source_evidence": [
+                {
+                  "source_node": "Statues",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 152
+                }
+              ]
+            },
+            {
+              "label": "Model Kits",
+              "href": "#/merchandising/figures-statues/model-kits",
+              "source_evidence": [
+                {
+                  "source_node": "Model Kits",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 39
+                }
+              ]
+            },
+            {
+              "label": "Dioramas",
+              "href": "#/merchandising/figures-statues/dioramas",
+              "source_evidence": [
+                {
+                  "source_node": "Dioramas",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 38
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Collectibles & Replicas",
+          "href": "#/merchandising/collectibles-replicas",
+          "items": [
+            {
+              "label": "Swords & Katanas",
+              "href": "#/merchandising/collectibles-replicas/swords-katanas",
+              "source_evidence": [
+                {
+                  "source_node": "Swords & Katanas",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 141
+                }
+              ]
+            },
+            {
+              "label": "Art Vinyl",
+              "href": "#/merchandising/collectibles-replicas/art-vinyl",
+              "source_evidence": [
+                {
+                  "source_node": "Art Vinyl",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 89
+                }
+              ]
+            },
+            {
+              "label": "Magic Wands",
+              "href": "#/merchandising/collectibles-replicas/magic-wands",
+              "source_evidence": [
+                {
+                  "source_node": "Magic Wands",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 79
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Toys & Building Sets",
+          "href": "#/merchandising/toys-building-sets",
+          "items": [
+            {
+              "label": "Building Sets",
+              "href": "#/merchandising/toys-building-sets/building-sets",
+              "source_evidence": [
+                {
+                  "source_node": "Building Sets",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 1161
+                }
+              ]
+            },
+            {
+              "label": "Vehicles, Models & RC",
+              "href": "#/merchandising/toys-building-sets/vehicles-models-rc",
+              "source_evidence": [
+                {
+                  "source_node": "Vehicles, Models & RC",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 136
+                }
+              ]
+            },
+            {
+              "label": "Fashion Dolls",
+              "href": "#/merchandising/toys-building-sets/fashion-dolls",
+              "source_evidence": [
+                {
+                  "source_node": "Fashion Dolls",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 60
+                }
+              ]
+            },
+            {
+              "label": "Creative & Scientific Toys",
+              "href": "#/merchandising/toys-building-sets/creative-scientific-toys",
+              "source_evidence": [
+                {
+                  "source_node": "Creative & Scientific Toys",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 37
+                }
+              ]
+            },
+            {
+              "label": "Book Nook & Miniature Villages",
+              "href": "#/merchandising/toys-building-sets/book-nook-miniature-villages",
+              "source_evidence": [
+                {
+                  "source_node": "Book Nook & Miniature Villages",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 30
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Plush",
+          "href": "#/merchandising/plush",
+          "items": []
+        },
+        {
+          "label": "Home & Lifestyle",
+          "href": "#/merchandising/home-lifestyle",
+          "items": [
+            {
+              "label": "Kitchen & Drinkware",
+              "href": "#/merchandising/home-lifestyle/kitchen-drinkware",
+              "source_evidence": [
+                {
+                  "source_node": "Kitchen & Drinkware",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 343
+                }
+              ]
+            },
+            {
+              "label": "Keychains",
+              "href": "#/merchandising/home-lifestyle/keychains",
+              "source_evidence": [
+                {
+                  "source_node": "Keychains",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 281
+                }
+              ]
+            },
+            {
+              "label": "Lighting",
+              "href": "#/merchandising/home-lifestyle/lighting",
+              "source_evidence": [
+                {
+                  "source_node": "Lighting",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 232
+                }
+              ]
+            },
+            {
+              "label": "Piggy Banks",
+              "href": "#/merchandising/home-lifestyle/piggy-banks",
+              "source_evidence": [
+                {
+                  "source_node": "Piggy Banks",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 123
+                }
+              ]
+            },
+            {
+              "label": "Gadgets",
+              "href": "#/merchandising/home-lifestyle/gadgets",
+              "source_nodes": [
+                "General Gadgets"
+              ],
+              "source_evidence": [
+                {
+                  "source_node": "General Gadgets",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 105
+                }
+              ]
+            },
+            {
+              "label": "Storage & Containers",
+              "href": "#/merchandising/home-lifestyle/storage-containers",
+              "source_evidence": [
+                {
+                  "source_node": "Storage & Containers",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 97
+                }
+              ]
+            },
+            {
+              "label": "Clocks & Alarm Clocks",
+              "href": "#/merchandising/home-lifestyle/clocks-alarm-clocks",
+              "source_evidence": [
+                {
+                  "source_node": "Clocks & Alarm Clocks",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 83
+                }
+              ]
+            },
+            {
+              "label": "Phone Stands & Charging",
+              "href": "#/merchandising/home-lifestyle/phone-stands-charging",
+              "source_evidence": [
+                {
+                  "source_node": "Phone Stands & Charging",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 80
+                }
+              ]
+            },
+            {
+              "label": "Gift Sets",
+              "href": "#/merchandising/home-lifestyle/gift-sets",
+              "source_evidence": [
+                {
+                  "source_node": "Gift Sets",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 41
+                }
+              ]
+            },
+            {
+              "label": "Frames & 3D Art",
+              "href": "#/merchandising/home-lifestyle/frames-3d-art",
+              "source_evidence": [
+                {
+                  "source_node": "Frames & 3D Art",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 40
+                }
+              ]
+            },
+            {
+              "label": "Cushions",
+              "href": "#/merchandising/home-lifestyle/cushions",
+              "source_evidence": [
+                {
+                  "source_node": "Cushions",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 32
+                }
+              ]
+            },
+            {
+              "label": "Pins, Stickers & Magnets",
+              "href": "#/merchandising/home-lifestyle/pins-stickers-magnets",
+              "source_evidence": [
+                {
+                  "source_node": "Pins, Stickers & Magnets",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 31
+                }
+              ]
+            },
+            {
+              "label": "Stress Toys",
+              "href": "#/merchandising/home-lifestyle/stress-toys",
+              "source_evidence": [
+                {
+                  "source_node": "Stress Toys",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 31
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "ELECTRONICS",
+      "href": "#/electronics",
+      "sections": [
+        {
+          "label": "Headphones & Earphones",
+          "href": "#/electronics/headphones-earphones",
+          "items": [
+            {
+              "label": "Headphones",
+              "href": "#/electronics/headphones-earphones/headphones",
+              "source_nodes": [
+                "Professional Headphones",
+                "Audio Headphones"
+              ],
+              "requires_curated_landing": true,
+              "source_evidence": [
+                {
+                  "source_node": "Professional Headphones",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 237
+                },
+                {
+                  "source_node": "Audio Headphones",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 110
+                }
+              ]
+            },
+            {
+              "label": "Gaming Headsets",
+              "href": "#/electronics/headphones-earphones/gaming-headsets",
+              "source_evidence": [
+                {
+                  "source_node": "Gaming Headsets",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 181
+                }
+              ]
+            },
+            {
+              "label": "Earphones",
+              "href": "#/electronics/headphones-earphones/earphones",
+              "source_nodes": [
+                "Mobile Earphones"
+              ],
+              "requires_curated_landing": true,
+              "source_evidence": [
+                {
+                  "source_node": "Mobile Earphones",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 55
+                }
+              ]
+            },
+            {
+              "label": "Headphone Accessories",
+              "href": "#/electronics/headphones-earphones/headphone-accessories",
+              "source_evidence": [
+                {
+                  "source_node": "Headphone Accessories",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 94
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Speakers",
+          "href": "#/electronics/speakers",
+          "items": [
+            {
+              "label": "PC Speakers",
+              "href": "#/electronics/speakers/pc-speakers",
+              "source_evidence": [
+                {
+                  "source_node": "PC Speakers",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 43
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Turntables & Hi-Fi",
+          "href": "#/electronics/turntables-hi-fi",
+          "items": [
+            {
+              "label": "Turntables",
+              "href": "#/electronics/turntables-hi-fi/turntables",
+              "source_nodes": [
+                "Turntables"
+              ],
+              "note": "Eccezione strategica: prodotto centrale per il contesto MUSIC.",
+              "source_evidence": [
+                {
+                  "source_node": "Turntables",
+                  "source_kind": "FILTER",
+                  "stock_reference_4_feeds": 4
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Cables & Adapters",
+          "href": "#/electronics/cables-adapters",
+          "items": [
+            {
+              "label": "USB Cables & Adapters",
+              "href": "#/electronics/cables-adapters/usb-cables-adapters",
+              "source_evidence": [
+                {
+                  "source_node": "USB Cables & Adapters",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 357
+                }
+              ]
+            },
+            {
+              "label": "Video Cables",
+              "href": "#/electronics/cables-adapters/video-cables",
+              "source_evidence": [
+                {
+                  "source_node": "Video Cables",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 307
+                }
+              ]
+            },
+            {
+              "label": "Audio / Video Adapters",
+              "href": "#/electronics/cables-adapters/audio-video-adapters",
+              "source_evidence": [
+                {
+                  "source_node": "Audio / Video Adapters",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 203
+                }
+              ]
+            },
+            {
+              "label": "Data Cables",
+              "href": "#/electronics/cables-adapters/data-cables",
+              "source_evidence": [
+                {
+                  "source_node": "Data Cables",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 200
+                }
+              ]
+            },
+            {
+              "label": "Power Cables",
+              "href": "#/electronics/cables-adapters/power-cables",
+              "source_evidence": [
+                {
+                  "source_node": "Power Cables",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 63
+                }
+              ]
+            },
+            {
+              "label": "Mobile Connection Cables",
+              "href": "#/electronics/cables-adapters/mobile-connection-cables",
+              "source_evidence": [
+                {
+                  "source_node": "Mobile Connection Cables",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 52
+                }
+              ]
+            },
+            {
+              "label": "Audio Cables",
+              "href": "#/electronics/cables-adapters/audio-cables",
+              "source_evidence": [
+                {
+                  "source_node": "Audio Cables",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 51
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Mobile Accessories",
+          "href": "#/electronics/mobile-accessories",
+          "items": [
+            {
+              "label": "Cases & Covers",
+              "href": "#/electronics/mobile-accessories/cases-covers",
+              "source_nodes": [
+                "Cover",
+                "Custodia Per Tablet"
+              ],
+              "requires_curated_landing": true,
+              "source_evidence": [
+                {
+                  "source_node": "Cover",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 108
+                },
+                {
+                  "source_node": "Custodia Per Tablet",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 60
+                }
+              ]
+            },
+            {
+              "label": "Power Banks",
+              "href": "#/electronics/mobile-accessories/power-banks",
+              "source_nodes": [
+                "Power Bank Standard",
+                "Power Bank"
+              ],
+              "requires_curated_landing": true,
+              "source_evidence": [
+                {
+                  "source_node": "Power Bank Standard",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 94
+                },
+                {
+                  "source_node": "Power Bank",
+                  "source_kind": "FILTER",
+                  "stock_reference_4_feeds": 10
+                }
+              ]
+            },
+            {
+              "label": "Chargers & Charging",
+              "href": "#/electronics/mobile-accessories/chargers-charging",
+              "source_nodes": [
+                "Caricabatterie Wireless/Senza Fili",
+                "Carica Batterie Da Auto Con Cavo",
+                "Carica Batterie Per Tablet",
+                "Carica Batterie",
+                "Carica Batterie USB",
+                "Carica Batterie USB Da Auto",
+                "Sistemi Di Caricamento Wireless"
+              ],
+              "requires_curated_landing": true,
+              "source_evidence": [
+                {
+                  "source_node": "Caricabatterie Wireless/Senza Fili",
+                  "source_kind": "FILTER",
+                  "stock_reference_4_feeds": 19
+                },
+                {
+                  "source_node": "Carica Batterie Da Auto Con Cavo",
+                  "source_kind": "FILTER",
+                  "stock_reference_4_feeds": 10
+                },
+                {
+                  "source_node": "Carica Batterie Per Tablet",
+                  "source_kind": "FILTER",
+                  "stock_reference_4_feeds": 9
+                },
+                {
+                  "source_node": "Carica Batterie",
+                  "source_kind": "FILTER",
+                  "stock_reference_4_feeds": 7
+                },
+                {
+                  "source_node": "Carica Batterie USB",
+                  "source_kind": "FILTER",
+                  "stock_reference_4_feeds": 1
+                },
+                {
+                  "source_node": "Carica Batterie USB Da Auto",
+                  "source_kind": "FILTER",
+                  "stock_reference_4_feeds": 1
+                },
+                {
+                  "source_node": "Sistemi Di Caricamento Wireless",
+                  "source_kind": "FILTER",
+                  "stock_reference_4_feeds": 2
+                }
+              ]
+            },
+            {
+              "label": "iPhone & iPad Accessories",
+              "href": "#/electronics/mobile-accessories/iphone-ipad-accessories",
+              "source_evidence": [
+                {
+                  "source_node": "iPhone & iPad Accessories",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 63
+                }
+              ]
+            },
+            {
+              "label": "Tablet Accessories",
+              "href": "#/electronics/mobile-accessories/tablet-accessories",
+              "source_nodes": [
+                "Accessori Tablet Industriali",
+                "Cover Con Tastiera Per Tablet",
+                "Pennini Per Tablet",
+                "Tablet & Phone Accessories",
+                "Tastiere Per Tablet",
+                "Supporto Per Tablet",
+                "Supporti Auto E Outdoor Per Tablet"
+              ],
+              "requires_curated_landing": true,
+              "source_evidence": [
+                {
+                  "source_node": "Accessori Tablet Industriali",
+                  "source_kind": "FILTER",
+                  "stock_reference_4_feeds": 15
+                },
+                {
+                  "source_node": "Cover Con Tastiera Per Tablet",
+                  "source_kind": "FILTER",
+                  "stock_reference_4_feeds": 12
+                },
+                {
+                  "source_node": "Pennini Per Tablet",
+                  "source_kind": "FILTER",
+                  "stock_reference_4_feeds": 11
+                },
+                {
+                  "source_node": "Tablet & Phone Accessories",
+                  "source_kind": "FILTER",
+                  "stock_reference_4_feeds": 11
+                },
+                {
+                  "source_node": "Tastiere Per Tablet",
+                  "source_kind": "FILTER",
+                  "stock_reference_4_feeds": 5
+                },
+                {
+                  "source_node": "Supporto Per Tablet",
+                  "source_kind": "FILTER",
+                  "stock_reference_4_feeds": 2
+                },
+                {
+                  "source_node": "Supporti Auto E Outdoor Per Tablet",
+                  "source_kind": "FILTER",
+                  "stock_reference_4_feeds": 2
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Batteries & Torches",
+          "href": "#/electronics/batteries-torches",
+          "items": []
+        },
+        {
+          "label": "Lifestyle Tech",
+          "href": "#/electronics/lifestyle-tech",
+          "items": [
+            {
+              "label": "Kids Electronics",
+              "href": "#/electronics/lifestyle-tech/kids-electronics",
+              "source_nodes": [
+                "Licensed Kids Electronics"
+              ],
+              "requires_curated_landing": true,
+              "source_evidence": [
+                {
+                  "source_node": "Licensed Kids Electronics",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 94
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Storage & Memory",
+          "href": "#/electronics/storage-memory",
+          "items": []
+        },
+        {
+          "label": "Home Cinema",
+          "href": "#/electronics/home-cinema",
+          "items": [
+            {
+              "label": "Remote Controls",
+              "href": "#/electronics/home-cinema/remote-controls",
+              "source_nodes": [
+                "Remote Controls"
+              ],
+              "source_evidence": [
+                {
+                  "source_node": "Remote Controls",
+                  "source_kind": "FILTER",
+                  "stock_reference_4_feeds": 28
+                }
+              ]
+            },
+            {
+              "label": "Soundbars",
+              "href": "#/electronics/home-cinema/soundbars",
+              "source_nodes": [
+                "Soundbars"
+              ],
+              "source_evidence": [
+                {
+                  "source_node": "Soundbars",
+                  "source_kind": "FILTER",
+                  "stock_reference_4_feeds": 27
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Microphones & Karaoke",
+          "href": "#/electronics/microphones-dj",
+          "source_l2": "Microphones & DJ",
+          "items": [
+            {
+              "label": "Microphones",
+              "href": "#/electronics/microphones-dj/microphones",
+              "source_nodes": [
+                "PC Microphones",
+                "Wireless Microphones",
+                "Wired Microphones"
+              ],
+              "requires_curated_landing": true,
+              "source_evidence": [
+                {
+                  "source_node": "PC Microphones",
+                  "source_kind": "FILTER",
+                  "stock_reference_4_feeds": 19
+                },
+                {
+                  "source_node": "Wireless Microphones",
+                  "source_kind": "FILTER",
+                  "stock_reference_4_feeds": 19
+                },
+                {
+                  "source_node": "Wired Microphones",
+                  "source_kind": "FILTER",
+                  "stock_reference_4_feeds": 3
+                }
+              ]
+            },
+            {
+              "label": "Karaoke & Kids Musical Instruments",
+              "href": "#/electronics/microphones-dj/karaoke-kids-musical-instruments",
+              "source_nodes": [
+                "Kids Musical Instruments & Karaoke"
+              ],
+              "requires_curated_landing": true,
+              "source_evidence": [
+                {
+                  "source_node": "Kids Musical Instruments & Karaoke",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 48
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "STATIONERY",
+      "href": "#/stationery",
+      "sections": [
+        {
+          "label": "Writing",
+          "href": "#/stationery/writing",
+          "items": [
+            {
+              "label": "Ballpoint Pens",
+              "href": "#/stationery/writing/ballpoint-pens",
+              "source_evidence": [
+                {
+                  "source_node": "Ballpoint Pens",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 306
+                }
+              ]
+            },
+            {
+              "label": "Markers",
+              "href": "#/stationery/writing/markers",
+              "source_evidence": [
+                {
+                  "source_node": "Markers",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 264
+                }
+              ]
+            },
+            {
+              "label": "Highlighters",
+              "href": "#/stationery/writing/highlighters",
+              "source_evidence": [
+                {
+                  "source_node": "Highlighters",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 223
+                }
+              ]
+            },
+            {
+              "label": "Fibre-tip Pens",
+              "href": "#/stationery/writing/fibre-tip-pens",
+              "source_evidence": [
+                {
+                  "source_node": "Fibre-tip Pens",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 142
+                }
+              ]
+            },
+            {
+              "label": "Rollerball Pens",
+              "href": "#/stationery/writing/rollerball-pens",
+              "source_evidence": [
+                {
+                  "source_node": "Rollerball Pens",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 134
+                }
+              ]
+            },
+            {
+              "label": "Pencils",
+              "href": "#/stationery/writing/pencils",
+              "source_evidence": [
+                {
+                  "source_node": "Pencils",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 108
+                }
+              ]
+            },
+            {
+              "label": "Mechanical Pencils",
+              "href": "#/stationery/writing/mechanical-pencils",
+              "source_evidence": [
+                {
+                  "source_node": "Mechanical Pencils",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 84
+                }
+              ]
+            },
+            {
+              "label": "Refills",
+              "href": "#/stationery/writing/refills",
+              "source_evidence": [
+                {
+                  "source_node": "Refills",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 69
+                }
+              ]
+            },
+            {
+              "label": "Correction",
+              "href": "#/stationery/writing/correction",
+              "source_evidence": [
+                {
+                  "source_node": "Correction",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 59
+                }
+              ]
+            },
+            {
+              "label": "Fountain Pens",
+              "href": "#/stationery/writing/fountain-pens",
+              "source_evidence": [
+                {
+                  "source_node": "Fountain Pens",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 35
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Notebooks & Diaries",
+          "href": "#/stationery/notebooks-diaries",
+          "items": [
+            {
+              "label": "Notebooks",
+              "href": "#/stationery/notebooks-diaries/notebooks",
+              "source_nodes": [
+                "Stapled Notebooks",
+                "Spiral Notebooks",
+                "Glued Notebooks",
+                "Elastic-closure Notebooks",
+                "Ring Notebooks",
+                "Micro-perforated Spiral Notebooks"
+              ],
+              "requires_curated_landing": true,
+              "source_evidence": [
+                {
+                  "source_node": "Stapled Notebooks",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 359
+                },
+                {
+                  "source_node": "Spiral Notebooks",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 56
+                },
+                {
+                  "source_node": "Glued Notebooks",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 42
+                },
+                {
+                  "source_node": "Elastic-closure Notebooks",
+                  "source_kind": "FILTER",
+                  "stock_reference_4_feeds": 24
+                },
+                {
+                  "source_node": "Ring Notebooks",
+                  "source_kind": "FILTER",
+                  "stock_reference_4_feeds": 17
+                },
+                {
+                  "source_node": "Micro-perforated Spiral Notebooks",
+                  "source_kind": "FILTER",
+                  "stock_reference_4_feeds": 11
+                }
+              ]
+            },
+            {
+              "label": "Memo Pads",
+              "href": "#/stationery/notebooks-diaries/memo-pads",
+              "source_evidence": [
+                {
+                  "source_node": "Memo Pads",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 122
+                }
+              ]
+            },
+            {
+              "label": "Office Pads",
+              "href": "#/stationery/notebooks-diaries/office-pads",
+              "source_evidence": [
+                {
+                  "source_node": "Office Pads",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 74
+                }
+              ]
+            },
+            {
+              "label": "Ring-binder Refills",
+              "href": "#/stationery/notebooks-diaries/ring-binder-refills",
+              "source_evidence": [
+                {
+                  "source_node": "Ring-binder Refills",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 65
+                }
+              ]
+            },
+            {
+              "label": "Diaries & Agendas",
+              "href": "#/stationery/notebooks-diaries/diaries-agendas",
+              "source_evidence": [
+                {
+                  "source_node": "Diaries & Agendas",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 37
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "School",
+          "href": "#/stationery/school",
+          "items": [
+            {
+              "label": "Paints & Watercolours",
+              "href": "#/stationery/school/paints-watercolours",
+              "source_nodes": [
+                "Tubi Tempera",
+                "Acquerelli"
+              ],
+              "requires_curated_landing": true,
+              "source_evidence": [
+                {
+                  "source_node": "Tubi Tempera",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 233
+                },
+                {
+                  "source_node": "Acquerelli",
+                  "source_kind": "FILTER",
+                  "stock_reference_4_feeds": 7
+                }
+              ]
+            },
+            {
+              "label": "Drawing Pads & Blocks",
+              "href": "#/stationery/school/drawing-pads-blocks",
+              "source_nodes": [
+                "Album E Blocchi Da Disegno",
+                "Album E Blocchi Carta Millimetrata"
+              ],
+              "requires_curated_landing": true,
+              "source_evidence": [
+                {
+                  "source_node": "Album E Blocchi Da Disegno",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 110
+                },
+                {
+                  "source_node": "Album E Blocchi Carta Millimetrata",
+                  "source_kind": "FILTER",
+                  "stock_reference_4_feeds": 1
+                }
+              ]
+            },
+            {
+              "label": "Notebook & Book Covers",
+              "href": "#/stationery/school/notebook-book-covers",
+              "source_nodes": [
+                "Copriquaderni",
+                "Coprilibri"
+              ],
+              "requires_curated_landing": true,
+              "source_evidence": [
+                {
+                  "source_node": "Copriquaderni",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 105
+                },
+                {
+                  "source_node": "Coprilibri",
+                  "source_kind": "FILTER",
+                  "stock_reference_4_feeds": 12
+                }
+              ]
+            },
+            {
+              "label": "Coloured Cardstock",
+              "href": "#/stationery/school/coloured-cardstock",
+              "source_nodes": [
+                "Cartoncini Colorati"
+              ],
+              "source_evidence": [
+                {
+                  "source_node": "Cartoncini Colorati",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 98
+                }
+              ]
+            },
+            {
+              "label": "Pencil Sharpeners",
+              "href": "#/stationery/school/pencil-sharpeners",
+              "source_nodes": [
+                "Temperini"
+              ],
+              "source_evidence": [
+                {
+                  "source_node": "Temperini",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 90
+                }
+              ]
+            },
+            {
+              "label": "Rulers",
+              "href": "#/stationery/school/rulers",
+              "source_nodes": [
+                "Righe"
+              ],
+              "source_evidence": [
+                {
+                  "source_node": "Righe",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 81
+                }
+              ]
+            },
+            {
+              "label": "Pencil Cases",
+              "href": "#/stationery/school/pencil-cases",
+              "source_nodes": [
+                "Astucci"
+              ],
+              "source_evidence": [
+                {
+                  "source_node": "Astucci",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 61
+                }
+              ]
+            },
+            {
+              "label": "Geometry & Measuring",
+              "href": "#/stationery/school/geometry-measuring",
+              "source_nodes": [
+                "Squadre",
+                "Compassi",
+                "Goniometri",
+                "Normografi E Curvilinee",
+                "Regoli"
+              ],
+              "requires_curated_landing": true,
+              "source_evidence": [
+                {
+                  "source_node": "Squadre",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 48
+                },
+                {
+                  "source_node": "Compassi",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 35
+                },
+                {
+                  "source_node": "Goniometri",
+                  "source_kind": "FILTER",
+                  "stock_reference_4_feeds": 14
+                },
+                {
+                  "source_node": "Normografi E Curvilinee",
+                  "source_kind": "FILTER",
+                  "stock_reference_4_feeds": 11
+                },
+                {
+                  "source_node": "Regoli",
+                  "source_kind": "FILTER",
+                  "stock_reference_4_feeds": 1
+                }
+              ]
+            },
+            {
+              "label": "Protocol Paper",
+              "href": "#/stationery/school/protocol-paper",
+              "source_nodes": [
+                "Fogli Protocollo"
+              ],
+              "source_evidence": [
+                {
+                  "source_node": "Fogli Protocollo",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 35
+                }
+              ]
+            },
+            {
+              "label": "School Backpacks",
+              "href": "#/stationery/school/school-backpacks",
+              "source_nodes": [
+                "Zaini Scuola"
+              ],
+              "source_evidence": [
+                {
+                  "source_node": "Zaini Scuola",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 33
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Desk & Organization",
+          "href": "#/stationery/desk-organization",
+          "items": [
+            {
+              "label": "Folders & Document Files",
+              "href": "#/stationery/desk-organization/folders-document-files",
+              "source_nodes": [
+                "Cartelle E Cartelline"
+              ],
+              "requires_curated_landing": true,
+              "source_evidence": [
+                {
+                  "source_node": "Cartelle E Cartelline",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 342
+                }
+              ]
+            },
+            {
+              "label": "Plastic Sleeves",
+              "href": "#/stationery/desk-organization/plastic-sleeves",
+              "source_nodes": [
+                "Buste In Plastica"
+              ],
+              "source_evidence": [
+                {
+                  "source_node": "Buste In Plastica",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 257
+                }
+              ]
+            },
+            {
+              "label": "Binders",
+              "href": "#/stationery/desk-organization/binders",
+              "source_nodes": [
+                "Raccoglitori"
+              ],
+              "source_evidence": [
+                {
+                  "source_node": "Raccoglitori",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 189
+                }
+              ]
+            },
+            {
+              "label": "Project Boxes",
+              "href": "#/stationery/desk-organization/project-boxes",
+              "source_nodes": [
+                "Scatole Progetto"
+              ],
+              "source_evidence": [
+                {
+                  "source_node": "Scatole Progetto",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 156
+                }
+              ]
+            },
+            {
+              "label": "Lever Arch Files",
+              "href": "#/stationery/desk-organization/lever-arch-files",
+              "source_nodes": [
+                "Registratori"
+              ],
+              "source_evidence": [
+                {
+                  "source_node": "Registratori",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 153
+                }
+              ]
+            },
+            {
+              "label": "Display Books",
+              "href": "#/stationery/desk-organization/display-books",
+              "source_nodes": [
+                "Portalistini"
+              ],
+              "source_evidence": [
+                {
+                  "source_node": "Portalistini",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 149
+                }
+              ]
+            },
+            {
+              "label": "Staplers",
+              "href": "#/stationery/desk-organization/staplers",
+              "source_nodes": [
+                "Cucitrici"
+              ],
+              "source_evidence": [
+                {
+                  "source_node": "Cucitrici",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 104
+                }
+              ]
+            },
+            {
+              "label": "Staples",
+              "href": "#/stationery/desk-organization/staples",
+              "source_nodes": [
+                "Punti Metallici"
+              ],
+              "source_evidence": [
+                {
+                  "source_node": "Punti Metallici",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 85
+                }
+              ]
+            },
+            {
+              "label": "Mail Trays",
+              "href": "#/stationery/desk-organization/mail-trays",
+              "source_nodes": [
+                "Portacorrispondenza"
+              ],
+              "source_evidence": [
+                {
+                  "source_node": "Portacorrispondenza",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 76
+                }
+              ]
+            },
+            {
+              "label": "Dividers",
+              "href": "#/stationery/desk-organization/dividers",
+              "source_nodes": [
+                "Intercalari"
+              ],
+              "source_evidence": [
+                {
+                  "source_node": "Intercalari",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 62
+                }
+              ]
+            },
+            {
+              "label": "Rubber Bands",
+              "href": "#/stationery/desk-organization/rubber-bands",
+              "source_nodes": [
+                "Elastici"
+              ],
+              "source_evidence": [
+                {
+                  "source_node": "Elastici",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 61
+                }
+              ]
+            },
+            {
+              "label": "Office Scissors",
+              "href": "#/stationery/desk-organization/office-scissors",
+              "source_nodes": [
+                "Forbici Ufficio"
+              ],
+              "source_evidence": [
+                {
+                  "source_node": "Forbici Ufficio",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 46
+                }
+              ]
+            },
+            {
+              "label": "Cutters",
+              "href": "#/stationery/desk-organization/cutters",
+              "source_nodes": [
+                "Cutter"
+              ],
+              "source_evidence": [
+                {
+                  "source_node": "Cutter",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 38
+                }
+              ]
+            },
+            {
+              "label": "Archive Boxes & Files",
+              "href": "#/stationery/desk-organization/archive-boxes-files",
+              "source_nodes": [
+                "Scatole Archivio E Faldoni"
+              ],
+              "requires_curated_landing": true,
+              "source_evidence": [
+                {
+                  "source_node": "Scatole Archivio E Faldoni",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 38
+                }
+              ]
+            },
+            {
+              "label": "Hole Punches",
+              "href": "#/stationery/desk-organization/hole-punches",
+              "source_nodes": [
+                "Perforatori"
+              ],
+              "source_evidence": [
+                {
+                  "source_node": "Perforatori",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 33
+                }
+              ]
+            },
+            {
+              "label": "Paper Clips",
+              "href": "#/stationery/desk-organization/paper-clips",
+              "source_nodes": [
+                "Fermagli"
+              ],
+              "source_evidence": [
+                {
+                  "source_node": "Fermagli",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 32
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Creative & Drawing",
+          "href": "#/stationery/creative-drawing",
+          "items": [
+            {
+              "label": "Creative Kits",
+              "href": "#/stationery/creative-drawing/creative-kits",
+              "source_nodes": [
+                "Kit Creativi"
+              ],
+              "source_evidence": [
+                {
+                  "source_node": "Kit Creativi",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 92
+                }
+              ]
+            },
+            {
+              "label": "Brushes",
+              "href": "#/stationery/creative-drawing/brushes",
+              "source_nodes": [
+                "Pennelli"
+              ],
+              "source_evidence": [
+                {
+                  "source_node": "Pennelli",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 73
+                }
+              ]
+            },
+            {
+              "label": "Drawing Portfolios",
+              "href": "#/stationery/creative-drawing/drawing-portfolios",
+              "source_nodes": [
+                "Cartelle Portadisegni"
+              ],
+              "source_evidence": [
+                {
+                  "source_node": "Cartelle Portadisegni",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 51
+                }
+              ]
+            },
+            {
+              "label": "Modelling Clay",
+              "href": "#/stationery/creative-drawing/modelling-clay",
+              "source_nodes": [
+                "Paste Per Modellare"
+              ],
+              "source_evidence": [
+                {
+                  "source_node": "Paste Per Modellare",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 41
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Toner, Ink & Printer Consumables",
+          "href": "#/stationery/toner-ink-printer-consumables",
+          "items": [
+            {
+              "label": "Laser Toner & Consumables",
+              "href": "#/stationery/toner-ink-printer-consumables/laser",
+              "source_nodes": [
+                "Laser Printer Consumables",
+                "Laser Multifunction Consumables"
+              ],
+              "requires_curated_landing": true,
+              "source_evidence": [
+                {
+                  "source_node": "Laser Printer Consumables",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 1395
+                },
+                {
+                  "source_node": "Laser Multifunction Consumables",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 482
+                }
+              ]
+            },
+            {
+              "label": "Inkjet Ink & Consumables",
+              "href": "#/stationery/toner-ink-printer-consumables/inkjet",
+              "source_nodes": [
+                "Inkjet Printer Consumables",
+                "Inkjet Multifunction Consumables"
+              ],
+              "requires_curated_landing": true,
+              "source_evidence": [
+                {
+                  "source_node": "Inkjet Printer Consumables",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 913
+                },
+                {
+                  "source_node": "Inkjet Multifunction Consumables",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 126
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Paper & Print Media",
+          "href": "#/stationery/paper-print-media",
+          "items": [
+            {
+              "label": "A4 Paper",
+              "href": "#/stationery/paper-print-media/a4-paper",
+              "source_nodes": [
+                "Carta Bianca A4",
+                "Carta Colorata A4",
+                "Carta Riciclata A4"
+              ],
+              "requires_curated_landing": true,
+              "source_evidence": [
+                {
+                  "source_node": "Carta Bianca A4",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 46
+                },
+                {
+                  "source_node": "Carta Colorata A4",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 69
+                },
+                {
+                  "source_node": "Carta Riciclata A4",
+                  "source_kind": "FILTER",
+                  "stock_reference_4_feeds": 1
+                }
+              ]
+            },
+            {
+              "label": "A3 Paper",
+              "href": "#/stationery/paper-print-media/a3-paper",
+              "source_nodes": [
+                "Carta Bianca A3",
+                "Carta Colorata A3",
+                "Carta Bianca A3+"
+              ],
+              "requires_curated_landing": true,
+              "source_evidence": [
+                {
+                  "source_node": "Carta Bianca A3",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 32
+                },
+                {
+                  "source_node": "Carta Colorata A3",
+                  "source_kind": "FILTER",
+                  "stock_reference_4_feeds": 27
+                },
+                {
+                  "source_node": "Carta Bianca A3+",
+                  "source_kind": "FILTER",
+                  "stock_reference_4_feeds": 4
+                }
+              ]
+            },
+            {
+              "label": "Photo Paper",
+              "href": "#/stationery/paper-print-media/photo-paper",
+              "source_nodes": [
+                "Carta Fotografica A4",
+                "Carta Fotografica A6",
+                "Carta Fotografica A5",
+                "Carta Fotografica A3",
+                "Carta Fotografica A3+"
+              ],
+              "requires_curated_landing": true,
+              "source_evidence": [
+                {
+                  "source_node": "Carta Fotografica A4",
+                  "source_kind": "FILTER",
+                  "stock_reference_4_feeds": 18
+                },
+                {
+                  "source_node": "Carta Fotografica A6",
+                  "source_kind": "FILTER",
+                  "stock_reference_4_feeds": 15
+                },
+                {
+                  "source_node": "Carta Fotografica A5",
+                  "source_kind": "FILTER",
+                  "stock_reference_4_feeds": 5
+                },
+                {
+                  "source_node": "Carta Fotografica A3",
+                  "source_kind": "FILTER",
+                  "stock_reference_4_feeds": 2
+                },
+                {
+                  "source_node": "Carta Fotografica A3+",
+                  "source_kind": "FILTER",
+                  "stock_reference_4_feeds": 1
+                }
+              ]
+            },
+            {
+              "label": "Coloured Paper",
+              "href": "#/stationery/paper-print-media/coloured-paper",
+              "source_nodes": [
+                "Carta Colorata A4",
+                "Carta Colorata A3"
+              ],
+              "requires_curated_landing": true,
+              "source_evidence": [
+                {
+                  "source_node": "Carta Colorata A4",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 69
+                },
+                {
+                  "source_node": "Carta Colorata A3",
+                  "source_kind": "FILTER",
+                  "stock_reference_4_feeds": 27
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Labels & Label Tapes",
+          "href": "#/stationery/labels-label-tapes",
+          "items": [
+            {
+              "label": "Address & Parcel Labels",
+              "href": "#/stationery/labels-label-tapes/address-parcel-labels",
+              "source_evidence": [
+                {
+                  "source_node": "Address & Parcel Labels",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 254
+                }
+              ]
+            },
+            {
+              "label": "Label-maker Tapes",
+              "href": "#/stationery/labels-label-tapes/label-maker-tapes",
+              "source_evidence": [
+                {
+                  "source_node": "Label-maker Tapes",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 191
+                }
+              ]
+            },
+            {
+              "label": "Thermal & Card Printer Labels",
+              "href": "#/stationery/labels-label-tapes/thermal-card-printer-labels",
+              "source_nodes": [
+                "Thermal / Card Printer Labels"
+              ],
+              "requires_curated_landing": true,
+              "source_evidence": [
+                {
+                  "source_node": "Thermal / Card Printer Labels",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 120
+                }
+              ]
+            },
+            {
+              "label": "Ribbons",
+              "href": "#/stationery/labels-label-tapes/ribbons",
+              "source_evidence": [
+                {
+                  "source_node": "Ribbons",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 67
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Cash Register & POS Rolls",
+          "href": "#/stationery/cash-register-pos-rolls",
+          "items": [
+            {
+              "label": "Cash Register Rolls",
+              "href": "#/stationery/cash-register-pos-rolls/cash-register-rolls",
+              "source_evidence": [
+                {
+                  "source_node": "Cash Register Rolls",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 46
+                }
+              ]
+            },
+            {
+              "label": "POS & Terminal Rolls",
+              "href": "#/stationery/cash-register-pos-rolls/pos-terminal-rolls",
+              "source_evidence": [
+                {
+                  "source_node": "POS & Terminal Rolls",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 35
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Envelopes, Forms & Stamps",
+          "href": "#/stationery/envelopes-forms-stamps",
+          "items": [
+            {
+              "label": "Envelopes",
+              "href": "#/stationery/envelopes-forms-stamps/envelopes",
+              "source_nodes": [
+                "Buste Bianche",
+                "Buste Colorate",
+                "Buste Imbottite",
+                "Buste A Sacco",
+                "Buste In Cartone"
+              ],
+              "requires_curated_landing": true,
+              "source_evidence": [
+                {
+                  "source_node": "Buste Bianche",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 86
+                },
+                {
+                  "source_node": "Buste Colorate",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 41
+                },
+                {
+                  "source_node": "Buste Imbottite",
+                  "source_kind": "FILTER",
+                  "stock_reference_4_feeds": 25
+                },
+                {
+                  "source_node": "Buste A Sacco",
+                  "source_kind": "FILTER",
+                  "stock_reference_4_feeds": 16
+                },
+                {
+                  "source_node": "Buste In Cartone",
+                  "source_kind": "FILTER",
+                  "stock_reference_4_feeds": 7
+                }
+              ]
+            },
+            {
+              "label": "Stamp Pads",
+              "href": "#/stationery/envelopes-forms-stamps/stamp-pads",
+              "source_nodes": [
+                "Cuscinetti Per Timbri"
+              ],
+              "source_evidence": [
+                {
+                  "source_node": "Cuscinetti Per Timbri",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 63
+                }
+              ]
+            },
+            {
+              "label": "Stamps",
+              "href": "#/stationery/envelopes-forms-stamps/stamps",
+              "source_nodes": [
+                "Timbri"
+              ],
+              "source_evidence": [
+                {
+                  "source_node": "Timbri",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 54
+                }
+              ]
+            },
+            {
+              "label": "Business Forms",
+              "href": "#/stationery/envelopes-forms-stamps/business-forms",
+              "source_nodes": [
+                "Contabilità / Società",
+                "Attività",
+                "Trasporti",
+                "Acquisti E Vendite",
+                "Alberghi E Ristoranti",
+                "Immobili (Edilizia-Condomini)",
+                "Personale",
+                "Sanità",
+                "Gestione Del Personale"
+              ],
+              "requires_curated_landing": true,
+              "source_evidence": [
+                {
+                  "source_node": "Contabilità / Società",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 49
+                },
+                {
+                  "source_node": "Attività",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 30
+                },
+                {
+                  "source_node": "Trasporti",
+                  "source_kind": "FILTER",
+                  "stock_reference_4_feeds": 25
+                },
+                {
+                  "source_node": "Acquisti E Vendite",
+                  "source_kind": "FILTER",
+                  "stock_reference_4_feeds": 6
+                },
+                {
+                  "source_node": "Alberghi E Ristoranti",
+                  "source_kind": "FILTER",
+                  "stock_reference_4_feeds": 6
+                },
+                {
+                  "source_node": "Immobili (Edilizia-Condomini)",
+                  "source_kind": "FILTER",
+                  "stock_reference_4_feeds": 5
+                },
+                {
+                  "source_node": "Personale",
+                  "source_kind": "FILTER",
+                  "stock_reference_4_feeds": 5
+                },
+                {
+                  "source_node": "Sanità",
+                  "source_kind": "FILTER",
+                  "stock_reference_4_feeds": 5
+                },
+                {
+                  "source_node": "Gestione Del Personale",
+                  "source_kind": "FILTER",
+                  "stock_reference_4_feeds": 4
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Packaging & Adhesives",
+          "href": "#/stationery/packaging-adhesives",
+          "items": [
+            {
+              "label": "Glues",
+              "href": "#/stationery/packaging-adhesives/glues",
+              "source_nodes": [
+                "Colle"
+              ],
+              "source_evidence": [
+                {
+                  "source_node": "Colle",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 114
+                }
+              ]
+            },
+            {
+              "label": "Adhesive Tapes",
+              "href": "#/stationery/packaging-adhesives/adhesive-tapes",
+              "source_nodes": [
+                "Nastri Adesivi"
+              ],
+              "source_evidence": [
+                {
+                  "source_node": "Nastri Adesivi",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 91
+                }
+              ]
+            },
+            {
+              "label": "Bags & Wrapping Paper",
+              "href": "#/stationery/packaging-adhesives/bags-wrapping-paper",
+              "source_nodes": [
+                "Sacchetti E Carta Da Pacco"
+              ],
+              "source_evidence": [
+                {
+                  "source_node": "Sacchetti E Carta Da Pacco",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 72
+                }
+              ]
+            },
+            {
+              "label": "Packing Tape",
+              "href": "#/stationery/packaging-adhesives/packing-tape",
+              "source_nodes": [
+                "Nastro Imballo"
+              ],
+              "source_evidence": [
+                {
+                  "source_node": "Nastro Imballo",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 42
+                }
+              ]
+            },
+            {
+              "label": "Plastic Document Pouches",
+              "href": "#/stationery/packaging-adhesives/plastic-document-pouches",
+              "source_nodes": [
+                "Buste In Plastica Portadocumenti"
+              ],
+              "source_evidence": [
+                {
+                  "source_node": "Buste In Plastica Portadocumenti",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 34
+                }
+              ]
+            },
+            {
+              "label": "Boxes",
+              "href": "#/stationery/packaging-adhesives/boxes",
+              "source_nodes": [
+                "Scatole"
+              ],
+              "source_evidence": [
+                {
+                  "source_node": "Scatole",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 34
+                }
+              ]
+            },
+            {
+              "label": "Double-sided Tapes",
+              "href": "#/stationery/packaging-adhesives/double-sided-tapes",
+              "source_nodes": [
+                "Nastri Biadesivi"
+              ],
+              "source_evidence": [
+                {
+                  "source_node": "Nastri Biadesivi",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 31
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Office Machines & Finishing",
+          "href": "#/stationery/office-machines-finishing",
+          "items": [
+            {
+              "label": "Binding Supplies",
+              "href": "#/stationery/office-machines-finishing/binding",
+              "source_nodes": [
+                "Plastic Binding Combs",
+                "Wire Binding Combs",
+                "Binding Covers",
+                "Thermal Binding Covers",
+                "Binding Combs"
+              ],
+              "requires_curated_landing": true,
+              "source_evidence": [
+                {
+                  "source_node": "Plastic Binding Combs",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 100
+                },
+                {
+                  "source_node": "Wire Binding Combs",
+                  "source_kind": "FILTER",
+                  "stock_reference_4_feeds": 23
+                },
+                {
+                  "source_node": "Binding Covers",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 32
+                },
+                {
+                  "source_node": "Thermal Binding Covers",
+                  "source_kind": "FILTER",
+                  "stock_reference_4_feeds": 12
+                },
+                {
+                  "source_node": "Binding Combs",
+                  "source_kind": "FILTER",
+                  "stock_reference_4_feeds": 5
+                }
+              ]
+            },
+            {
+              "label": "Laminators & Accessories",
+              "href": "#/stationery/office-machines-finishing/laminators",
+              "source_nodes": [
+                "Laminator Accessories",
+                "Hot Laminators"
+              ],
+              "requires_curated_landing": true,
+              "source_evidence": [
+                {
+                  "source_node": "Laminator Accessories",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 72
+                },
+                {
+                  "source_node": "Hot Laminators",
+                  "source_kind": "FILTER",
+                  "stock_reference_4_feeds": 27
+                }
+              ]
+            },
+            {
+              "label": "Shredders & Accessories",
+              "href": "#/stationery/office-machines-finishing/shredders",
+              "source_nodes": [
+                "Cross-cut Shredders",
+                "Strip-cut Shredders",
+                "Micro-cut Shredders",
+                "Shredder Accessories"
+              ],
+              "requires_curated_landing": true,
+              "source_evidence": [
+                {
+                  "source_node": "Cross-cut Shredders",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 47
+                },
+                {
+                  "source_node": "Strip-cut Shredders",
+                  "source_kind": "FILTER",
+                  "stock_reference_4_feeds": 7
+                },
+                {
+                  "source_node": "Micro-cut Shredders",
+                  "source_kind": "FILTER",
+                  "stock_reference_4_feeds": 2
+                },
+                {
+                  "source_node": "Shredder Accessories",
+                  "source_kind": "FILTER",
+                  "stock_reference_4_feeds": 10
+                }
+              ]
+            },
+            {
+              "label": "Label Makers",
+              "href": "#/stationery/office-machines-finishing/label-makers",
+              "source_nodes": [
+                "Desktop Label Makers",
+                "Portable Label Makers"
+              ],
+              "requires_curated_landing": true,
+              "source_evidence": [
+                {
+                  "source_node": "Desktop Label Makers",
+                  "source_kind": "FILTER",
+                  "stock_reference_4_feeds": 22
+                },
+                {
+                  "source_node": "Portable Label Makers",
+                  "source_kind": "FILTER",
+                  "stock_reference_4_feeds": 18
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Printers & Multifunction",
+          "href": "#/stationery/printers-multifunction",
+          "items": [
+            {
+              "label": "Inkjet Printers",
+              "href": "#/stationery/printers-multifunction/inkjet-printers",
+              "source_nodes": [
+                "Inkjet Printers"
+              ],
+              "source_evidence": [
+                {
+                  "source_node": "Inkjet Printers",
+                  "source_kind": "FILTER",
+                  "stock_reference_4_feeds": 27
+                }
+              ]
+            },
+            {
+              "label": "Laser Printers",
+              "href": "#/stationery/printers-multifunction/laser-printers",
+              "source_nodes": [
+                "Mono Laser Printers",
+                "Colour Laser Printers"
+              ],
+              "requires_curated_landing": true,
+              "source_evidence": [
+                {
+                  "source_node": "Mono Laser Printers",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 38
+                },
+                {
+                  "source_node": "Colour Laser Printers",
+                  "source_kind": "FILTER",
+                  "stock_reference_4_feeds": 23
+                }
+              ]
+            },
+            {
+              "label": "Inkjet Multifunction",
+              "href": "#/stationery/printers-multifunction/inkjet-multifunction",
+              "source_evidence": [
+                {
+                  "source_node": "Inkjet Multifunction",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 75
+                }
+              ]
+            },
+            {
+              "label": "Laser Multifunction",
+              "href": "#/stationery/printers-multifunction/laser-multifunction",
+              "source_nodes": [
+                "Colour Laser Multifunction",
+                "Mono Laser Multifunction"
+              ],
+              "requires_curated_landing": true,
+              "source_evidence": [
+                {
+                  "source_node": "Colour Laser Multifunction",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 70
+                },
+                {
+                  "source_node": "Mono Laser Multifunction",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 51
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Retail Display & Signage",
+          "href": "#/stationery/retail-display-signage",
+          "items": [
+            {
+              "label": "Whiteboards & Planning",
+              "href": "#/stationery/retail-display-signage/whiteboards-planning",
+              "source_nodes": [
+                "Lavagne E Planning"
+              ],
+              "source_evidence": [
+                {
+                  "source_node": "Lavagne E Planning",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 72
+                }
+              ]
+            },
+            {
+              "label": "Brochure Holders",
+              "href": "#/stationery/retail-display-signage/brochure-holders",
+              "source_nodes": [
+                "Porta Depliant Da Tavolo E Da Parete"
+              ],
+              "source_evidence": [
+                {
+                  "source_node": "Porta Depliant Da Tavolo E Da Parete",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 43
+                }
+              ]
+            },
+            {
+              "label": "Name & Badge Holders",
+              "href": "#/stationery/retail-display-signage/name-badge-holders",
+              "source_nodes": [
+                "Portanomi E Portabadge"
+              ],
+              "source_evidence": [
+                {
+                  "source_node": "Portanomi E Portabadge",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 37
+                }
+              ]
+            },
+            {
+              "label": "Signage",
+              "href": "#/stationery/retail-display-signage/signage",
+              "source_nodes": [
+                "Segnaletica"
+              ],
+              "note": "Eccezione: è nel nome stesso del L2 e rappresenta un intento autonomo.",
+              "source_evidence": [
+                {
+                  "source_node": "Segnaletica",
+                  "source_kind": "FILTER",
+                  "stock_reference_4_feeds": 20
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Retail & Counter Supplies",
+          "href": "#/stationery/retail-counter-supplies",
+          "items": [
+            {
+              "label": "Banknote Detectors",
+              "href": "#/stationery/retail-counter-supplies/banknote-detectors",
+              "source_evidence": [
+                {
+                  "source_node": "Banknote Detectors",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 34
+                }
+              ]
+            },
+            {
+              "label": "Money Counters",
+              "href": "#/stationery/retail-counter-supplies/money-counters",
+              "source_nodes": [
+                "Money Counters"
+              ],
+              "source_evidence": [
+                {
+                  "source_node": "Money Counters",
+                  "source_kind": "FILTER",
+                  "stock_reference_4_feeds": 20
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "POS & Barcode Equipment",
+          "href": "#/stationery/pos-barcode-equipment",
+          "items": [
+            {
+              "label": "Barcode Scanners",
+              "href": "#/stationery/pos-barcode-equipment/barcode-scanners",
+              "source_nodes": [
+                "General-purpose Barcode Scanners"
+              ],
+              "requires_curated_landing": true,
+              "source_evidence": [
+                {
+                  "source_node": "General-purpose Barcode Scanners",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 127
+                }
+              ]
+            },
+            {
+              "label": "Label & Receipt Printers",
+              "href": "#/stationery/pos-barcode-equipment/label-receipt-printers",
+              "source_nodes": [
+                "Desktop Label / Receipt Printers"
+              ],
+              "requires_curated_landing": true,
+              "source_evidence": [
+                {
+                  "source_node": "Desktop Label / Receipt Printers",
+                  "source_kind": "L3",
+                  "stock_reference_4_feeds": 62
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
