@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Space1999</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="service-bar">
+      <div class="container service-bar__inner">
+        <p>International distributor of media products</p>
+        <nav aria-label="Servizi">
+          <a href="#newsletter">Newsletter</a><a href="#shipping">Spedizioni</a>
+          <a href="#wishlist">Wishlist</a><a href="#blog">Blog</a><a href="#account">MySpace1999</a>
+        </nav>
+      </div>
+    </div>
+    <div class="container brand-row">
+      <a class="brand" href="/" aria-label="Space1999 home">
+        <img src="https://space1999.com/bundles/mercuriospace/shop/images/03_Marchio_Space.jpg" alt="Space1999">
+      </a>
+      <div class="mobile-actions">
+        <button class="icon-button" type="button" data-search-open aria-label="Cerca">⌕</button>
+        <button class="icon-button" type="button" data-menu-open aria-label="Apri menu"><span class="burger"></span></button>
+      </div>
+    </div>
+    <div class="nav-shell">
+      <div class="container nav-row">
+        <nav aria-label="Menu principale"><ul class="desktop-menu" data-desktop-menu></ul></nav>
+        <form class="search" role="search">
+          <input type="search" name="q" placeholder="Cerca nel catalogo" aria-label="Cerca nel catalogo">
+          <button type="submit" aria-label="Avvia ricerca">⌕</button>
+        </form>
+      </div>
+    </div>
+  </header>
+  <div class="overlay" data-overlay></div>
+  <aside class="mobile-panel" data-mobile-panel aria-hidden="true">
+    <div class="mobile-panel__head"><strong>Menu</strong><button type="button" data-menu-close aria-label="Chiudi menu">×</button></div>
+    <form class="mobile-search" role="search"><input type="search" name="q" placeholder="Cerca"><button type="submit">⌕</button></form>
+    <nav aria-label="Menu mobile"><ul class="mobile-menu" data-mobile-menu></ul></nav>
+  </aside>
+  <script src="assets/app.js" defer></script>
+</body>
+</html>
