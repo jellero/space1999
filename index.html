@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./assets/styles.css?v=20260826-3">
+  <link rel="stylesheet" href="./assets/styles.css?v=20260826-4">
 </head>
 <body>
   <header class="site-header">
@@ -33,11 +33,16 @@
     <div class="nav-shell">
       <nav class="container" aria-label="Menu principale"><ul class="desktop-menu" data-desktop-menu></ul></nav>
     </div>
-    <form class="container search" role="search">
-      <span aria-hidden="true">⌕</span>
-      <input type="search" name="q" placeholder="search by text or barcode" aria-label="Cerca per testo o barcode">
-      <label><input type="checkbox"> Stock only</label>
-      <button type="submit">Search</button><button type="button">Adv Search</button>
+    <form class="container search" role="search" action="https://space1999.com/en/shop/search" method="get" data-main-search>
+      <div class="search-field">
+        <svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="10" cy="10" r="6.5"></circle><path d="m15 15 6 6"></path></svg>
+        <input type="text" name="s" autocomplete="off" placeholder="search by text or barcode" aria-label="Cerca per testo o barcode">
+      </div>
+      <div class="search-actions">
+        <label><input type="checkbox" name="onlystock"><span>Stock only</span></label>
+        <button type="submit">Search</button>
+        <button type="button" data-advanced-search>Adv Search</button>
+      </div>
     </form>
   </header>
   <div class="overlay" data-overlay></div>
@@ -46,6 +51,6 @@
     <form class="mobile-search" role="search"><input type="search" name="q" placeholder="Cerca"><button type="submit">⌕</button></form>
     <nav aria-label="Menu mobile"><ul class="mobile-menu" data-mobile-menu></ul></nav>
   </aside>
-  <script src="./assets/app.js?v=20260826-3" defer></script>
+  <script src="./assets/app.js?v=20260826-4" defer></script>
 </body>
 </html>
