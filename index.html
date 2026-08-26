@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./assets/styles.css?v=20260826-4">
+  <link rel="stylesheet" href="./assets/styles.css?v=20260826-5">
 </head>
 <body>
   <header class="site-header">
@@ -45,12 +45,88 @@
       </div>
     </form>
   </header>
+
   <div class="overlay" data-overlay></div>
   <aside class="mobile-panel" data-mobile-panel aria-hidden="true">
     <div class="mobile-panel__head"><strong>Menu</strong><button type="button" data-menu-close aria-label="Chiudi menu">×</button></div>
     <form class="mobile-search" role="search"><input type="search" name="q" placeholder="Cerca"><button type="submit">⌕</button></form>
     <nav aria-label="Menu mobile"><ul class="mobile-menu" data-mobile-menu></ul></nav>
   </aside>
+
+  <main>
+    <section class="hero container" aria-labelledby="hero-title">
+      <div class="hero__copy">
+        <p class="eyebrow">Worldwide music distribution</p>
+        <h1 id="hero-title">New sounds.<br>New stories.</h1>
+        <p>Una base editoriale pulita per introdurre novità, preordini e selezioni dal catalogo.</p>
+        <a class="button button--dark" href="#new-releases">Explore new releases</a>
+      </div>
+      <div class="hero__art" aria-hidden="true">
+        <span class="record"></span>
+        <span class="hero__number">99</span>
+      </div>
+    </section>
+
+    <section class="product-section container" id="new-releases">
+      <div class="section-heading">
+        <div><p class="eyebrow">Just arrived</p><h2>New Releases</h2></div>
+        <a href="#">View All <span aria-hidden="true">→</span></a>
+      </div>
+      <div class="product-grid">
+        <article class="product-card"><a href="#"><div class="cover cover--red"><span>01</span></div><h3>Album title</h3><p>Artist name</p><small>LP Vinyl · Label</small></a></article>
+        <article class="product-card"><a href="#"><div class="cover cover--cream"><span>02</span></div><h3>New collection</h3><p>Artist name</p><small>CD Audio · Label</small></a></article>
+        <article class="product-card"><a href="#"><div class="cover cover--dark"><span>03</span></div><h3>Limited edition</h3><p>Artist name</p><small>LP Vinyl · Label</small></a></article>
+        <article class="product-card"><a href="#"><div class="cover cover--blue"><span>04</span></div><h3>Live sessions</h3><p>Artist name</p><small>CD Audio · Label</small></a></article>
+        <article class="product-card"><a href="#"><div class="cover cover--orange"><span>05</span></div><h3>Original score</h3><p>Artist name</p><small>LP Vinyl · Label</small></a></article>
+        <article class="product-card"><a href="#"><div class="cover cover--grey"><span>06</span></div><h3>Anniversary</h3><p>Artist name</p><small>Box Set · Label</small></a></article>
+      </div>
+    </section>
+
+    <section class="editorial-banner">
+      <div class="container editorial-banner__inner">
+        <div><p class="eyebrow">Curated selection</p><h2>Music for the modern listener</h2></div>
+        <p>Cataloghi indipendenti, ristampe e nuove scoperte riunite in una selezione dedicata.</p>
+        <a class="button button--light" href="#">Discover the selection</a>
+      </div>
+    </section>
+
+    <section class="product-section container">
+      <div class="section-heading">
+        <div><p class="eyebrow">Coming soon</p><h2>Preorders</h2></div>
+        <a href="#">View All <span aria-hidden="true">→</span></a>
+      </div>
+      <div class="product-grid product-grid--compact">
+        <article class="product-card"><a href="#"><div class="cover cover--dark"><span>07</span></div><h3>Future classics</h3><p>Artist name</p><small>LP Vinyl · Label</small></a></article>
+        <article class="product-card"><a href="#"><div class="cover cover--blue"><span>08</span></div><h3>First pressing</h3><p>Artist name</p><small>LP Vinyl · Label</small></a></article>
+        <article class="product-card"><a href="#"><div class="cover cover--red"><span>09</span></div><h3>Studio album</h3><p>Artist name</p><small>CD Audio · Label</small></a></article>
+        <article class="product-card"><a href="#"><div class="cover cover--cream"><span>10</span></div><h3>Deluxe version</h3><p>Artist name</p><small>Box Set · Label</small></a></article>
+      </div>
+    </section>
+
+    <section class="split-feature container">
+      <a class="feature-card feature-card--import" href="#"><span>Selected worldwide</span><strong>Import</strong><em>Explore →</em></a>
+      <a class="feature-card feature-card--deals" href="#"><span>Special prices</span><strong>Super Deals</strong><em>Explore →</em></a>
+    </section>
+
+    <section class="service-strip">
+      <div class="container service-strip__grid">
+        <div><strong>Worldwide shipping</strong><span>Fast and tracked deliveries</span></div>
+        <div><strong>Specialist catalogue</strong><span>Music, media and merchandise</span></div>
+        <div><strong>Customer care</strong><span>Support before and after purchase</span></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <section><h2>Contattaci</h2><ul><li><a href="tel:+390433945309">Chiamaci +39 0433 945309</a></li><li><a href="https://wa.me/390433945309">Scrivici su WhatsApp</a></li><li><a href="#">Contatti</a></li></ul></section>
+      <section><h2>My Space1999</h2><ul><li><a href="#">Il mio profilo</a></li><li><a href="#">Spedizioni</a></li><li><a href="#">Resi</a></li><li><a href="#">Ordini</a></li><li><a href="#">Pagamenti</a></li></ul></section>
+      <section><h2>Azienda</h2><ul><li><a href="#">Visione</a></li><li><a href="#">Lavora con noi</a></li><li><a href="#">Galleria</a></li><li><a href="#">Dati aziendali e bancari</a></li></ul></section>
+      <section><h2>Termini e condizioni</h2><ul><li><a href="#">Condizioni generali</a></li><li><a href="#">Condizioni spedizione</a></li><li><a href="#">Resi</a></li><li><a href="#">Privacy</a></li><li><a href="#">Cookie policy</a></li></ul></section>
+    </div>
+    <div class="container footer-bottom"><span>VAT IT 02073290302</span><span>© SPACE1999 · Tutti i diritti sono riservati</span></div>
+  </footer>
+
   <script src="./assets/app.js?v=20260826-4" defer></script>
 </body>
 </html>
