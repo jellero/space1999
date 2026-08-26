@@ -1,0 +1,115 @@
+{
+  "version": 1,
+  "sections": [
+    {
+      "id": "new-releases",
+      "products": [
+        {
+          "id": "new-01",
+          "artist": "Artist name",
+          "title": "Album title",
+          "format": "LP Vinyl",
+          "label": "Label",
+          "coverLabel": "01",
+          "coverVariant": "red",
+          "href": "https://space1999.com/en/shop/catalogues/76167"
+        },
+        {
+          "id": "new-02",
+          "artist": "Artist name",
+          "title": "New collection",
+          "format": "CD Audio",
+          "label": "Label",
+          "coverLabel": "02",
+          "coverVariant": "cream",
+          "href": "https://space1999.com/en/shop/catalogues/76167"
+        },
+        {
+          "id": "new-03",
+          "artist": "Artist name",
+          "title": "Limited edition",
+          "format": "LP Vinyl",
+          "label": "Label",
+          "coverLabel": "03",
+          "coverVariant": "dark",
+          "href": "https://space1999.com/en/shop/catalogues/76167"
+        },
+        {
+          "id": "new-04",
+          "artist": "Artist name",
+          "title": "Live sessions",
+          "format": "CD Audio",
+          "label": "Label",
+          "coverLabel": "04",
+          "coverVariant": "blue",
+          "href": "https://space1999.com/en/shop/catalogues/76167"
+        },
+        {
+          "id": "new-05",
+          "artist": "Artist name",
+          "title": "Original score",
+          "format": "LP Vinyl",
+          "label": "Label",
+          "coverLabel": "05",
+          "coverVariant": "orange",
+          "href": "https://space1999.com/en/shop/catalogues/76167"
+        },
+        {
+          "id": "new-06",
+          "artist": "Artist name",
+          "title": "Anniversary",
+          "format": "Box Set",
+          "label": "Label",
+          "coverLabel": "06",
+          "coverVariant": "grey",
+          "href": "https://space1999.com/en/shop/catalogues/76167"
+        }
+      ]
+    },
+    {
+      "id": "preorders",
+      "products": [
+        {
+          "id": "preorder-07",
+          "artist": "Artist name",
+          "title": "Future classics",
+          "format": "LP Vinyl",
+          "label": "Label",
+          "coverLabel": "07",
+          "coverVariant": "dark",
+          "href": "https://space1999.com/en/shop/catalogues/57173"
+        },
+        {
+          "id": "preorder-08",
+          "artist": "Artist name",
+          "title": "First pressing",
+          "format": "LP Vinyl",
+          "label": "Label",
+          "coverLabel": "08",
+          "coverVariant": "blue",
+          "href": "https://space1999.com/en/shop/catalogues/57173"
+        },
+        {
+          "id": "preorder-09",
+          "artist": "Artist name",
+          "title": "Studio album",
+          "format": "CD Audio",
+          "label": "Label",
+          "coverLabel": "09",
+          "coverVariant": "red",
+          "href": "https://space1999.com/en/shop/catalogues/57173"
+        },
+        {
+          "id": "preorder-10",
+          "artist": "Artist name",
+          "title": "Deluxe version",
+          "format": "Box Set",
+          "label": "Label",
+          "coverLabel": "10",
+          "coverVariant": "cream",
+          "href": "https://space1999.com/en/shop/catalogues/57173"
+        }
+      ]
+    }
+  ]
+}
