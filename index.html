@@ -11,33 +11,34 @@
 </head>
 <body>
   <header class="site-header">
-    <div class="service-bar">
-      <div class="container service-bar__inner">
-        <p>International distributor of media products</p>
-        <nav aria-label="Servizi">
-          <a href="#newsletter">Newsletter</a><a href="#shipping">Spedizioni</a>
-          <a href="#wishlist">Wishlist</a><a href="#blog">Blog</a><a href="#account">MySpace1999</a>
-        </nav>
-      </div>
-    </div>
-    <div class="container brand-row">
+    <div class="container header-top">
       <a class="brand" href="/" aria-label="Space1999 home">
         <img src="https://space1999.com/bundles/mercuriospace/shop/images/03_Marchio_Space.jpg" alt="Space1999">
       </a>
+      <p class="claim">International distributor of media products</p>
+      <div class="header-tools">
+        <a class="shipping" href="https://space1999.com/en/shop/shipping"><strong>INFO</strong> Shipment</a>
+        <nav class="language" aria-label="Lingua"><a href="#it">IT</a><span>|</span><a class="active" href="#en">EN</a></nav>
+        <form class="login">
+          <input type="email" placeholder="e-Mail" aria-label="e-Mail">
+          <input type="password" placeholder="Password" aria-label="Password">
+          <div><button type="button">Log in</button><button type="button">Register</button></div>
+        </form>
+      </div>
       <div class="mobile-actions">
         <button class="icon-button" type="button" data-search-open aria-label="Cerca">⌕</button>
         <button class="icon-button" type="button" data-menu-open aria-label="Apri menu"><span class="burger"></span></button>
       </div>
     </div>
     <div class="nav-shell">
-      <div class="container nav-row">
-        <nav aria-label="Menu principale"><ul class="desktop-menu" data-desktop-menu></ul></nav>
-        <form class="search" role="search">
-          <input type="search" name="q" placeholder="Cerca nel catalogo" aria-label="Cerca nel catalogo">
-          <button type="submit" aria-label="Avvia ricerca">⌕</button>
-        </form>
-      </div>
+      <nav class="container" aria-label="Menu principale"><ul class="desktop-menu" data-desktop-menu></ul></nav>
     </div>
+    <form class="container search" role="search">
+      <span aria-hidden="true">⌕</span>
+      <input type="search" name="q" placeholder="search by text or barcode" aria-label="Cerca per testo o barcode">
+      <label><input type="checkbox"> Stock only</label>
+      <button type="submit">Search</button><button type="button">Adv Search</button>
+    </form>
   </header>
   <div class="overlay" data-overlay></div>
   <aside class="mobile-panel" data-mobile-panel aria-hidden="true">
