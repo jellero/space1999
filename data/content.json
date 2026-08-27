@@ -1,0 +1,343 @@
+{
+  "version": 2,
+  "defaultLocale": "it",
+  "supportedLocales": ["it", "en"],
+  "locales": {
+    "it": {
+      "meta": {
+        "title": "Space1999 — distributore internazionale di prodotti multimediali",
+        "description": "Mockup responsive e multilingue della home page Space1999."
+      },
+      "ui": {
+        "skipLink": "Vai al contenuto principale",
+        "header": {
+          "claim": "International distributor of media products",
+          "shipping": "Spedizioni",
+          "languageLabel": "Lingua",
+          "loginLabel": "Accesso clienti",
+          "login": "Log in",
+          "register": "Registrati",
+          "openSearch": "Apri ricerca",
+          "openMenu": "Apri menu",
+          "closeMenu": "Chiudi menu",
+          "mainMenuLabel": "Menu principale",
+          "mobileNavigationLabel": "Navigazione mobile",
+          "mobileMenuLabel": "Menu principale mobile",
+          "menu": "Menu",
+          "search": "Cerca",
+          "searchLabel": "Cerca per testo o barcode",
+          "searchPlaceholder": "cerca per testo o barcode",
+          "startSearch": "Avvia ricerca",
+          "stockOnly": "Solo disponibili",
+          "advancedSearch": "Ricerca avanzata"
+        },
+        "modal": {
+          "closePreview": "Chiudi anteprima prodotto",
+          "close": "Chiudi",
+          "details": "Vedi scheda completa"
+        }
+      },
+      "main": {
+        "hero": {
+          "eyebrow": "Catalogo in evidenza",
+          "title": "Selected catalogue",
+          "description": "Una selezione editoriale dalla home page Space1999.",
+          "ctaLabel": "Scopri la selezione",
+          "href": "https://space1999.com/it/shop/catalogues/104005",
+          "image": "https://space1999.com/cache/c9e3a266514cc6ab47bafa2c4ab4d3bd.jpg",
+          "imageAlt": "Catalogo Space1999 in evidenza"
+        },
+        "sections": [
+          {
+            "type": "products",
+            "id": "new-releases",
+            "eyebrow": "Appena arrivati",
+            "title": "New Releases",
+            "viewAllLabel": "Vedi tutti",
+            "href": "https://space1999.com/it/shop/catalogues/76167",
+            "productIds": ["airbourne-airbourne", "amyl-truth-live", "julia-holter-materia", "billy-strings-goodbyes", "kamelot-dark-asylum", "csi-in-viaggio"]
+          },
+          {
+            "type": "editorial",
+            "id": "modern-listener",
+            "eyebrow": "Selezione curata",
+            "title": "Music For The Modern Listener",
+            "description": "Una selezione reale del catalogo Space1999 dedicata a colonne sonore, jazz e raccolte ricercate.",
+            "ctaLabel": "Scopri la selezione",
+            "href": "https://space1999.com/it/shop/catalogues/104027"
+          },
+          {
+            "type": "products",
+            "id": "preorders",
+            "eyebrow": "Prossimamente",
+            "title": "Preorders",
+            "viewAllLabel": "Vedi tutti",
+            "href": "https://space1999.com/it/shop/catalogues/57173",
+            "compact": true,
+            "productIds": ["interpol-mirror", "beck-ride-lonesome", "bloc-party-anatomy", "dj-shadow-mo-wax", "alabama-shakes-dreaming", "michael-jackson-thriller"]
+          },
+          {
+            "type": "products",
+            "id": "brazilian-flavour",
+            "eyebrow": "Selezione dal catalogo",
+            "title": "Brazilian Flavour",
+            "viewAllLabel": "Vedi tutti",
+            "href": "https://space1999.com/it/shop/catalogues/104026",
+            "productIds": ["various-samba-verano", "various-broken-samba", "damiao-brazilian-studizel", "various-brazilian-beats", "various-new-latinaires", "grupo-batuque-big-bang"]
+          },
+          {
+            "type": "features",
+            "id": "featured-catalogues",
+            "ariaLabel": "Selezioni in evidenza",
+            "items": [
+              {
+                "eyebrow": "Selezionati nel mondo",
+                "title": "Import",
+                "ctaLabel": "Esplora",
+                "href": "https://space1999.com/it/shop/import",
+                "image": "https://cover.space1999.com/cache/66457019-53228c212f06de0ad9cb96b13725d7fa-1000x1000-C.jpg",
+                "variant": "import"
+              },
+              {
+                "eyebrow": "Prezzi speciali",
+                "title": "Super Deals",
+                "ctaLabel": "Esplora",
+                "href": "https://space1999.com/it/shop/superdeals",
+                "image": "https://space1999.com/cache/0a1e19d45f235fb259a86d866b006a75.jpg",
+                "variant": "deals"
+              }
+            ]
+          },
+          {
+            "type": "services",
+            "id": "services",
+            "ariaLabel": "Servizi",
+            "items": [
+              {"title": "Spedizioni internazionali", "description": "Consegne rapide e tracciate"},
+              {"title": "Catalogo specializzato", "description": "Musica, media e merchandising"},
+              {"title": "Assistenza clienti", "description": "Supporto prima e dopo l’acquisto"}
+            ]
+          }
+        ]
+      },
+      "footer": {
+        "newsletter": {
+          "title": "Newsletter",
+          "description": "Ricevi novità e selezioni dal catalogo.",
+          "placeholder": "E-mail",
+          "inputLabel": "Indirizzo e-mail",
+          "submitLabel": "Iscriviti",
+          "demoMessage": "Modulo dimostrativo: collegare il servizio newsletter in produzione."
+        },
+        "groups": [
+          {
+            "title": "Contattaci",
+            "links": [
+              {"label": "Chiamaci +39 0433 945309", "href": "tel:+390433945309"},
+              {"label": "Scrivici su WhatsApp", "href": "https://wa.me/393926858687"},
+              {"label": "Contatti", "href": "https://space1999.com/it/shop/contactus"}
+            ]
+          },
+          {
+            "title": "My Space1999",
+            "links": [
+              {"label": "Il mio profilo", "href": "https://space1999.com/it/private/profile"},
+              {"label": "Spedizioni", "href": "https://space1999.com/it/shop/shipping"},
+              {"label": "Resi", "href": "https://space1999.com/it/shop/returns"},
+              {"label": "Ordini", "href": "https://space1999.com/it/private/orders"},
+              {"label": "Pagamenti", "href": "https://space1999.com/it/private/payments"}
+            ]
+          },
+          {
+            "title": "Azienda",
+            "links": [
+              {"label": "Visione", "href": "https://space1999.com/it/shop/vision"},
+              {"label": "Lavora con noi", "href": "https://space1999.com/it/shop/jobs"},
+              {"label": "Galleria", "href": "https://space1999.com/it/shop/gallery"},
+              {"label": "Dati aziendali e bancari", "href": "https://space1999.com/it/shop/bankdetails"}
+            ]
+          },
+          {
+            "title": "Termini e condizioni",
+            "links": [
+              {"label": "Condizioni generali", "href": "https://space1999.com/it/shop/general-conditions"},
+              {"label": "Condizioni spedizione", "href": "https://space1999.com/it/shop/shipping-conditions"},
+              {"label": "Resi", "href": "https://space1999.com/it/shop/returns"},
+              {"label": "Privacy", "href": "https://space1999.com/it/shop/privacy-policy"},
+              {"label": "Cookie policy", "href": "https://space1999.com/it/shop/privacy"}
+            ]
+          }
+        ],
+        "legal": ["VAT IT 02073290302", "© SPACE1999 · Tutti i diritti sono riservati"]
+      }
+    },
+    "en": {
+      "meta": {
+        "title": "Space1999 — international distributor of media products",
+        "description": "Responsive multilingual prototype of the Space1999 home page."
+      },
+      "ui": {
+        "skipLink": "Skip to main content",
+        "header": {
+          "claim": "International distributor of media products",
+          "shipping": "Shipment",
+          "languageLabel": "Language",
+          "loginLabel": "Customer login",
+          "login": "Log in",
+          "register": "Register",
+          "openSearch": "Open search",
+          "openMenu": "Open menu",
+          "closeMenu": "Close menu",
+          "mainMenuLabel": "Main menu",
+          "mobileNavigationLabel": "Mobile navigation",
+          "mobileMenuLabel": "Mobile main menu",
+          "menu": "Menu",
+          "search": "Search",
+          "searchLabel": "Search by text or barcode",
+          "searchPlaceholder": "search by text or barcode",
+          "startSearch": "Start search",
+          "stockOnly": "Stock only",
+          "advancedSearch": "Adv Search"
+        },
+        "modal": {
+          "closePreview": "Close product preview",
+          "close": "Close",
+          "details": "View full details"
+        }
+      },
+      "main": {
+        "hero": {
+          "eyebrow": "Featured catalogue",
+          "title": "Selected catalogue",
+          "description": "An editorial selection from the Space1999 home page.",
+          "ctaLabel": "Discover the selection",
+          "href": "https://space1999.com/en/shop/catalogues/104005",
+          "image": "https://space1999.com/cache/c9e3a266514cc6ab47bafa2c4ab4d3bd.jpg",
+          "imageAlt": "Featured Space1999 catalogue"
+        },
+        "sections": [
+          {
+            "type": "products",
+            "id": "new-releases",
+            "eyebrow": "Just arrived",
+            "title": "New Releases",
+            "viewAllLabel": "View all",
+            "href": "https://space1999.com/en/shop/catalogues/76167",
+            "productIds": ["airbourne-airbourne", "amyl-truth-live", "julia-holter-materia", "billy-strings-goodbyes", "kamelot-dark-asylum", "csi-in-viaggio"]
+          },
+          {
+            "type": "editorial",
+            "id": "modern-listener",
+            "eyebrow": "Curated selection",
+            "title": "Music For The Modern Listener",
+            "description": "A real Space1999 catalogue selection dedicated to soundtracks, jazz and carefully chosen compilations.",
+            "ctaLabel": "Discover the selection",
+            "href": "https://space1999.com/en/shop/catalogues/104027"
+          },
+          {
+            "type": "products",
+            "id": "preorders",
+            "eyebrow": "Coming soon",
+            "title": "Preorders",
+            "viewAllLabel": "View all",
+            "href": "https://space1999.com/en/shop/catalogues/57173",
+            "compact": true,
+            "productIds": ["interpol-mirror", "beck-ride-lonesome", "bloc-party-anatomy", "dj-shadow-mo-wax", "alabama-shakes-dreaming", "michael-jackson-thriller"]
+          },
+          {
+            "type": "products",
+            "id": "brazilian-flavour",
+            "eyebrow": "Catalogue selection",
+            "title": "Brazilian Flavour",
+            "viewAllLabel": "View all",
+            "href": "https://space1999.com/en/shop/catalogues/104026",
+            "productIds": ["various-samba-verano", "various-broken-samba", "damiao-brazilian-studizel", "various-brazilian-beats", "various-new-latinaires", "grupo-batuque-big-bang"]
+          },
+          {
+            "type": "features",
+            "id": "featured-catalogues",
+            "ariaLabel": "Featured selections",
+            "items": [
+              {
+                "eyebrow": "Selected worldwide",
+                "title": "Import",
+                "ctaLabel": "Explore",
+                "href": "https://space1999.com/en/shop/import",
+                "image": "https://cover.space1999.com/cache/66457019-53228c212f06de0ad9cb96b13725d7fa-1000x1000-C.jpg",
+                "variant": "import"
+              },
+              {
+                "eyebrow": "Special prices",
+                "title": "Super Deals",
+                "ctaLabel": "Explore",
+                "href": "https://space1999.com/en/shop/superdeals",
+                "image": "https://space1999.com/cache/0a1e19d45f235fb259a86d866b006a75.jpg",
+                "variant": "deals"
+              }
+            ]
+          },
+          {
+            "type": "services",
+            "id": "services",
+            "ariaLabel": "Services",
+            "items": [
+              {"title": "Worldwide shipping", "description": "Fast and tracked deliveries"},
+              {"title": "Specialist catalogue", "description": "Music, media and merchandise"},
+              {"title": "Customer care", "description": "Support before and after purchase"}
+            ]
+          }
+        ]
+      },
+      "footer": {
+        "newsletter": {
+          "title": "Newsletter",
+          "description": "Receive catalogue news and selections.",
+          "placeholder": "E-mail",
+          "inputLabel": "E-mail address",
+          "submitLabel": "Subscribe",
+          "demoMessage": "Demo form: connect the newsletter service in production."
+        },
+        "groups": [
+          {
+            "title": "Contact us",
+            "links": [
+              {"label": "Call +39 0433 945309", "href": "tel:+390433945309"},
+              {"label": "Write on WhatsApp", "href": "https://wa.me/393926858687"},
+              {"label": "Contacts", "href": "https://space1999.com/en/shop/contactus"}
+            ]
+          },
+          {
+            "title": "My Space1999",
+            "links": [
+              {"label": "My profile", "href": "https://space1999.com/en/private/profile"},
+              {"label": "Shipping", "href": "https://space1999.com/en/shop/shipping"},
+              {"label": "Returns", "href": "https://space1999.com/en/shop/returns"},
+              {"label": "Orders", "href": "https://space1999.com/en/private/orders"},
+              {"label": "Payments", "href": "https://space1999.com/en/private/payments"}
+            ]
+          },
+          {
+            "title": "Company",
+            "links": [
+              {"label": "Vision", "href": "https://space1999.com/en/shop/vision"},
+              {"label": "Work with us", "href": "https://space1999.com/en/shop/jobs"},
+              {"label": "Gallery", "href": "https://space1999.com/en/shop/gallery"},
+              {"label": "Company and bank details", "href": "https://space1999.com/en/shop/bankdetails"}
+            ]
+          },
+          {
+            "title": "Terms and conditions",
+            "links": [
+              {"label": "General conditions", "href": "https://space1999.com/en/shop/general-conditions"},
+              {"label": "Shipping conditions", "href": "https://space1999.com/en/shop/shipping-conditions"},
+              {"label": "Returns", "href": "https://space1999.com/en/shop/returns"},
+              {"label": "Privacy", "href": "https://space1999.com/en/shop/privacy-policy"},
+              {"label": "Cookie policy", "href": "https://space1999.com/en/shop/privacy"}
+            ]
+          }
+        ],
+        "legal": ["VAT IT 02073290302", "© SPACE1999 · All rights reserved"]
+      }
+    }
+  }
+}

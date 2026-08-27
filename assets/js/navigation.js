@@ -1,4 +1,4 @@
-import { createElement, fetchJson, trapFocus } from "./utils.js";
+import { createElement, fetchJson, trapFocus } from "./utils.js?v=20260826-11";
 
 function createLink({ label, href }, className) {
   return createElement("a", {
@@ -88,7 +88,11 @@ export async function loadNavigation({ endpoint, desktopRoot, mobileRoot, status
     desktopRoot.setAttribute("aria-busy", "false");
     mobileRoot.setAttribute("aria-busy", "false");
     status.hidden = false;
-    status.textContent = "Navigazione temporaneamente non disponibile.";
+    const requestedLocale = new URLSearchParams(window.location.search).get("lang");
+    const isEnglish = requestedLocale === "en" || (!requestedLocale && document.documentElement.lang === "en");
+    status.textContent = isEnglish
+      ? "Navigation is temporarily unavailable."
+      : "Navigazione temporaneamente non disponibile.";
     throw error;
   }
 }

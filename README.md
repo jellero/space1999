@@ -1,48 +1,28 @@
-# Space1999 — front-end prototype
+# Space1999 — professional front-end handoff
 
-Prototipo statico e responsive della home page Space1999. Il repository documenta layout, navigazione, ricerca, catalogo, hover prodotto, quick view e footer da integrare nel software definitivo.
+Prototipo statico, responsive e multilingue della home page Space1999. Il repository è organizzato come riferimento tecnico per la società che realizzerà il software definitivo: contenuti, presentazione e comportamenti sono separati; non sono presenti dipendenze runtime o passaggi di build obbligatori.
 
-## Obiettivi
+## Stato della consegna
 
-- preservare il comportamento visivo approvato;
-- separare contenuti, presentazione e logica;
-- fornire componenti accessibili e facilmente sostituibili con dati API;
-- evitare dipendenze e passaggi di build non necessari per il prototipo.
-
-## Struttura
-
-```text
-.
-├── index.html                  # Markup semantico e template delle card
-├── assets/
-│   ├── styles.css              # Token, componenti e breakpoint responsive
-│   └── js/
-│       ├── app.js              # Bootstrap dell'applicazione
-│       ├── catalog.js          # Rendering sicuro delle card da JSON
-│       ├── navigation.js       # Mega-menu e drawer mobile
-│       ├── product-modal.js    # Quick view e gestione del focus
-│       ├── search.js           # Ricerca semplice e avanzata
-│       └── utils.js            # Utility condivise
-├── data/
-│   ├── menu.json               # Sorgente completa con dati di governance
-│   ├── navigation.json         # Payload runtime alleggerito
-│   └── products.json           # Dati dimostrativi del catalogo
-└── scripts/
-    ├── build-navigation.mjs    # Genera il payload runtime dal menu sorgente
-    └── validate.mjs            # Controlli di coerenza e sintassi
-```
+- header responsive con mega-menu full-width e drawer mobile;
+- ricerca semplice e avanzata indirizzata alle route Space1999;
+- main e footer generati integralmente da JSON;
+- interfaccia italiana e inglese selezionabile con `?lang=it` e `?lang=en`;
+- prodotti, copertine, cataloghi e link reali rilevati dal sito pubblico Space1999;
+- hover prodotto e quick view accessibile;
+- validazione automatica dei contratti dati e della sintassi JavaScript.
 
 ## Avvio locale
 
-I moduli JavaScript e i file JSON richiedono un server HTTP. Dalla root del progetto:
+I moduli ES e i file JSON richiedono HTTP. Dalla root:
 
 ```bash
 python3 -m http.server 8080
 ```
 
-Aprire `http://localhost:8080`. Non aprire direttamente `index.html` con il protocollo `file://`.
+Aprire `http://localhost:8080/?lang=it` oppure `http://localhost:8080/?lang=en`.
 
-## Comandi di controllo
+## Comandi
 
 Il progetto non installa pacchetti e richiede Node.js 20 o superiore.
 
@@ -51,64 +31,61 @@ npm run build:navigation
 npm run validate
 ```
 
-`build:navigation` elimina dal payload browser i metadati di audit non usati dall'interfaccia. `validate` controlla JSON, identificativi, corrispondenza fra sezioni e markup e sintassi dei moduli.
+- `build:navigation` genera il payload runtime alleggerito da `data/menu.json`.
+- `validate` controlla lingue, sezioni, riferimenti prodotto, campi obbligatori, hook HTML e sintassi dei moduli.
 
-## Contratti dati
+## Struttura
 
-### Navigazione
-
-`data/navigation.json` espone:
-
-```json
-{
-  "version": 1,
-  "menu": [
-    {
-      "label": "MUSIC",
-      "href": "#/music",
-      "sections": [
-        {
-          "label": "Vinyl",
-          "href": "#/music/vinyl",
-          "items": [{ "label": "LP Vinyl", "href": "#/music/vinyl/lp" }]
-        }
-      ]
-    }
-  ]
-}
+```text
+.
+├── index.html                  # Shell semantica e hook dell'applicazione
+├── assets/
+│   ├── styles.css              # Token, componenti, stati e breakpoint
+│   └── js/
+│       ├── app.js              # Bootstrap e isolamento degli errori
+│       ├── catalog.js          # Card prodotto e route localizzate
+│       ├── content.js          # Renderer di main e footer
+│       ├── i18n.js             # Risoluzione lingua e traduzioni UI
+│       ├── navigation.js       # Mega-menu e drawer mobile
+│       ├── product-modal.js    # Quick view, focus trap e inert
+│       ├── search.js           # Ricerca semplice e avanzata
+│       └── utils.js            # Fetch, DOM e accessibilità condivisi
+├── data/
+│   ├── content.json            # Main, footer e UI in IT/EN
+│   ├── menu.json               # Sorgente completa della tassonomia
+│   ├── navigation.json         # Payload menu ottimizzato per il browser
+│   └── products.json           # Snapshot demo del catalogo reale
+├── docs/
+│   ├── ARCHITECTURE.md         # Flusso applicativo e responsabilità
+│   ├── CONTENT-MODEL.md        # Contratti JSON e multilingua
+│   └── INTEGRATION.md          # Passaggio a CMS/API e checklist produzione
+└── scripts/
+    ├── build-navigation.mjs
+    └── validate.mjs
 ```
 
-### Catalogo
+## Scelte tecniche
 
-`data/products.json` raggruppa i prodotti per `section.id`. Ogni prodotto richiede:
+- Rendering DOM con `textContent`, senza HTML proveniente dai JSON.
+- Caricamento parallelo di contenuti, prodotti e navigazione.
+- Errori del menu isolati dagli errori del main/footer.
+- Lingua risolta nell'ordine: query string, preferenza salvata, browser, fallback `it`.
+- URL localizzati mantenuti nel modello dati, non ricostruiti implicitamente per i prodotti.
+- Immagini con dimensioni dichiarate, lazy loading e decoding asincrono.
+- Stato del modal sincronizzato con `hidden`, `aria-hidden`, focus e `inert`.
 
-- `id`: identificativo univoco;
-- `artist`, `title`, `format`, `label`: contenuto della card e del modal;
-- `coverLabel`, `coverVariant`: rappresentazione grafica del prototipo;
-- `href`: destinazione della pagina dettaglio.
+## Dati dimostrativi
 
-Nell'applicazione definitiva `coverLabel` e `coverVariant` dovranno essere sostituiti da URL immagine ottimizzati e relativi testi alternativi.
+`data/products.json` è uno snapshot dei contenuti visibili sul sito pubblico Space1999 al **26 agosto 2026**. Non è un feed e non deve essere considerato aggiornato automaticamente. Le immagini sono referenziate dai domini Space1999 esclusivamente per il mockup.
 
-## Integrazione nel software definitivo
+Nel prodotto definitivo i contenuti devono arrivare da CMS/PIM/API autorizzati, con immagini servite dall'infrastruttura concordata e regole di cache definite dal team backend.
 
-1. Sostituire gli endpoint JSON in `assets/js/app.js` con le API del catalogo e della tassonomia.
-2. Mantenere i componenti di rendering oppure mapparli nel framework scelto dalla società di sviluppo.
-3. Collegare login, registrazione e ricerca agli endpoint reali.
-4. Sostituire i testi e i prodotti dimostrativi con dati del CMS/PIM.
-5. Servire immagini responsive con `srcset`, dimensioni dichiarate e lazy loading.
-6. Applicare Content Security Policy, monitoraggio degli errori e test automatici nel progetto applicativo.
+## Documentazione per lo sviluppo
 
-## Accessibilità implementata
+- [Architettura](docs/ARCHITECTURE.md)
+- [Modello contenuti](docs/CONTENT-MODEL.md)
+- [Guida di integrazione](docs/INTEGRATION.md)
 
-- skip link al contenuto principale;
-- landmark e titoli semantici;
-- stati `aria-expanded`, `aria-hidden` e `aria-busy`;
-- focus trap e ripristino del focus per drawer e quick view;
-- chiusura con `Esc`, pulsante e overlay;
-- blocco dello sfondo con `inert` durante l'apertura del modal;
-- supporto a `prefers-reduced-motion`;
-- messaggi di errore non bloccanti per menu e catalogo.
+## Perimetro
 
-## Nota sul perimetro
-
-Questo repository è un prototipo di front-end, non contiene logica e-commerce, autenticazione, carrello, pagamenti, analytics o persistenza. I link a Space1999 sono riferimenti funzionali per la fase di handoff e dovranno essere sostituiti dalle route definitive.
+Il repository descrive il front-end. Login, registrazione, newsletter, carrello, disponibilità, prezzi, pagamenti, analytics e persistenza non sono implementati. I form senza backend sono intenzionalmente dimostrativi; le route pubbliche Space1999 servono a verificare navigazione e contenuti.

@@ -1,65 +1,68 @@
-import { fetchJson } from "./utils.js";
+import { createElement } from "./utils.js?v=20260826-11";
 
-const COVER_VARIANTS = new Set(["red", "cream", "dark", "blue", "orange", "grey"]);
+/**
+ * Restituisce la route prodotto per la lingua attiva, con fallback esplicito.
+ * Il contratto supporta anche una stringa per facilitare l'integrazione con API
+ * che restituiscono URL già localizzati.
+ */
+export function resolveProductHref(product, locale, fallbackLocale = "it") {
+  if (typeof product.href === "string") return product.href;
+  return product.href?.[locale] ?? product.href?.[fallbackLocale] ?? "#";
+}
 
-function createProductCard(product, template) {
-  const fragment = template.content.cloneNode(true);
-  const card = fragment.querySelector("[data-product-card]");
-  const link = fragment.querySelector("[data-product-link]");
-  const cover = fragment.querySelector("[data-product-cover]");
-  const variant = COVER_VARIANTS.has(product.coverVariant) ? product.coverVariant : "grey";
+/** Crea una card senza innerHTML: tutti i valori JSON passano da textContent. */
+export function createProductCard(product, { locale, fallbackLocale = "it" }) {
+  const href = resolveProductHref(product, locale, fallbackLocale);
   const meta = [product.format, product.label].filter(Boolean).join(" · ");
+  const card = createElement("article", {
+    className: "product-card",
+    attributes: { "data-product-card": "", "data-product-id": product.id },
+  });
+  const link = createElement("a", {
+    className: "product-card__link",
+    attributes: {
+      href,
+      "data-product-link": "",
+      "aria-label": `${product.artist}: ${product.title}`,
+    },
+  });
+  const cover = createElement("div", {
+    className: "cover",
+    attributes: { "data-product-cover": "", "aria-hidden": "true" },
+  });
+  const image = createElement("img", {
+    attributes: {
+      src: product.image,
+      alt: "",
+      width: 1000,
+      height: 1000,
+      loading: "lazy",
+      decoding: "async",
+    },
+  });
 
   card.dataset.productTitle = product.title;
   card.dataset.productArtist = product.artist;
   card.dataset.productMeta = meta;
-  card.dataset.productHref = product.href;
+  card.dataset.productHref = href;
 
-  link.href = product.href;
-  link.setAttribute("aria-label", `${product.artist}: ${product.title}`);
-  cover.classList.add(`cover--${variant}`);
+  cover.append(image);
+  link.append(
+    cover,
+    createElement("h3", { text: product.artist }),
+    createElement("p", { text: product.title }),
+    createElement("small", { text: meta }),
+  );
+  card.append(link);
 
-  fragment.querySelector("[data-product-cover-label]").textContent = product.coverLabel;
-  fragment.querySelector("[data-product-title]").textContent = product.title;
-  fragment.querySelector("[data-product-artist]").textContent = product.artist;
-  fragment.querySelector("[data-product-meta]").textContent = meta;
-
-  return fragment;
+  return card;
 }
 
-export async function loadCatalog({ endpoint, template }) {
-  const grids = new Map(
-    [...document.querySelectorAll("[data-catalog-grid]")].map((grid) => [grid.dataset.catalogGrid, grid]),
-  );
-
-  try {
-    const data = await fetchJson(endpoint);
-
-    if (!Array.isArray(data.sections)) {
-      throw new TypeError("Il payload catalogo non contiene un array sections valido.");
-    }
-
-    for (const section of data.sections) {
-      const grid = grids.get(section.id);
-      if (!grid || !Array.isArray(section.products)) continue;
-
-      const fragment = document.createDocumentFragment();
-      for (const product of section.products) {
-        fragment.append(createProductCard(product, template));
-      }
-
-      grid.replaceChildren(fragment);
-      grid.setAttribute("aria-busy", "false");
-
-      const status = document.querySelector(`[data-catalog-status="${section.id}"]`);
-      if (status) status.hidden = true;
-    }
-  } catch (error) {
-    for (const [id, grid] of grids) {
-      grid.setAttribute("aria-busy", "false");
-      const status = document.querySelector(`[data-catalog-status="${id}"]`);
-      if (status) status.textContent = "Catalogo temporaneamente non disponibile.";
-    }
-    throw error;
-  }
+/** Risolve gli ID dichiarati nel contenuto editoriale contro il catalogo. */
+export function getSectionProducts(section, productsById) {
+  return section.productIds.map((id) => {
+    const product = productsById.get(id);
+    if (!product) throw new Error(`Prodotto ${id} non disponibile per la sezione ${section.id}.`);
+    return product;
+  });
 }

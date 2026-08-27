@@ -1,7 +1,23 @@
-import { loadCatalog } from "./catalog.js";
-import { initNavigationDrawer, loadNavigation } from "./navigation.js";
-import { initProductModal } from "./product-modal.js";
-import { initSearch } from "./search.js";
+import { loadPageContent } from "./content.js?v=20260826-11";
+import { initNavigationDrawer, loadNavigation } from "./navigation.js?v=20260826-11";
+import { initProductModal } from "./product-modal.js?v=20260826-11";
+import { initSearch } from "./search.js?v=20260826-11";
+
+function showContentError(error) {
+  const isEnglish = document.documentElement.lang === "en";
+  const message = isEnglish
+    ? "Content is temporarily unavailable. Please try again later."
+    : "I contenuti non sono temporaneamente disponibili. Riprova più tardi.";
+
+  document.querySelector("[data-main-root]")?.setAttribute("aria-busy", "false");
+  document.querySelector("[data-footer-root]")?.setAttribute("aria-busy", "false");
+  document.querySelectorAll("[data-page-status], [data-footer-status]").forEach((status) => {
+    status.textContent = message;
+  });
+
+  // In produzione sostituire con il sistema di observability adottato dal progetto.
+  console.error("Impossibile inizializzare i contenuti della pagina.", error);
+}
 
 async function bootstrap() {
   const panel = document.querySelector("[data-mobile-panel]");
@@ -9,23 +25,38 @@ async function bootstrap() {
   const openButtons = document.querySelectorAll("[data-menu-open], [data-search-open]");
   const closeButton = document.querySelector("[data-menu-close]");
   const mobileSearch = document.querySelector("[data-mobile-search]");
-  const modal = document.querySelector("[data-product-modal]");
-  const template = document.querySelector("#product-card-template");
 
-  initSearch();
   initNavigationDrawer({ panel, overlay: drawerOverlay, openButtons, closeButton, searchForm: mobileSearch });
-  initProductModal(modal);
+  initProductModal(document.querySelector("[data-product-modal]"));
 
-  // Navigazione e catalogo sono indipendenti: un errore non blocca il resto della pagina.
-  await Promise.allSettled([
+  // Contenuti e navigazione sono indipendenti: un errore non blocca l'altro ramo.
+  const [contentResult] = await Promise.all([
+    loadPageContent({
+      contentEndpoint: "./data/content.json",
+      productsEndpoint: "./data/products.json",
+      mainRoot: document.querySelector("[data-main-root]"),
+      footerRoot: document.querySelector("[data-footer-root]"),
+    }).catch((error) => {
+      showContentError(error);
+      return null;
+    }),
     loadNavigation({
       endpoint: "./data/navigation.json",
       desktopRoot: document.querySelector("[data-desktop-menu]"),
       mobileRoot: document.querySelector("[data-mobile-menu]"),
       status: document.querySelector("[data-navigation-status]"),
+    }).catch((error) => {
+      console.error("Impossibile inizializzare la navigazione.", error);
+      return null;
     }),
-    loadCatalog({ endpoint: "./data/products.json", template }),
   ]);
+
+  // L'URL di ricerca avanzata viene localizzato durante il caricamento contenuti.
+  initSearch();
+
+  if (contentResult) {
+    document.documentElement.dataset.contentSource = contentResult.source.mode;
+  }
 }
 
 bootstrap();

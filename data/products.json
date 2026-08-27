@@ -1,115 +1,173 @@
 {
-  "version": 1,
-  "sections": [
+  "version": 2,
+  "source": {
+    "name": "Space1999 public shop",
+    "url": "https://space1999.com/en/shop/",
+    "capturedAt": "2026-08-26",
+    "mode": "demo-snapshot"
+  },
+  "items": [
     {
-      "id": "new-releases",
-      "products": [
-        {
-          "id": "new-01",
-          "artist": "Artist name",
-          "title": "Album title",
-          "format": "LP Vinyl",
-          "label": "Label",
-          "coverLabel": "01",
-          "coverVariant": "red",
-          "href": "https://space1999.com/en/shop/catalogues/76167"
-        },
-        {
-          "id": "new-02",
-          "artist": "Artist name",
-          "title": "New collection",
-          "format": "CD Audio",
-          "label": "Label",
-          "coverLabel": "02",
-          "coverVariant": "cream",
-          "href": "https://space1999.com/en/shop/catalogues/76167"
-        },
-        {
-          "id": "new-03",
-          "artist": "Artist name",
-          "title": "Limited edition",
-          "format": "LP Vinyl",
-          "label": "Label",
-          "coverLabel": "03",
-          "coverVariant": "dark",
-          "href": "https://space1999.com/en/shop/catalogues/76167"
-        },
-        {
-          "id": "new-04",
-          "artist": "Artist name",
-          "title": "Live sessions",
-          "format": "CD Audio",
-          "label": "Label",
-          "coverLabel": "04",
-          "coverVariant": "blue",
-          "href": "https://space1999.com/en/shop/catalogues/76167"
-        },
-        {
-          "id": "new-05",
-          "artist": "Artist name",
-          "title": "Original score",
-          "format": "LP Vinyl",
-          "label": "Label",
-          "coverLabel": "05",
-          "coverVariant": "orange",
-          "href": "https://space1999.com/en/shop/catalogues/76167"
-        },
-        {
-          "id": "new-06",
-          "artist": "Artist name",
-          "title": "Anniversary",
-          "format": "Box Set",
-          "label": "Label",
-          "coverLabel": "06",
-          "coverVariant": "grey",
-          "href": "https://space1999.com/en/shop/catalogues/76167"
-        }
-      ]
+      "id": "airbourne-airbourne",
+      "artist": "Airbourne",
+      "title": "Airbourne",
+      "format": "LP Vinyl",
+      "label": "Spinefarm",
+      "image": "https://cover.space1999.com/cache/66437544-eaf38e320b9c26e1a136a1c3fdf1d8ce-1000x1000-C.jpg",
+      "href": {"it": "https://space1999.com/it/shop/item/99438756", "en": "https://space1999.com/en/shop/item/99438756"}
     },
     {
-      "id": "preorders",
-      "products": [
-        {
-          "id": "preorder-07",
-          "artist": "Artist name",
-          "title": "Future classics",
-          "format": "LP Vinyl",
-          "label": "Label",
-          "coverLabel": "07",
-          "coverVariant": "dark",
-          "href": "https://space1999.com/en/shop/catalogues/57173"
-        },
-        {
-          "id": "preorder-08",
-          "artist": "Artist name",
-          "title": "First pressing",
-          "format": "LP Vinyl",
-          "label": "Label",
-          "coverLabel": "08",
-          "coverVariant": "blue",
-          "href": "https://space1999.com/en/shop/catalogues/57173"
-        },
-        {
-          "id": "preorder-09",
-          "artist": "Artist name",
-          "title": "Studio album",
-          "format": "CD Audio",
-          "label": "Label",
-          "coverLabel": "09",
-          "coverVariant": "red",
-          "href": "https://space1999.com/en/shop/catalogues/57173"
-        },
-        {
-          "id": "preorder-10",
-          "artist": "Artist name",
-          "title": "Deluxe version",
-          "format": "Box Set",
-          "label": "Label",
-          "coverLabel": "10",
-          "coverVariant": "cream",
-          "href": "https://space1999.com/en/shop/catalogues/57173"
-        }
-      ]
+      "id": "amyl-truth-live",
+      "artist": "Amyl And The Sniffers",
+      "title": "Truth Or Consequence Live Album",
+      "format": "CD Audio",
+      "label": "Rough Trade Records",
+      "image": "https://cover.space1999.com/cache/66462032-468fe790c1da61294e682176f4345930-1000x1000-C.jpg",
+      "href": {"it": "https://space1999.com/it/shop/item/99658789", "en": "https://space1999.com/en/shop/item/99658789"}
+    },
+    {
+      "id": "julia-holter-materia",
+      "artist": "Julia Holter",
+      "title": "Materia",
+      "format": "LP Vinyl",
+      "label": "Domino",
+      "image": "https://cover.space1999.com/cache/66450042-6a41368bab70e24afca34677d846fb73-1000x1000-C.jpg",
+      "href": {"it": "https://space1999.com/it/shop/item/99557338", "en": "https://space1999.com/en/shop/item/99557338"}
+    },
+    {
+      "id": "billy-strings-goodbyes",
+      "artist": "Billy Strings",
+      "title": "So Much For Goodbyes",
+      "format": "LP Vinyl",
+      "label": "Warner",
+      "image": "https://cover.space1999.com/cache/66458608-ef5692145a2a263de89be40b1b756d1e-1000x1000-C.jpg",
+      "href": {"it": "https://space1999.com/it/shop/item/99560556", "en": "https://space1999.com/en/shop/item/99560556"}
+    },
+    {
+      "id": "kamelot-dark-asylum",
+      "artist": "Kamelot",
+      "title": "Dark Asylum",
+      "format": "CD Audio",
+      "label": "Napalm Records",
+      "image": "https://cover.space1999.com/cache/66459707-566c9af0d27401c3162bb938728c6339-1000x1000-C.jpg",
+      "href": {"it": "https://space1999.com/it/shop/item/99657963", "en": "https://space1999.com/en/shop/item/99657963"}
+    },
+    {
+      "id": "csi-in-viaggio",
+      "artist": "C.S.I.",
+      "title": "In Viaggio 1994/1998",
+      "format": "LP Vinyl",
+      "label": "Universal",
+      "image": "https://cover.space1999.com/cache/66460374-953410619168eeb10b1121d6d926057e-1000x1000-C.jpg",
+      "href": {"it": "https://space1999.com/it/shop/item/99574538", "en": "https://space1999.com/en/shop/item/99574538"}
+    },
+    {
+      "id": "interpol-mirror",
+      "artist": "Interpol",
+      "title": "This Mirror Weighs A Ton",
+      "format": "LP Vinyl",
+      "label": "Partisan",
+      "image": "https://cover.space1999.com/cache/66458029-503b6dfcaf63e078118186a82d139f0e-1000x1000-C.jpg",
+      "href": {"it": "https://space1999.com/it/shop/item/99557331", "en": "https://space1999.com/en/shop/item/99557331"}
+    },
+    {
+      "id": "beck-ride-lonesome",
+      "artist": "Beck",
+      "title": "Ride Lonesome",
+      "format": "LP Vinyl",
+      "label": "Universal",
+      "image": "https://cover.space1999.com/cache/66458077-a33b4f89670a6e62a45a1715de70255a-1000x1000-C.jpg",
+      "href": {"it": "https://space1999.com/it/shop/item/99549907", "en": "https://space1999.com/en/shop/item/99549907"}
+    },
+    {
+      "id": "bloc-party-anatomy",
+      "artist": "Bloc Party",
+      "title": "Anatomy Of A Brief Romance",
+      "format": "LP Vinyl",
+      "label": "Contagious",
+      "image": "https://cover.space1999.com/cache/66437380-cbd80952f47a7cfbc34757598827029b-1000x1000-C.jpg",
+      "href": {"it": "https://space1999.com/it/shop/item/99438787", "en": "https://space1999.com/en/shop/item/99438787"}
+    },
+    {
+      "id": "dj-shadow-mo-wax",
+      "artist": "DJ Shadow",
+      "title": "The Mo Wax Singles 1993-1997",
+      "format": "LP Vinyl",
+      "label": "PIAS",
+      "image": "https://cover.space1999.com/cache/66437518-11b80e678ea3fc5e31acdc7981ac56d4-1000x1000-C.jpg",
+      "href": {"it": "https://space1999.com/it/shop/item/99438043", "en": "https://space1999.com/en/shop/item/99438043"}
+    },
+    {
+      "id": "alabama-shakes-dreaming",
+      "artist": "Alabama Shakes",
+      "title": "I Must Be Dreaming",
+      "format": "LP Vinyl",
+      "label": "Universal",
+      "image": "https://cover.space1999.com/cache/66460370-4bd51a171d8973bbf9789ba9b0b29037-1000x1000-C.jpg",
+      "href": {"it": "https://space1999.com/it/shop/item/99574520", "en": "https://space1999.com/en/shop/item/99574520"}
+    },
+    {
+      "id": "michael-jackson-thriller",
+      "artist": "Michael Jackson",
+      "title": "Thriller",
+      "format": "LP Vinyl",
+      "label": "Sony",
+      "image": "https://cover.space1999.com/cache/66448365-4260af24ef3ef7081e683de897dddb4e-1000x1000-C.jpg",
+      "href": {"it": "https://space1999.com/it/shop/item/99518711", "en": "https://space1999.com/en/shop/item/99518711"}
+    },
+    {
+      "id": "various-samba-verano",
+      "artist": "Various Artists",
+      "title": "Samba Del Verano",
+      "format": "LP Vinyl",
+      "label": "Acid Jazz",
+      "image": "https://cover.space1999.com/cache/65993070-c954fa98f3c9cc2bc67029bc8e4c7eb2-1000x1000-C.jpg",
+      "href": {"it": "https://space1999.com/it/shop/item/79911833", "en": "https://space1999.com/en/shop/item/79911833"}
+    },
+    {
+      "id": "various-broken-samba",
+      "artist": "Various Artists",
+      "title": "Broken Samba",
+      "format": "LP Vinyl",
+      "label": "Far Out",
+      "image": "https://cover.space1999.com/cache/66459169-ad8e8b18cb664fce88c9fc30aa0b7477-1000x1000-C.jpg",
+      "href": {"it": "https://space1999.com/it/shop/item/95507071", "en": "https://space1999.com/en/shop/item/95507071"}
+    },
+    {
+      "id": "damiao-brazilian-studizel",
+      "artist": "Damiao Da Silva",
+      "title": "The Brazilian Studizel",
+      "format": "LP Vinyl",
+      "label": "Vox",
+      "image": "https://cover.space1999.com/cache/66459168-6734bf1e455fe0dc9986ca2979a00a73-1000x1000-C.jpg",
+      "href": {"it": "https://space1999.com/it/shop/item/95506427", "en": "https://space1999.com/en/shop/item/95506427"}
+    },
+    {
+      "id": "various-brazilian-beats",
+      "artist": "Various Artists",
+      "title": "Brazilian Beats 4",
+      "format": "LP Vinyl",
+      "label": "Mr Bongo",
+      "image": "https://cover.space1999.com/cache/451193-cbf5eb701e4c4a7c5263ba368c5638a9-1000x1000-C.jpg",
+      "href": {"it": "https://space1999.com/it/shop/item/79859650", "en": "https://space1999.com/en/shop/item/79859650"}
+    },
+    {
+      "id": "various-new-latinaires",
+      "artist": "Various Artists",
+      "title": "The New Latinaires 3",
+      "format": "LP Vinyl",
+      "label": "Ubiquity",
+      "image": "https://cover.space1999.com/cache/4550596-902b4512c6956ab529c56e079f19deb2-1000x1000-C.jpg",
+      "href": {"it": "https://space1999.com/it/shop/item/95505278", "en": "https://space1999.com/en/shop/item/95505278"}
+    },
+    {
+      "id": "grupo-batuque-big-bang",
+      "artist": "Grupo Batuque",
+      "title": "Big Bang",
+      "format": "12\" Vinyl",
+      "label": "Far Out",
+      "image": "https://cover.space1999.com/cache/598116-335ea7dbee4ff161cdb119e51df75865-1000x1000-C.jpg",
+      "href": {"it": "https://space1999.com/it/shop/item/95507076", "en": "https://space1999.com/en/shop/item/95507076"}
     }
   ]
 }
