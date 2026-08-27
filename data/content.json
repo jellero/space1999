@@ -38,16 +38,30 @@
         }
       },
       "main": {
-        "hero": {
-          "eyebrow": "Catalogo in evidenza",
-          "title": "Selected catalogue",
-          "description": "Una selezione editoriale dalla home page Space1999.",
-          "ctaLabel": "Scopri la selezione",
-          "href": "https://space1999.com/it/shop/catalogues/104005",
-          "image": "https://space1999.com/cache/c9e3a266514cc6ab47bafa2c4ab4d3bd.jpg",
-          "imageAlt": "Catalogo Space1999 in evidenza"
-        },
         "sections": [
+          {
+            "type": "slider",
+            "id": "homepage-slider",
+            "ariaLabel": "Cataloghi in evidenza",
+            "previousLabel": "Slide precedente",
+            "nextLabel": "Slide successiva",
+            "statusLabel": "Slide {current} di {total}",
+            "autoplayMs": 5000,
+            "slides": [
+              {"href": "https://space1999.com/it/shop/catalogues/104005", "image": "https://space1999.com/cache/c9e3a266514cc6ab47bafa2c4ab4d3bd.jpg", "imageAlt": "Catalogo Space1999 in evidenza 1"},
+              {"href": "https://space1999.com/it/shop/catalogues/103973", "image": "https://space1999.com/cache/561c4b61a9536375011402425a83d11c.jpg", "imageAlt": "Catalogo Space1999 in evidenza 2"},
+              {"href": "https://space1999.com/it/shop/catalogues/103972", "image": "https://space1999.com/cache/fa1c861bd15c24696fc2a345d5ec1535.jpg", "imageAlt": "Catalogo Space1999 in evidenza 3"},
+              {"href": "https://space1999.com/it/shop/catalogues/103971", "image": "https://space1999.com/cache/f1dc903de1bcc13c7c8cc250fbf227f4.jpg", "imageAlt": "Catalogo Space1999 in evidenza 4"},
+              {"href": "https://space1999.com/it/shop/catalogues/103970", "image": "https://space1999.com/cache/2ce502bdf273e98bc5d15f2456e838d8.jpg", "imageAlt": "Catalogo Space1999 in evidenza 5"}
+            ]
+          },
+          {
+            "type": "banner",
+            "id": "catalogue-banner",
+            "href": "https://space1999.com/it/shop/catalogues/57111",
+            "image": "https://space1999.com/cache/c4a4f940edfafd4297fe3f44fbf60265.jpg",
+            "imageAlt": "Catalogo Space1999"
+          },
           {
             "type": "products",
             "id": "new-releases",
@@ -55,16 +69,15 @@
             "title": "New Releases",
             "viewAllLabel": "Vedi tutti",
             "href": "https://space1999.com/it/shop/catalogues/76167",
+            "layout": "six",
             "productIds": ["airbourne-airbourne", "amyl-truth-live", "julia-holter-materia", "billy-strings-goodbyes", "kamelot-dark-asylum", "csi-in-viaggio"]
           },
           {
-            "type": "editorial",
-            "id": "modern-listener",
-            "eyebrow": "Selezione curata",
-            "title": "Music For The Modern Listener",
-            "description": "Una selezione reale del catalogo Space1999 dedicata a colonne sonore, jazz e raccolte ricercate.",
-            "ctaLabel": "Scopri la selezione",
-            "href": "https://space1999.com/it/shop/catalogues/104027"
+            "type": "banner",
+            "id": "preorders-banner",
+            "href": "https://space1999.com/it/shop/catalogues/104020",
+            "image": "https://space1999.com/cache/2369032e4f0d21cdb2eff0be08d4c1d2.jpg",
+            "imageAlt": "Preordini Space1999"
           },
           {
             "type": "products",
@@ -73,7 +86,7 @@
             "title": "Preorders",
             "viewAllLabel": "Vedi tutti",
             "href": "https://space1999.com/it/shop/catalogues/57173",
-            "compact": true,
+            "layout": "four",
             "productIds": ["interpol-mirror", "beck-ride-lonesome", "bloc-party-anatomy", "dj-shadow-mo-wax", "alabama-shakes-dreaming", "michael-jackson-thriller"]
           },
           {
@@ -83,7 +96,17 @@
             "title": "Brazilian Flavour",
             "viewAllLabel": "Vedi tutti",
             "href": "https://space1999.com/it/shop/catalogues/104026",
+            "layout": "six",
             "productIds": ["various-samba-verano", "various-broken-samba", "damiao-brazilian-studizel", "various-brazilian-beats", "various-new-latinaires", "grupo-batuque-big-bang"]
+          },
+          {
+            "type": "editorial",
+            "id": "modern-listener",
+            "eyebrow": "Selezione curata",
+            "title": "Music For The Modern Listener",
+            "description": "Una selezione reale del catalogo Space1999 dedicata a colonne sonore, jazz e raccolte ricercate.",
+            "ctaLabel": "Scopri la selezione",
+            "href": "https://space1999.com/it/shop/catalogues/104027"
           },
           {
             "type": "features",
@@ -206,16 +229,30 @@
         }
       },
       "main": {
-        "hero": {
-          "eyebrow": "Featured catalogue",
-          "title": "Selected catalogue",
-          "description": "An editorial selection from the Space1999 home page.",
-          "ctaLabel": "Discover the selection",
-          "href": "https://space1999.com/en/shop/catalogues/104005",
-          "image": "https://space1999.com/cache/c9e3a266514cc6ab47bafa2c4ab4d3bd.jpg",
-          "imageAlt": "Featured Space1999 catalogue"
-        },
         "sections": [
+          {
+            "type": "slider",
+            "id": "homepage-slider",
+            "ariaLabel": "Featured catalogues",
+            "previousLabel": "Previous slide",
+            "nextLabel": "Next slide",
+            "statusLabel": "Slide {current} of {total}",
+            "autoplayMs": 5000,
+            "slides": [
+              {"href": "https://space1999.com/en/shop/catalogues/104005", "image": "https://space1999.com/cache/c9e3a266514cc6ab47bafa2c4ab4d3bd.jpg", "imageAlt": "Featured Space1999 catalogue 1"},
+              {"href": "https://space1999.com/en/shop/catalogues/103973", "image": "https://space1999.com/cache/561c4b61a9536375011402425a83d11c.jpg", "imageAlt": "Featured Space1999 catalogue 2"},
+              {"href": "https://space1999.com/en/shop/catalogues/103972", "image": "https://space1999.com/cache/fa1c861bd15c24696fc2a345d5ec1535.jpg", "imageAlt": "Featured Space1999 catalogue 3"},
+              {"href": "https://space1999.com/en/shop/catalogues/103971", "image": "https://space1999.com/cache/f1dc903de1bcc13c7c8cc250fbf227f4.jpg", "imageAlt": "Featured Space1999 catalogue 4"},
+              {"href": "https://space1999.com/en/shop/catalogues/103970", "image": "https://space1999.com/cache/2ce502bdf273e98bc5d15f2456e838d8.jpg", "imageAlt": "Featured Space1999 catalogue 5"}
+            ]
+          },
+          {
+            "type": "banner",
+            "id": "catalogue-banner",
+            "href": "https://space1999.com/en/shop/catalogues/57111",
+            "image": "https://space1999.com/cache/c4a4f940edfafd4297fe3f44fbf60265.jpg",
+            "imageAlt": "Space1999 catalogue"
+          },
           {
             "type": "products",
             "id": "new-releases",
@@ -223,16 +260,15 @@
             "title": "New Releases",
             "viewAllLabel": "View all",
             "href": "https://space1999.com/en/shop/catalogues/76167",
+            "layout": "six",
             "productIds": ["airbourne-airbourne", "amyl-truth-live", "julia-holter-materia", "billy-strings-goodbyes", "kamelot-dark-asylum", "csi-in-viaggio"]
           },
           {
-            "type": "editorial",
-            "id": "modern-listener",
-            "eyebrow": "Curated selection",
-            "title": "Music For The Modern Listener",
-            "description": "A real Space1999 catalogue selection dedicated to soundtracks, jazz and carefully chosen compilations.",
-            "ctaLabel": "Discover the selection",
-            "href": "https://space1999.com/en/shop/catalogues/104027"
+            "type": "banner",
+            "id": "preorders-banner",
+            "href": "https://space1999.com/en/shop/catalogues/104020",
+            "image": "https://space1999.com/cache/2369032e4f0d21cdb2eff0be08d4c1d2.jpg",
+            "imageAlt": "Space1999 preorders"
           },
           {
             "type": "products",
@@ -241,7 +277,7 @@
             "title": "Preorders",
             "viewAllLabel": "View all",
             "href": "https://space1999.com/en/shop/catalogues/57173",
-            "compact": true,
+            "layout": "four",
             "productIds": ["interpol-mirror", "beck-ride-lonesome", "bloc-party-anatomy", "dj-shadow-mo-wax", "alabama-shakes-dreaming", "michael-jackson-thriller"]
           },
           {
@@ -251,7 +287,17 @@
             "title": "Brazilian Flavour",
             "viewAllLabel": "View all",
             "href": "https://space1999.com/en/shop/catalogues/104026",
+            "layout": "six",
             "productIds": ["various-samba-verano", "various-broken-samba", "damiao-brazilian-studizel", "various-brazilian-beats", "various-new-latinaires", "grupo-batuque-big-bang"]
+          },
+          {
+            "type": "editorial",
+            "id": "modern-listener",
+            "eyebrow": "Curated selection",
+            "title": "Music For The Modern Listener",
+            "description": "A real Space1999 catalogue selection dedicated to soundtracks, jazz and carefully chosen compilations.",
+            "ctaLabel": "Discover the selection",
+            "href": "https://space1999.com/en/shop/catalogues/104027"
           },
           {
             "type": "features",

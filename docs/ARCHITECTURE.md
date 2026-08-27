@@ -12,9 +12,10 @@ flowchart TD
     A --> C[content.json + products.json]
     A --> D[navigation.json]
     C --> E[i18n.js]
-    E --> F[Main dinamico]
+    E --> F[Sezioni main dinamiche]
     E --> G[Footer dinamico]
     D --> H[Mega-menu e menu mobile]
+    F --> I[slider.js]
 ```
 
 `app.js` inizializza subito i controlli che non dipendono dai dati. Contenuti e navigazione vengono poi caricati in parallelo. Un errore in un ramo viene segnalato senza impedire all'altro ramo di completare il rendering.
@@ -30,6 +31,7 @@ flowchart TD
 | `navigation.js` | mega-menu, accordion e drawer | conoscere i prodotti |
 | `product-modal.js` | quick view e accessibilità dialog | recuperare dati remoti |
 | `search.js` | validazione e route ricerca | eseguire logica e-commerce |
+| `slider.js` | autoplay, frecce, tastiera e pausa | conoscere contenuti o catalogo |
 | `utils.js` | primitive condivise | conoscere componenti applicativi |
 
 ## Sicurezza del rendering
@@ -54,6 +56,7 @@ Gli URL sono comunque dati sensibili: nel software definitivo devono essere prod
 - drawer e modal con focus trap, ripristino del focus e chiusura con `Esc`;
 - sfondo reso `inert` durante il quick view;
 - hover prodotto equivalente anche con focus da tastiera;
+- slider controllabile con frecce e tastiera, in pausa durante l’interazione;
 - supporto a `prefers-reduced-motion`.
 
 ## Responsive

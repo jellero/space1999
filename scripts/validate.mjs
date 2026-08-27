@@ -27,7 +27,9 @@ if (!content.supportedLocales.includes(content.defaultLocale)) {
   throw new Error("defaultLocale deve essere incluso in supportedLocales.");
 }
 
-const requiredMainTypes = new Set(["products", "editorial", "features", "services"]);
+const supportedMainTypes = new Set(["slider", "banner", "products", "editorial", "features", "services"]);
+const requiredMainTypes = new Set(["slider", "banner", "products"]);
+const supportedProductLayouts = new Set(["six", "four", "featured"]);
 let referenceSectionIds = null;
 const referencedProductIds = new Set();
 
@@ -45,16 +47,46 @@ for (const locale of content.supportedLocales) {
     throw new Error(`Le sezioni della lingua ${locale} non corrispondono alla lingua di riferimento.`);
   }
   referenceSectionIds ??= sectionIds;
+  const localeSectionTypes = new Set(localeContent.main.sections.map((section) => section.type));
+  for (const requiredType of requiredMainTypes) {
+    if (!localeSectionTypes.has(requiredType)) {
+      throw new Error(`La lingua ${locale} non contiene una sezione ${requiredType}.`);
+    }
+  }
 
   for (const section of localeContent.main.sections) {
-    if (!requiredMainTypes.has(section.type)) {
+    if (!supportedMainTypes.has(section.type)) {
       throw new Error(`Tipo sezione non supportato: ${section.type}.`);
     }
     if (section.type === "products") {
       if (!Array.isArray(section.productIds) || section.productIds.length === 0) {
         throw new Error(`La sezione ${section.id} non contiene productIds.`);
       }
+      if (!supportedProductLayouts.has(section.layout)) {
+        throw new Error(`Layout prodotti non supportato in ${section.id}: ${section.layout}.`);
+      }
       section.productIds.forEach((id) => referencedProductIds.add(id));
+    }
+    if (section.type === "slider") {
+      for (const field of ["ariaLabel", "previousLabel", "nextLabel", "statusLabel"]) {
+        if (!section[field]) throw new Error(`Campo ${field} mancante nello slider ${section.id}.`);
+      }
+      if (!Array.isArray(section.slides) || section.slides.length < 2) {
+        throw new Error(`Lo slider ${section.id} deve contenere almeno due slide.`);
+      }
+      if (!Number.isInteger(section.autoplayMs) || section.autoplayMs < 3000) {
+        throw new Error(`Autoplay non valido nello slider ${section.id}.`);
+      }
+      for (const [index, slide] of section.slides.entries()) {
+        for (const field of ["href", "image", "imageAlt"]) {
+          if (!slide[field]) throw new Error(`Campo ${field} mancante nella slide ${index + 1}.`);
+        }
+      }
+    }
+    if (section.type === "banner") {
+      for (const field of ["href", "image", "imageAlt"]) {
+        if (!section[field]) throw new Error(`Campo ${field} mancante nel banner ${section.id}.`);
+      }
     }
   }
 
@@ -101,6 +133,7 @@ const modules = [
   "assets/js/navigation.js",
   "assets/js/product-modal.js",
   "assets/js/search.js",
+  "assets/js/slider.js",
   "assets/js/utils.js",
 ];
 

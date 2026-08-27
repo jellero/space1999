@@ -45,10 +45,22 @@ Struttura principale:
 
 | `type` | Campi specifici | Renderer |
 |---|---|---|
-| `products` | `productIds`, `viewAllLabel`, `compact` | griglia di card |
+| `slider` | `slides`, `autoplayMs`, etichette controlli | campagne a rotazione |
+| `banner` | `image`, `imageAlt`, `href` | banner full-width |
+| `products` | `productIds`, `viewAllLabel`, `layout` | griglia di card |
 | `editorial` | `description`, `ctaLabel` | banner testuale |
 | `features` | `items[]`, `image`, `variant` | due promozioni visuali |
 | `services` | `items[].title/description` | fascia servizi |
+
+### Layout delle griglie prodotto
+
+| `layout` | Uso previsto |
+|---|---|
+| `six` | cataloghi standard, fino a 6 colonne desktop |
+| `four` | selezioni compatte, 4 colonne desktop |
+| `featured` | prima card in evidenza e griglia densa |
+
+Il renderer applica soltanto valori presenti nella whitelist; un layout sconosciuto viene rifiutato dalla validazione.
 
 Gli ID e l'ordine delle sezioni devono coincidere in tutte le lingue. `npm run validate` applica questa regola.
 

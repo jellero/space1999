@@ -1,40 +1,91 @@
-import { createProductCard, getSectionProducts } from "./catalog.js?v=20260826-11";
-import { configureLocale, resolveLocale } from "./i18n.js?v=20260826-11";
-import { createElement, fetchJson } from "./utils.js?v=20260826-11";
+import { createProductCard, getSectionProducts } from "./catalog.js?v=20260827-2";
+import { configureLocale, resolveLocale } from "./i18n.js?v=20260827-2";
+import { createElement, fetchJson } from "./utils.js?v=20260827-2";
 
-function renderHero(hero) {
+const PRODUCT_LAYOUTS = new Set(["six", "four", "featured"]);
+
+function renderSlider(sectionData) {
   const section = createElement("section", {
-    className: "hero container",
-    attributes: { "aria-labelledby": "hero-title" },
+    className: "home-slider container",
+    attributes: {
+      "data-slider": "",
+      "data-autoplay-ms": sectionData.autoplayMs,
+      "data-status-template": sectionData.statusLabel,
+      "aria-label": sectionData.ariaLabel,
+    },
   });
-  const copy = createElement("div", { className: "hero__copy" });
-  const title = createElement("h1", { text: hero.title, attributes: { id: "hero-title" } });
-  const mediaLink = createElement("a", {
-    className: "hero__media",
-    attributes: { href: hero.href, "aria-label": hero.ctaLabel },
+  const viewport = createElement("div", { className: "home-slider__viewport" });
+  const track = createElement("div", {
+    className: "home-slider__track",
+    attributes: { "data-slider-track": "" },
   });
+  const status = createElement("p", {
+    className: "visually-hidden",
+    attributes: { "data-slider-status": "", "aria-live": "polite", "aria-atomic": "true" },
+  });
+
+  sectionData.slides.forEach((slideData, index) => {
+    const slide = createElement("article", {
+      className: `home-slider__slide${index === 0 ? " is-active" : ""}`,
+      attributes: {
+        "data-slider-slide": "",
+        "aria-hidden": String(index !== 0),
+        inert: index === 0 ? null : "",
+      },
+    });
+    const link = createElement("a", {
+      attributes: { href: slideData.href, tabindex: index === 0 ? 0 : -1 },
+    });
+    const image = createElement("img", {
+      attributes: {
+        src: slideData.image,
+        alt: slideData.imageAlt,
+        width: 1250,
+        height: 395,
+        loading: index === 0 ? "eager" : "lazy",
+        decoding: "async",
+        fetchpriority: index === 0 ? "high" : "auto",
+      },
+    });
+
+    link.append(image);
+    slide.append(link);
+    track.append(slide);
+  });
+
+  const previous = createElement("button", {
+    className: "home-slider__control home-slider__control--previous",
+    attributes: { type: "button", "data-slider-previous": "", "aria-label": sectionData.previousLabel },
+  });
+  const next = createElement("button", {
+    className: "home-slider__control home-slider__control--next",
+    attributes: { type: "button", "data-slider-next": "", "aria-label": sectionData.nextLabel },
+  });
+  previous.append(createElement("span", { text: "‹", attributes: { "aria-hidden": "true" } }));
+  next.append(createElement("span", { text: "›", attributes: { "aria-hidden": "true" } }));
+  viewport.append(track, previous, next);
+  section.append(viewport, status);
+  return section;
+}
+
+function renderBanner(sectionData) {
+  const section = createElement("section", {
+    className: "campaign-banner container",
+    attributes: { id: sectionData.id, "aria-label": sectionData.imageAlt },
+  });
+  const link = createElement("a", { attributes: { href: sectionData.href } });
   const image = createElement("img", {
     attributes: {
-      src: hero.image,
-      alt: hero.imageAlt,
-      width: 1250,
-      height: 395,
+      src: sectionData.image,
+      alt: sectionData.imageAlt,
+      width: 2000,
+      height: 430,
+      loading: "lazy",
       decoding: "async",
     },
   });
-
-  copy.append(
-    createElement("p", { className: "eyebrow", text: hero.eyebrow }),
-    title,
-    createElement("p", { text: hero.description }),
-    createElement("a", {
-      className: "button button--dark",
-      text: hero.ctaLabel,
-      attributes: { href: hero.href },
-    }),
-  );
-  mediaLink.append(image);
-  section.append(copy, mediaLink);
+  link.append(image);
+  section.append(link);
   return section;
 }
 
@@ -48,8 +99,9 @@ function renderProductSection(sectionData, productsById, locale, fallbackLocale)
   const viewAll = createElement("a", {
     attributes: { href: sectionData.href },
   });
+  const layout = PRODUCT_LAYOUTS.has(sectionData.layout) ? sectionData.layout : "six";
   const grid = createElement("div", {
-    className: `product-grid${sectionData.compact ? " product-grid--compact" : ""}`,
+    className: `product-grid product-grid--${layout}`,
     attributes: { "data-catalog-grid": sectionData.id },
   });
 
@@ -154,6 +206,8 @@ function renderServices(sectionData) {
 }
 
 const MAIN_RENDERERS = {
+  slider: renderSlider,
+  banner: renderBanner,
   products: renderProductSection,
   editorial: renderEditorial,
   features: renderFeatures,
@@ -162,7 +216,6 @@ const MAIN_RENDERERS = {
 
 function renderMain(root, mainData, context) {
   const fragment = document.createDocumentFragment();
-  fragment.append(renderHero(mainData.hero));
 
   for (const sectionData of mainData.sections) {
     const renderer = MAIN_RENDERERS[sectionData.type];

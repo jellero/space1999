@@ -1,7 +1,8 @@
-import { loadPageContent } from "./content.js?v=20260826-11";
-import { initNavigationDrawer, loadNavigation } from "./navigation.js?v=20260826-11";
-import { initProductModal } from "./product-modal.js?v=20260826-11";
-import { initSearch } from "./search.js?v=20260826-11";
+import { loadPageContent } from "./content.js?v=20260827-2";
+import { initNavigationDrawer, loadNavigation } from "./navigation.js?v=20260827-2";
+import { initProductModal } from "./product-modal.js?v=20260827-2";
+import { initSearch } from "./search.js?v=20260827-2";
+import { initSliders } from "./slider.js?v=20260827-2";
 
 function showContentError(error) {
   const isEnglish = document.documentElement.lang === "en";
@@ -55,6 +56,7 @@ async function bootstrap() {
   initSearch();
 
   if (contentResult) {
+    initSliders();
     document.documentElement.dataset.contentSource = contentResult.source.mode;
   }
 }
