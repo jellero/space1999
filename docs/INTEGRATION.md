@@ -13,6 +13,7 @@ Il prototipo fornisce un view model e comportamenti verificabili, non un'archite
 | `navigation.json` | category/taxonomy service |
 | `localStorage` lingua | preferenza account/cookie/router |
 | link assoluti Space1999 | route generate dal router |
+| `image.desktop/mobile` | media field CMS con due asset obbligatori |
 | `console.error` | piattaforma di observability |
 | form newsletter demo | marketing automation/CRM |
 
@@ -31,7 +32,9 @@ L'interfaccia non deve dipendere direttamente dai nomi dei campi del database o 
 Nel mockup le copertine sono collegate ai domini pubblici Space1999. Per la produzione:
 
 - verificare diritti, hotlink policy e strategia CDN;
-- generare formati moderni e varianti responsive;
+- richiedere nel backoffice un asset desktop e uno mobile per slider e banner;
+- validare formato e proporzioni al caricamento, mostrando un'anteprima per entrambi;
+- generare formati moderni e varianti responsive dalla rispettiva sorgente;
 - fornire `width`, `height`, `srcset` e `sizes`;
 - mantenere fallback e placeholder per risorse mancanti;
 - evitare URL di cache considerati permanenti senza un contratto esplicito.
@@ -61,6 +64,7 @@ Nel mockup le copertine sono collegate ai domini pubblici Space1999. Per la prod
 - [ ] endpoint e route definitivi approvati;
 - [ ] Content Security Policy configurata;
 - [ ] immagini migrate o autorizzate;
+- [ ] asset desktop/mobile di slider e banner verificati nei formati editoriali;
 - [ ] cookie e consensi verificati legalmente;
 - [ ] form collegati e protetti da abuso;
 - [ ] traduzioni revisionate;

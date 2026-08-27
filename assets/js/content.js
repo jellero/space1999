@@ -1,8 +1,38 @@
-import { createProductCard, getSectionProducts } from "./catalog.js?v=20260827-4";
-import { configureLocale, resolveLocale } from "./i18n.js?v=20260827-4";
-import { createElement, fetchJson } from "./utils.js?v=20260827-4";
+import { createProductCard, getSectionProducts } from "./catalog.js?v=20260827-5";
+import { configureLocale, resolveLocale } from "./i18n.js?v=20260827-5";
+import { createElement, fetchJson } from "./utils.js?v=20260827-5";
 
 const PRODUCT_LAYOUTS = new Set(["six", "four", "featured"]);
+const MOBILE_MEDIA_QUERY = "(max-width: 700px)";
+
+/**
+ * Crea un'immagine art-directed: il browser sceglie l'asset mobile senza
+ * scaricare inutilmente quello desktop. Le dimensioni del layout restano CSS.
+ */
+function createResponsiveImage({ image, alt, className, width, height, loading, fetchpriority }) {
+  const picture = createElement("picture", { className: `${className}-picture` });
+  const mobileSource = createElement("source", {
+    attributes: {
+      media: MOBILE_MEDIA_QUERY,
+      srcset: image.mobile,
+    },
+  });
+  const element = createElement("img", {
+    className,
+    attributes: {
+      src: image.desktop,
+      alt,
+      width,
+      height,
+      loading,
+      decoding: "async",
+      fetchpriority,
+    },
+  });
+
+  picture.append(mobileSource, element);
+  return picture;
+}
 
 function renderSlider(sectionData) {
   const section = createElement("section", {
@@ -37,32 +67,33 @@ function renderSlider(sectionData) {
       attributes: { href: slideData.href, tabindex: index === 0 ? 0 : -1 },
     });
     const media = createElement("span", { className: "home-slider__media" });
-    const backdrop = createElement("img", {
-      className: "home-slider__backdrop",
-      attributes: {
-        src: slideData.image,
-        alt: "",
-        "aria-hidden": "true",
-        width: 1250,
-        height: 395,
-        loading: index === 0 ? "eager" : "lazy",
-        decoding: "async",
-      },
-    });
-    const image = createElement("img", {
+    const usesFallbackArtwork = slideData.image.mobile === slideData.image.desktop;
+    const backdrop = usesFallbackArtwork
+      ? createElement("img", {
+        className: "home-slider__backdrop",
+        attributes: {
+          src: slideData.image.mobile,
+          alt: "",
+          "aria-hidden": "true",
+          width: 1250,
+          height: 395,
+          loading: index === 0 ? "eager" : "lazy",
+          decoding: "async",
+        },
+      })
+      : null;
+    const image = createResponsiveImage({
+      image: slideData.image,
+      alt: slideData.imageAlt,
       className: "home-slider__image",
-      attributes: {
-        src: slideData.image,
-        alt: slideData.imageAlt,
-        width: 1250,
-        height: 395,
-        loading: index === 0 ? "eager" : "lazy",
-        decoding: "async",
-        fetchpriority: index === 0 ? "high" : "auto",
-      },
+      width: 1250,
+      height: 395,
+      loading: index === 0 ? "eager" : "lazy",
+      fetchpriority: index === 0 ? "high" : "auto",
     });
 
-    media.append(backdrop, image);
+    if (backdrop) media.append(backdrop);
+    media.append(image);
     link.append(media);
     slide.append(link);
     track.append(slide);
@@ -107,28 +138,28 @@ function renderBanner(sectionData) {
   });
   const link = createElement("a", { attributes: { href: sectionData.href } });
   const media = createElement("span", { className: "campaign-banner__media" });
-  const backdrop = createElement("img", {
-    className: "campaign-banner__backdrop",
-    attributes: {
-      src: sectionData.image,
-      alt: "",
-      "aria-hidden": "true",
-      width: 2000,
-      height: 430,
-      loading: "lazy",
-      decoding: "async",
-    },
-  });
-  const image = createElement("img", {
+  const usesFallbackArtwork = sectionData.image.mobile === sectionData.image.desktop;
+  const backdrop = usesFallbackArtwork
+    ? createElement("img", {
+      className: "campaign-banner__backdrop",
+      attributes: {
+        src: sectionData.image.mobile,
+        alt: "",
+        "aria-hidden": "true",
+        width: 2000,
+        height: 430,
+        loading: "lazy",
+        decoding: "async",
+      },
+    })
+    : null;
+  const image = createResponsiveImage({
+    image: sectionData.image,
+    alt: sectionData.imageAlt,
     className: "campaign-banner__image",
-    attributes: {
-      src: sectionData.image,
-      alt: sectionData.imageAlt,
-      width: 2000,
-      height: 430,
-      loading: "lazy",
-      decoding: "async",
-    },
+    width: 2000,
+    height: 430,
+    loading: "lazy",
   });
   const mobileContent = createElement("span", { className: "campaign-banner__content" });
   mobileContent.append(
@@ -136,7 +167,8 @@ function renderBanner(sectionData) {
     createElement("strong", { text: sectionData.mobile.title }),
     createElement("span", { className: "campaign-banner__cta", text: `${sectionData.mobile.ctaLabel} →` }),
   );
-  media.append(backdrop, image);
+  if (backdrop) media.append(backdrop);
+  media.append(image);
   link.append(media, mobileContent);
   section.append(link);
   return section;

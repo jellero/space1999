@@ -25,13 +25,13 @@ flowchart TD
 | Modulo | Responsabilità | Non deve fare |
 |---|---|---|
 | `app.js` | bootstrap, dipendenze DOM, isolamento errori | generare markup di sezione |
-| `content.js` | comporre main/footer dai contratti JSON | gestire menu o focus del modal |
+| `content.js` | comporre main/footer e media art-directed dai contratti JSON | gestire menu o focus del modal |
 | `catalog.js` | creare card e risolvere route prodotto | effettuare fetch autonomi |
 | `i18n.js` | scegliere lingua e tradurre la shell | contenere testi editoriali hardcoded |
 | `navigation.js` | mega-menu, accordion e drawer | conoscere i prodotti |
 | `product-modal.js` | quick view e accessibilità dialog | recuperare dati remoti |
 | `search.js` | validazione e route ricerca | eseguire logica e-commerce |
-| `slider.js` | autoplay, frecce, tastiera e pausa | conoscere contenuti o catalogo |
+| `slider.js` | autoplay, frecce, tastiera, swipe e pausa | conoscere contenuti o catalogo |
 | `utils.js` | primitive condivise | conoscere componenti applicativi |
 
 ## Sicurezza del rendering
@@ -53,6 +53,7 @@ Gli URL sono comunque dati sensibili: nel software definitivo devono essere prod
 - skip link al main;
 - `aria-busy` durante il caricamento;
 - lingua documento aggiornata con `html[lang]`;
+- selettore lingua duplicato nel drawer e sincronizzato sullo stesso stato attivo;
 - drawer e modal con focus trap, ripristino del focus e chiusura con `Esc`;
 - sfondo reso `inert` durante il quick view;
 - hover prodotto equivalente anche con focus da tastiera;
@@ -68,7 +69,7 @@ I breakpoint principali sono:
 | `> 1360px` | header completo, griglia fino a 6 colonne |
 | `1181–1360px` | header compatto, griglia a 4 colonne |
 | `≤ 1180px` | drawer mobile, header essenziale |
-| `≤ 700px` | hero verticale, griglie a 2 colonne |
+| `≤ 700px` | slider `4:5`, banner `4:3`, griglie a 2 colonne |
 | `≤ 600px` | modal a colonna singola |
 
 Nessun prodotto viene nascosto ai breakpoint: cambia soltanto il numero di colonne.

@@ -7,8 +7,8 @@ Prototipo statico, responsive e multilingue della home page Space1999. Il reposi
 - header responsive con mega-menu full-width e drawer mobile;
 - ricerca semplice e avanzata indirizzata alle route Space1999;
 - main e footer generati integralmente da JSON;
-- slider automatico con le cinque campagne reali, indicatori e gesture mobile;
-- banner full-width su desktop e schede promozionali dedicate su mobile;
+- slider automatico con asset desktop/mobile separati, indicatori e gesture mobile;
+- banner art-directed full-width su desktop e schede promozionali dedicate su mobile;
 - griglie prodotto con layout `six`, `four` e `featured`;
 - interfaccia italiana e inglese selezionabile con `?lang=it` e `?lang=en`;
 - prodotti, copertine, cataloghi e link reali rilevati dal sito pubblico Space1999;
@@ -76,6 +76,7 @@ npm run validate
 - Lingua risolta nell'ordine: query string, preferenza salvata, browser, fallback `it`.
 - URL localizzati mantenuti nel modello dati, non ricostruiti implicitamente per i prodotti.
 - Immagini con dimensioni dichiarate, lazy loading e decoding asincrono.
+- Slider e banner renderizzati con `<picture>` e due asset obbligatori pronti per il backoffice.
 - Slider fermato su hover/focus, navigabile tramite swipe e disattivato con `prefers-reduced-motion`.
 - Varianti mobile dei banner alimentate dallo stesso JSON multilingue delle sezioni desktop.
 - Stato del modal sincronizzato con `hidden`, `aria-hidden`, focus e `inert`.

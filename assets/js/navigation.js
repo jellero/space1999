@@ -1,4 +1,4 @@
-import { createElement, fetchJson, trapFocus } from "./utils.js?v=20260827-4";
+import { createElement, fetchJson, trapFocus } from "./utils.js?v=20260827-5";
 
 function createLink({ label, href }, className) {
   return createElement("a", {

@@ -33,6 +33,17 @@ const supportedProductLayouts = new Set(["six", "four", "featured"]);
 let referenceSectionIds = null;
 const referencedProductIds = new Set();
 
+function validateResponsiveImage(image, context) {
+  if (!image || typeof image !== "object") {
+    throw new Error(`Immagine responsive non valida in ${context}.`);
+  }
+  for (const viewport of ["desktop", "mobile"]) {
+    if (typeof image[viewport] !== "string" || image[viewport].length === 0) {
+      throw new Error(`Asset ${viewport} mancante in ${context}.`);
+    }
+  }
+}
+
 for (const locale of content.supportedLocales) {
   const localeContent = content.locales?.[locale];
   if (!localeContent?.meta || !localeContent?.ui || !localeContent?.main || !localeContent?.footer) {
@@ -81,12 +92,14 @@ for (const locale of content.supportedLocales) {
         for (const field of ["href", "image", "imageAlt"]) {
           if (!slide[field]) throw new Error(`Campo ${field} mancante nella slide ${index + 1}.`);
         }
+        validateResponsiveImage(slide.image, `slide ${index + 1} di ${section.id}`);
       }
     }
     if (section.type === "banner") {
       for (const field of ["href", "image", "imageAlt"]) {
         if (!section[field]) throw new Error(`Campo ${field} mancante nel banner ${section.id}.`);
       }
+      validateResponsiveImage(section.image, `banner ${section.id}`);
       for (const field of ["eyebrow", "title", "ctaLabel"]) {
         if (!section.mobile?.[field]) {
           throw new Error(`Campo mobile.${field} mancante nel banner ${section.id}.`);

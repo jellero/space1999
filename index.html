@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://cover.space1999.com">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap">
-    <link rel="stylesheet" href="./assets/styles.css?v=20260827-4">
+    <link rel="stylesheet" href="./assets/styles.css?v=20260827-5">
   </head>
 
   <body>
@@ -167,6 +167,20 @@
         </button>
       </form>
 
+      <div class="mobile-language">
+        <span class="mobile-language__label">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="8.5"></circle>
+            <path d="M3.8 12h16.4M12 3.5c2.3 2.4 3.5 5.2 3.5 8.5S14.3 18.1 12 20.5M12 3.5C9.7 5.9 8.5 8.7 8.5 12s1.2 6.1 3.5 8.5"></path>
+          </svg>
+          <span data-i18n="header.languageLabel">Lingua</span>
+        </span>
+        <nav class="mobile-language__switch" aria-label="Lingua" data-i18n-aria-label="header.languageLabel">
+          <a href="?lang=it" lang="it" data-language="it">IT</a>
+          <a href="?lang=en" lang="en" data-language="en">EN</a>
+        </nav>
+      </div>
+
       <nav aria-label="Menu principale mobile" data-i18n-aria-label="header.mobileMenuLabel">
         <ul class="mobile-menu" data-mobile-menu aria-busy="true"></ul>
       </nav>
@@ -222,6 +236,6 @@
       <p class="noscript-message">Per visualizzare il catalogo è necessario abilitare JavaScript.</p>
     </noscript>
 
-    <script type="module" src="./assets/js/app.js?v=20260827-4"></script>
+    <script type="module" src="./assets/js/app.js?v=20260827-5"></script>
   </body>
 </html>

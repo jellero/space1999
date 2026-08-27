@@ -456,7 +456,7 @@ ul {
   visibility: visible;
 }
 
-.home-slider__slide a,.home-slider__media,.home-slider__slide img {
+.home-slider__slide a,.home-slider__media,.home-slider__image-picture,.home-slider__slide img {
   width: 100%;
   height: 100%;
   display: block;
@@ -520,7 +520,7 @@ ul {
   margin-top: 64px;
 }
 
-.campaign-banner a,.campaign-banner__media,.campaign-banner img {
+.campaign-banner a,.campaign-banner__media,.campaign-banner__image-picture,.campaign-banner img {
   width: 100%;
   display: block;
 }
@@ -1243,6 +1243,61 @@ ul {
     stroke-linecap: round;
   }
 
+  .mobile-language {
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin: 0 15px 14px;
+    padding: 6px 7px 6px 12px;
+    border: 1px solid var(--line);
+    background: #f7f7f7;
+  }
+
+  .mobile-language__label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #555;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+  }
+
+  .mobile-language__label svg {
+    width: 19px;
+    height: 19px;
+    fill: none;
+    stroke: var(--orange);
+    stroke-width: 1.6;
+    stroke-linecap: round;
+  }
+
+  .mobile-language__switch {
+    display: grid;
+    grid-template-columns: repeat(2,40px);
+    gap: 2px;
+    padding: 2px;
+    border: 1px solid #ddd;
+    background: var(--white);
+  }
+
+  .mobile-language__switch a {
+    min-height: 32px;
+    display: grid;
+    place-items: center;
+    color: #777;
+    font-size: 11px;
+    font-weight: 700;
+  }
+
+  .mobile-language__switch a.active {
+    background: var(--orange);
+    color: var(--white);
+  }
+
   .mobile-menu>li {
     border-top: 1px solid var(--line);
   }
@@ -1319,7 +1374,7 @@ ul {
   }
 
   .home-slider__viewport {
-    aspect-ratio: 16/9;
+    aspect-ratio: 4/5;
     background: #161616;
     isolation: isolate;
     touch-action: pan-y;
@@ -1429,7 +1484,7 @@ ul {
   }
 
   .campaign-banner__media {
-    aspect-ratio: 16/7;
+    aspect-ratio: 4/3;
     overflow: hidden;
     background: #ececec;
   }
@@ -1618,6 +1673,14 @@ ul {
 
   .home-slider {
     width: 100%;
+  }
+
+  .mobile-search {
+    margin-inline: 12px;
+  }
+
+  .mobile-language {
+    margin-inline: 12px;
   }
 
   .footer-grid {

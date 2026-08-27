@@ -45,8 +45,8 @@ Struttura principale:
 
 | `type` | Campi specifici | Renderer |
 |---|---|---|
-| `slider` | `slides`, `autoplayMs`, etichette controlli | campagne a rotazione; indicatori e swipe su mobile |
-| `banner` | `image`, `imageAlt`, `href`, `mobile` | banner desktop e scheda promozionale mobile |
+| `slider` | `slides`, `autoplayMs`, `image.desktop/mobile`, etichette controlli | campagne art-directed; indicatori e swipe su mobile |
+| `banner` | `image.desktop/mobile`, `imageAlt`, `href`, `mobile` | banner desktop e scheda promozionale mobile |
 | `products` | `productIds`, `viewAllLabel`, `layout` | griglia di card |
 | `editorial` | `description`, `ctaLabel` | banner testuale |
 | `features` | `items[]`, `image`, `variant` | due promozioni visuali |
@@ -64,9 +64,23 @@ Il renderer applica soltanto valori presenti nella whitelist; un layout sconosci
 
 ### Varianti mobile
 
-Slider e banner non vengono semplicemente ridotti. Sotto `700px` lo slider usa una superficie `16:9`, mantiene visibile l'intera creatività sopra uno sfondo derivato dalla stessa immagine e aggiunge indicatori e gesture orizzontale. Il banner diventa una scheda composta da media e contenuto localizzato.
+Slider e banner non vengono semplicemente ridotti. Sotto `700px` lo slider usa una superficie `4:5`, mantiene visibile la creatività mobile sopra uno sfondo derivato dalla stessa immagine e aggiunge indicatori e gesture orizzontale. Il banner usa una superficie `4:3` e diventa una scheda composta da media e contenuto localizzato.
 
-Il campo obbligatorio `mobile` dei banner contiene:
+Ogni creatività dichiara obbligatoriamente i due asset richiesti dal backoffice:
+
+```json
+{
+  "image": {
+    "desktop": "https://cdn.example/slider-desktop.jpg",
+    "mobile": "https://cdn.example/slider-mobile.jpg"
+  },
+  "imageAlt": "Descrizione della campagna"
+}
+```
+
+Il renderer produce un elemento `<picture>` con breakpoint `700px`: il browser scarica la risorsa adatta alla viewport. Formati editoriali consigliati: `1250 × 395px` per lo slider desktop, `750 × 938px` per lo slider mobile, `2000 × 430px` per il banner desktop e `900 × 675px` per il banner mobile.
+
+Il secondo campo `mobile` dei banner contiene invece il copy breve della scheda:
 
 ```json
 {
@@ -76,7 +90,7 @@ Il campo obbligatorio `mobile` dei banner contiene:
 }
 ```
 
-Questa separazione consente al CMS di fornire copy corto adatto a schermi stretti senza duplicare URL e immagine della campagna.
+La separazione consente al CMS di fornire sia un'immagine con art direction mobile sia un copy corto adatto a schermi stretti, senza duplicare URL e metadati della campagna.
 
 Gli ID e l'ordine delle sezioni devono coincidere in tutte le lingue. `npm run validate` applica questa regola.
 
