@@ -470,7 +470,7 @@ ul {
   object-fit: cover;
 }
 
-.home-slider__backdrop,.home-slider__pagination {
+.home-slider__pagination {
   display: none;
 }
 
@@ -533,7 +533,7 @@ ul {
   height: auto;
 }
 
-.campaign-banner__backdrop,.campaign-banner__content {
+.campaign-banner__content {
   display: none;
 }
 
@@ -1375,43 +1375,19 @@ ul {
 
   .home-slider__viewport {
     aspect-ratio: 4/5;
-    background: #161616;
+    background: #e9e9e9;
     isolation: isolate;
     touch-action: pan-y;
-  }
-
-  .home-slider__viewport::after {
-    position: absolute;
-    z-index: 2;
-    inset: auto 0 0;
-    height: 76px;
-    background: linear-gradient(0deg,rgb(0 0 0/.62),transparent);
-    content: "";
-    pointer-events: none;
   }
 
   .home-slider__media {
     overflow: hidden;
   }
 
-  .home-slider__slide .home-slider__backdrop {
-    position: absolute;
-    inset: -12%;
-    width: 124%;
-    height: 124%;
-    display: block;
-    object-fit: cover;
-    filter: blur(20px);
-    opacity: .55;
-    transform: scale(1.06);
-  }
-
   .home-slider__slide .home-slider__image {
-    position: relative;
-    z-index: 1;
-    width: calc(100% - 24px);
-    margin-inline: auto;
-    object-fit: contain;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
   }
 
   .home-slider__control {
@@ -1463,6 +1439,7 @@ ul {
     height: 7px;
     border-radius: 999px;
     background: rgb(255 255 255/.58);
+    box-shadow: 0 1px 4px rgb(0 0 0/.55);
     content: "";
     transform: translate(-50%,-50%);
     transition: width .2s ease,background-color .2s ease;
@@ -1486,28 +1463,14 @@ ul {
   .campaign-banner__media {
     aspect-ratio: 4/3;
     overflow: hidden;
-    background: #ececec;
-  }
-
-  .campaign-banner .campaign-banner__backdrop {
-    position: absolute;
-    inset: -16%;
-    width: 132%;
-    height: 132%;
-    display: block;
-    object-fit: cover;
-    filter: blur(18px);
-    opacity: .42;
-    transform: scale(1.04);
+    background: #e9e9e9;
   }
 
   .campaign-banner .campaign-banner__image {
-    position: relative;
-    z-index: 1;
-    width: calc(100% - 20px);
+    width: 100%;
     height: 100%;
-    margin-inline: auto;
-    object-fit: contain;
+    object-fit: cover;
+    object-position: center;
   }
 
   .campaign-banner__content {

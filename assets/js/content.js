@@ -1,6 +1,6 @@
-import { createProductCard, getSectionProducts } from "./catalog.js?v=20260827-5";
-import { configureLocale, resolveLocale } from "./i18n.js?v=20260827-5";
-import { createElement, fetchJson } from "./utils.js?v=20260827-5";
+import { createProductCard, getSectionProducts } from "./catalog.js?v=20260827-6";
+import { configureLocale, resolveLocale } from "./i18n.js?v=20260827-6";
+import { createElement, fetchJson } from "./utils.js?v=20260827-6";
 
 const PRODUCT_LAYOUTS = new Set(["six", "four", "featured"]);
 const MOBILE_MEDIA_QUERY = "(max-width: 700px)";
@@ -67,21 +67,6 @@ function renderSlider(sectionData) {
       attributes: { href: slideData.href, tabindex: index === 0 ? 0 : -1 },
     });
     const media = createElement("span", { className: "home-slider__media" });
-    const usesFallbackArtwork = slideData.image.mobile === slideData.image.desktop;
-    const backdrop = usesFallbackArtwork
-      ? createElement("img", {
-        className: "home-slider__backdrop",
-        attributes: {
-          src: slideData.image.mobile,
-          alt: "",
-          "aria-hidden": "true",
-          width: 1250,
-          height: 395,
-          loading: index === 0 ? "eager" : "lazy",
-          decoding: "async",
-        },
-      })
-      : null;
     const image = createResponsiveImage({
       image: slideData.image,
       alt: slideData.imageAlt,
@@ -92,7 +77,6 @@ function renderSlider(sectionData) {
       fetchpriority: index === 0 ? "high" : "auto",
     });
 
-    if (backdrop) media.append(backdrop);
     media.append(image);
     link.append(media);
     slide.append(link);
@@ -138,21 +122,6 @@ function renderBanner(sectionData) {
   });
   const link = createElement("a", { attributes: { href: sectionData.href } });
   const media = createElement("span", { className: "campaign-banner__media" });
-  const usesFallbackArtwork = sectionData.image.mobile === sectionData.image.desktop;
-  const backdrop = usesFallbackArtwork
-    ? createElement("img", {
-      className: "campaign-banner__backdrop",
-      attributes: {
-        src: sectionData.image.mobile,
-        alt: "",
-        "aria-hidden": "true",
-        width: 2000,
-        height: 430,
-        loading: "lazy",
-        decoding: "async",
-      },
-    })
-    : null;
   const image = createResponsiveImage({
     image: sectionData.image,
     alt: sectionData.imageAlt,
@@ -167,7 +136,6 @@ function renderBanner(sectionData) {
     createElement("strong", { text: sectionData.mobile.title }),
     createElement("span", { className: "campaign-banner__cta", text: `${sectionData.mobile.ctaLabel} →` }),
   );
-  if (backdrop) media.append(backdrop);
   media.append(image);
   link.append(media, mobileContent);
   section.append(link);

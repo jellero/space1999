@@ -64,7 +64,7 @@ Il renderer applica soltanto valori presenti nella whitelist; un layout sconosci
 
 ### Varianti mobile
 
-Slider e banner non vengono semplicemente ridotti. Sotto `700px` lo slider usa una superficie `4:5`, mantiene visibile la creatività mobile sopra uno sfondo derivato dalla stessa immagine e aggiunge indicatori e gesture orizzontale. Il banner usa una superficie `4:3` e diventa una scheda composta da media e contenuto localizzato.
+Slider e banner non vengono semplicemente ridotti. Sotto `700px` lo slider usa una superficie `4:5`, riempita interamente dalla creatività mobile tramite `object-fit: cover`, e aggiunge indicatori e gesture orizzontale. Il banner usa una superficie `4:3`, anch'essa completamente coperta dall'asset mobile, e diventa una scheda composta da media e contenuto localizzato. Non vengono applicati fondali sfocati o veli opachi.
 
 Ogni creatività dichiara obbligatoriamente i due asset richiesti dal backoffice:
 
