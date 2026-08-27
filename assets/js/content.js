@@ -1,6 +1,6 @@
-import { createProductCard, getSectionProducts } from "./catalog.js?v=20260827-6";
-import { configureLocale, resolveLocale } from "./i18n.js?v=20260827-6";
-import { createElement, fetchJson } from "./utils.js?v=20260827-6";
+import { createProductCard, getSectionProducts } from "./catalog.js?v=20260827-7";
+import { configureLocale, resolveLocale } from "./i18n.js?v=20260827-7";
+import { createElement, fetchJson } from "./utils.js?v=20260827-7";
 
 const PRODUCT_LAYOUTS = new Set(["six", "four", "featured"]);
 const MOBILE_MEDIA_QUERY = "(max-width: 700px)";
