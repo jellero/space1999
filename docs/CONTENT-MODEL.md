@@ -64,7 +64,7 @@ Il renderer applica soltanto valori presenti nella whitelist; un layout sconosci
 
 ### Varianti mobile
 
-Slider e banner non vengono semplicemente ridotti. Sotto `700px` lo slider conserva una superficie panoramica `3:1`, riempita dalla creatività mobile tramite `object-fit: cover` con un ritaglio minimo; indicatori e frecce sono collocati sotto l'immagine e non coprono il contenuto. Il banner usa una superficie `4:1`, ancorata a sinistra per proteggere titoli e callout, e diventa una scheda composta da media e contenuto localizzato. Non vengono applicati fondali sfocati o veli opachi.
+Slider e banner non vengono semplicemente ritagliati. Sotto `700px` lo slider usa una creatività mobile dedicata `4:5`; il banner usa una creatività dedicata `4:3`. Entrambe riempiono la superficie tramite `object-fit: cover`, senza fondali sfocati o veli opachi.
 
 Ogni creatività dichiara obbligatoriamente i due asset richiesti dal backoffice:
 
@@ -78,7 +78,7 @@ Ogni creatività dichiara obbligatoriamente i due asset richiesti dal backoffice
 }
 ```
 
-Il renderer produce un elemento `<picture>` con breakpoint `700px`: il browser scarica la risorsa adatta alla viewport. Formati editoriali consigliati: `1250 × 395px` per lo slider desktop, `1200 × 400px` per lo slider mobile, `2000 × 430px` per il banner desktop e `1200 × 300px` per il banner mobile. La versione mobile deve semplificare la composizione e mantenere testi importanti lontani dai bordi.
+Il renderer produce un elemento `<picture>` con breakpoint `700px`: il browser scarica la risorsa adatta alla viewport. Formati editoriali consigliati: `1250 × 395px` per lo slider desktop, `1200 × 1500px` per lo slider mobile, `2000 × 430px` per il banner desktop e `1200 × 900px` per il banner mobile. La versione mobile deve essere ricomposta editorialmente, semplificando il testo e mantenendo gli elementi importanti lontani dai bordi.
 
 Il secondo campo `mobile` dei banner contiene invece il copy breve della scheda:
 

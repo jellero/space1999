@@ -69,7 +69,7 @@ I breakpoint principali sono:
 | `> 1360px` | header completo, griglia fino a 6 colonne |
 | `1181–1360px` | header compatto, griglia a 4 colonne |
 | `≤ 1180px` | drawer mobile, header essenziale |
-| `≤ 700px` | slider `3:1`, banner `4:1`, griglie a 2 colonne |
+| `≤ 700px` | slider mobile `4:5`, banner mobile `4:3`, griglie a 2 colonne |
 | `≤ 600px` | modal a colonna singola |
 
 Nessun prodotto viene nascosto ai breakpoint: cambia soltanto il numero di colonne.

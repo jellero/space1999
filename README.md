@@ -7,8 +7,8 @@ Prototipo statico, responsive e multilingue della home page Space1999. Il reposi
 - header responsive con mega-menu full-width e drawer mobile;
 - ricerca semplice e avanzata indirizzata alle route Space1999;
 - main e footer generati integralmente da JSON;
-- slider automatico con asset desktop/mobile separati, indicatori e gesture mobile;
-- banner art-directed full-width su desktop e schede promozionali dedicate su mobile;
+- slider automatico con cinque creatività mobile `4:5` dedicate, indicatori e gesture;
+- banner art-directed desktop e due creatività mobile `4:3` dedicate;
 - griglie prodotto con layout `six`, `four` e `featured`;
 - interfaccia italiana e inglese selezionabile con `?lang=it` e `?lang=en`;
 - prodotti, copertine, cataloghi e link reali rilevati dal sito pubblico Space1999;

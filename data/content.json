@@ -1,5 +1,5 @@
 {
-  "version": 3,
+  "version": 4,
   "defaultLocale": "it",
   "supportedLocales": ["it", "en"],
   "locales": {
@@ -48,18 +48,18 @@
             "statusLabel": "Slide {current} di {total}",
             "autoplayMs": 5000,
             "slides": [
-              {"href": "https://space1999.com/it/shop/catalogues/104005", "image": {"desktop": "https://space1999.com/cache/c9e3a266514cc6ab47bafa2c4ab4d3bd.jpg", "mobile": "https://space1999.com/cache/c9e3a266514cc6ab47bafa2c4ab4d3bd.jpg"}, "imageAlt": "Catalogo Space1999 in evidenza 1"},
-              {"href": "https://space1999.com/it/shop/catalogues/103973", "image": {"desktop": "https://space1999.com/cache/561c4b61a9536375011402425a83d11c.jpg", "mobile": "https://space1999.com/cache/561c4b61a9536375011402425a83d11c.jpg"}, "imageAlt": "Catalogo Space1999 in evidenza 2"},
-              {"href": "https://space1999.com/it/shop/catalogues/103972", "image": {"desktop": "https://space1999.com/cache/fa1c861bd15c24696fc2a345d5ec1535.jpg", "mobile": "https://space1999.com/cache/fa1c861bd15c24696fc2a345d5ec1535.jpg"}, "imageAlt": "Catalogo Space1999 in evidenza 3"},
-              {"href": "https://space1999.com/it/shop/catalogues/103971", "image": {"desktop": "https://space1999.com/cache/f1dc903de1bcc13c7c8cc250fbf227f4.jpg", "mobile": "https://space1999.com/cache/f1dc903de1bcc13c7c8cc250fbf227f4.jpg"}, "imageAlt": "Catalogo Space1999 in evidenza 4"},
-              {"href": "https://space1999.com/it/shop/catalogues/103970", "image": {"desktop": "https://space1999.com/cache/2ce502bdf273e98bc5d15f2456e838d8.jpg", "mobile": "https://space1999.com/cache/2ce502bdf273e98bc5d15f2456e838d8.jpg"}, "imageAlt": "Catalogo Space1999 in evidenza 5"}
+              {"href": "https://space1999.com/it/shop/catalogues/104005", "image": {"desktop": "https://space1999.com/cache/c9e3a266514cc6ab47bafa2c4ab4d3bd.jpg", "mobile": "./assets/images/campaigns/mobile/ty-segall-chrome.webp"}, "imageAlt": "Catalogo Space1999 in evidenza 1"},
+              {"href": "https://space1999.com/it/shop/catalogues/103973", "image": {"desktop": "https://space1999.com/cache/561c4b61a9536375011402425a83d11c.jpg", "mobile": "./assets/images/campaigns/mobile/floating-points-mere-mortals.webp"}, "imageAlt": "Catalogo Space1999 in evidenza 2"},
+              {"href": "https://space1999.com/it/shop/catalogues/103972", "image": {"desktop": "https://space1999.com/cache/fa1c861bd15c24696fc2a345d5ec1535.jpg", "mobile": "./assets/images/campaigns/mobile/interpol-this-mirror.webp"}, "imageAlt": "Catalogo Space1999 in evidenza 3"},
+              {"href": "https://space1999.com/it/shop/catalogues/103971", "image": {"desktop": "https://space1999.com/cache/f1dc903de1bcc13c7c8cc250fbf227f4.jpg", "mobile": "./assets/images/campaigns/mobile/afghan-whigs-soft-control.webp"}, "imageAlt": "Catalogo Space1999 in evidenza 4"},
+              {"href": "https://space1999.com/it/shop/catalogues/103970", "image": {"desktop": "https://space1999.com/cache/2ce502bdf273e98bc5d15f2456e838d8.jpg", "mobile": "./assets/images/campaigns/mobile/lambchop-punching-the-clown.webp"}, "imageAlt": "Catalogo Space1999 in evidenza 5"}
             ]
           },
           {
             "type": "banner",
             "id": "catalogue-banner",
             "href": "https://space1999.com/it/shop/catalogues/57111",
-            "image": {"desktop": "https://space1999.com/cache/c4a4f940edfafd4297fe3f44fbf60265.jpg", "mobile": "https://space1999.com/cache/c4a4f940edfafd4297fe3f44fbf60265.jpg"},
+            "image": {"desktop": "https://space1999.com/cache/c4a4f940edfafd4297fe3f44fbf60265.jpg", "mobile": "./assets/images/campaigns/mobile/eddie-vedder-earthling.webp"},
             "imageAlt": "Catalogo Space1999",
             "mobile": {
               "eyebrow": "Catalogo in evidenza",
@@ -81,7 +81,7 @@
             "type": "banner",
             "id": "preorders-banner",
             "href": "https://space1999.com/it/shop/catalogues/104020",
-            "image": {"desktop": "https://space1999.com/cache/2369032e4f0d21cdb2eff0be08d4c1d2.jpg", "mobile": "https://space1999.com/cache/2369032e4f0d21cdb2eff0be08d4c1d2.jpg"},
+            "image": {"desktop": "https://space1999.com/cache/2369032e4f0d21cdb2eff0be08d4c1d2.jpg", "mobile": "./assets/images/campaigns/mobile/beck-ride-lonesome.webp"},
             "imageAlt": "Preordini Space1999",
             "mobile": {
               "eyebrow": "In arrivo",
@@ -249,18 +249,18 @@
             "statusLabel": "Slide {current} of {total}",
             "autoplayMs": 5000,
             "slides": [
-              {"href": "https://space1999.com/en/shop/catalogues/104005", "image": {"desktop": "https://space1999.com/cache/c9e3a266514cc6ab47bafa2c4ab4d3bd.jpg", "mobile": "https://space1999.com/cache/c9e3a266514cc6ab47bafa2c4ab4d3bd.jpg"}, "imageAlt": "Featured Space1999 catalogue 1"},
-              {"href": "https://space1999.com/en/shop/catalogues/103973", "image": {"desktop": "https://space1999.com/cache/561c4b61a9536375011402425a83d11c.jpg", "mobile": "https://space1999.com/cache/561c4b61a9536375011402425a83d11c.jpg"}, "imageAlt": "Featured Space1999 catalogue 2"},
-              {"href": "https://space1999.com/en/shop/catalogues/103972", "image": {"desktop": "https://space1999.com/cache/fa1c861bd15c24696fc2a345d5ec1535.jpg", "mobile": "https://space1999.com/cache/fa1c861bd15c24696fc2a345d5ec1535.jpg"}, "imageAlt": "Featured Space1999 catalogue 3"},
-              {"href": "https://space1999.com/en/shop/catalogues/103971", "image": {"desktop": "https://space1999.com/cache/f1dc903de1bcc13c7c8cc250fbf227f4.jpg", "mobile": "https://space1999.com/cache/f1dc903de1bcc13c7c8cc250fbf227f4.jpg"}, "imageAlt": "Featured Space1999 catalogue 4"},
-              {"href": "https://space1999.com/en/shop/catalogues/103970", "image": {"desktop": "https://space1999.com/cache/2ce502bdf273e98bc5d15f2456e838d8.jpg", "mobile": "https://space1999.com/cache/2ce502bdf273e98bc5d15f2456e838d8.jpg"}, "imageAlt": "Featured Space1999 catalogue 5"}
+              {"href": "https://space1999.com/en/shop/catalogues/104005", "image": {"desktop": "https://space1999.com/cache/c9e3a266514cc6ab47bafa2c4ab4d3bd.jpg", "mobile": "./assets/images/campaigns/mobile/ty-segall-chrome.webp"}, "imageAlt": "Featured Space1999 catalogue 1"},
+              {"href": "https://space1999.com/en/shop/catalogues/103973", "image": {"desktop": "https://space1999.com/cache/561c4b61a9536375011402425a83d11c.jpg", "mobile": "./assets/images/campaigns/mobile/floating-points-mere-mortals.webp"}, "imageAlt": "Featured Space1999 catalogue 2"},
+              {"href": "https://space1999.com/en/shop/catalogues/103972", "image": {"desktop": "https://space1999.com/cache/fa1c861bd15c24696fc2a345d5ec1535.jpg", "mobile": "./assets/images/campaigns/mobile/interpol-this-mirror.webp"}, "imageAlt": "Featured Space1999 catalogue 3"},
+              {"href": "https://space1999.com/en/shop/catalogues/103971", "image": {"desktop": "https://space1999.com/cache/f1dc903de1bcc13c7c8cc250fbf227f4.jpg", "mobile": "./assets/images/campaigns/mobile/afghan-whigs-soft-control.webp"}, "imageAlt": "Featured Space1999 catalogue 4"},
+              {"href": "https://space1999.com/en/shop/catalogues/103970", "image": {"desktop": "https://space1999.com/cache/2ce502bdf273e98bc5d15f2456e838d8.jpg", "mobile": "./assets/images/campaigns/mobile/lambchop-punching-the-clown.webp"}, "imageAlt": "Featured Space1999 catalogue 5"}
             ]
           },
           {
             "type": "banner",
             "id": "catalogue-banner",
             "href": "https://space1999.com/en/shop/catalogues/57111",
-            "image": {"desktop": "https://space1999.com/cache/c4a4f940edfafd4297fe3f44fbf60265.jpg", "mobile": "https://space1999.com/cache/c4a4f940edfafd4297fe3f44fbf60265.jpg"},
+            "image": {"desktop": "https://space1999.com/cache/c4a4f940edfafd4297fe3f44fbf60265.jpg", "mobile": "./assets/images/campaigns/mobile/eddie-vedder-earthling.webp"},
             "imageAlt": "Space1999 catalogue",
             "mobile": {
               "eyebrow": "Featured catalogue",
@@ -282,7 +282,7 @@
             "type": "banner",
             "id": "preorders-banner",
             "href": "https://space1999.com/en/shop/catalogues/104020",
-            "image": {"desktop": "https://space1999.com/cache/2369032e4f0d21cdb2eff0be08d4c1d2.jpg", "mobile": "https://space1999.com/cache/2369032e4f0d21cdb2eff0be08d4c1d2.jpg"},
+            "image": {"desktop": "https://space1999.com/cache/2369032e4f0d21cdb2eff0be08d4c1d2.jpg", "mobile": "./assets/images/campaigns/mobile/beck-ride-lonesome.webp"},
             "imageAlt": "Space1999 preorders",
             "mobile": {
               "eyebrow": "Coming soon",
