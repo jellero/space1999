@@ -1,6 +1,6 @@
-import { createProductCard, getSectionProducts } from "./catalog.js?v=20260827-3";
-import { configureLocale, resolveLocale } from "./i18n.js?v=20260827-3";
-import { createElement, fetchJson } from "./utils.js?v=20260827-3";
+import { createProductCard, getSectionProducts } from "./catalog.js?v=20260827-4";
+import { configureLocale, resolveLocale } from "./i18n.js?v=20260827-4";
+import { createElement, fetchJson } from "./utils.js?v=20260827-4";
 
 const PRODUCT_LAYOUTS = new Set(["six", "four", "featured"]);
 
@@ -36,7 +36,21 @@ function renderSlider(sectionData) {
     const link = createElement("a", {
       attributes: { href: slideData.href, tabindex: index === 0 ? 0 : -1 },
     });
+    const media = createElement("span", { className: "home-slider__media" });
+    const backdrop = createElement("img", {
+      className: "home-slider__backdrop",
+      attributes: {
+        src: slideData.image,
+        alt: "",
+        "aria-hidden": "true",
+        width: 1250,
+        height: 395,
+        loading: index === 0 ? "eager" : "lazy",
+        decoding: "async",
+      },
+    });
     const image = createElement("img", {
+      className: "home-slider__image",
       attributes: {
         src: slideData.image,
         alt: slideData.imageAlt,
@@ -48,7 +62,8 @@ function renderSlider(sectionData) {
       },
     });
 
-    link.append(image);
+    media.append(backdrop, image);
+    link.append(media);
     slide.append(link);
     track.append(slide);
   });
@@ -61,9 +76,26 @@ function renderSlider(sectionData) {
     className: "home-slider__control home-slider__control--next",
     attributes: { type: "button", "data-slider-next": "", "aria-label": sectionData.nextLabel },
   });
+  const pagination = createElement("div", {
+    className: "home-slider__pagination",
+    attributes: { "data-slider-pagination": "", "aria-label": sectionData.ariaLabel },
+  });
+  sectionData.slides.forEach((_, index) => {
+    const dotLabel = sectionData.statusLabel
+      .replace("{current}", String(index + 1))
+      .replace("{total}", String(sectionData.slides.length));
+    pagination.append(createElement("button", {
+      attributes: {
+        type: "button",
+        "data-slider-dot": "",
+        "data-slide-index": index,
+        "aria-label": dotLabel,
+      },
+    }));
+  });
   previous.append(createElement("span", { text: "‹", attributes: { "aria-hidden": "true" } }));
   next.append(createElement("span", { text: "›", attributes: { "aria-hidden": "true" } }));
-  viewport.append(track, previous, next);
+  viewport.append(track, previous, next, pagination);
   section.append(viewport, status);
   return section;
 }
@@ -74,7 +106,21 @@ function renderBanner(sectionData) {
     attributes: { id: sectionData.id, "aria-label": sectionData.imageAlt },
   });
   const link = createElement("a", { attributes: { href: sectionData.href } });
+  const media = createElement("span", { className: "campaign-banner__media" });
+  const backdrop = createElement("img", {
+    className: "campaign-banner__backdrop",
+    attributes: {
+      src: sectionData.image,
+      alt: "",
+      "aria-hidden": "true",
+      width: 2000,
+      height: 430,
+      loading: "lazy",
+      decoding: "async",
+    },
+  });
   const image = createElement("img", {
+    className: "campaign-banner__image",
     attributes: {
       src: sectionData.image,
       alt: sectionData.imageAlt,
@@ -84,7 +130,14 @@ function renderBanner(sectionData) {
       decoding: "async",
     },
   });
-  link.append(image);
+  const mobileContent = createElement("span", { className: "campaign-banner__content" });
+  mobileContent.append(
+    createElement("span", { className: "eyebrow", text: sectionData.mobile.eyebrow }),
+    createElement("strong", { text: sectionData.mobile.title }),
+    createElement("span", { className: "campaign-banner__cta", text: `${sectionData.mobile.ctaLabel} →` }),
+  );
+  media.append(backdrop, image);
+  link.append(media, mobileContent);
   section.append(link);
   return section;
 }

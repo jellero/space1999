@@ -45,8 +45,8 @@ Struttura principale:
 
 | `type` | Campi specifici | Renderer |
 |---|---|---|
-| `slider` | `slides`, `autoplayMs`, etichette controlli | campagne a rotazione |
-| `banner` | `image`, `imageAlt`, `href` | banner full-width |
+| `slider` | `slides`, `autoplayMs`, etichette controlli | campagne a rotazione; indicatori e swipe su mobile |
+| `banner` | `image`, `imageAlt`, `href`, `mobile` | banner desktop e scheda promozionale mobile |
 | `products` | `productIds`, `viewAllLabel`, `layout` | griglia di card |
 | `editorial` | `description`, `ctaLabel` | banner testuale |
 | `features` | `items[]`, `image`, `variant` | due promozioni visuali |
@@ -61,6 +61,22 @@ Struttura principale:
 | `featured` | prima card in evidenza e griglia densa |
 
 Il renderer applica soltanto valori presenti nella whitelist; un layout sconosciuto viene rifiutato dalla validazione.
+
+### Varianti mobile
+
+Slider e banner non vengono semplicemente ridotti. Sotto `700px` lo slider usa una superficie `16:9`, mantiene visibile l'intera creatività sopra uno sfondo derivato dalla stessa immagine e aggiunge indicatori e gesture orizzontale. Il banner diventa una scheda composta da media e contenuto localizzato.
+
+Il campo obbligatorio `mobile` dei banner contiene:
+
+```json
+{
+  "eyebrow": "Catalogo in evidenza",
+  "title": "Le novità Space1999",
+  "ctaLabel": "Apri il catalogo"
+}
+```
+
+Questa separazione consente al CMS di fornire copy corto adatto a schermi stretti senza duplicare URL e immagine della campagna.
 
 Gli ID e l'ordine delle sezioni devono coincidere in tutte le lingue. `npm run validate` applica questa regola.
 

@@ -1,8 +1,8 @@
-import { loadPageContent } from "./content.js?v=20260827-3";
-import { initNavigationDrawer, loadNavigation } from "./navigation.js?v=20260827-3";
-import { initProductModal } from "./product-modal.js?v=20260827-3";
-import { initSearch } from "./search.js?v=20260827-3";
-import { initSliders } from "./slider.js?v=20260827-3";
+import { loadPageContent } from "./content.js?v=20260827-4";
+import { initNavigationDrawer, loadNavigation } from "./navigation.js?v=20260827-4";
+import { initProductModal } from "./product-modal.js?v=20260827-4";
+import { initSearch } from "./search.js?v=20260827-4";
+import { initSliders } from "./slider.js?v=20260827-4";
 
 function showContentError(error) {
   const isEnglish = document.documentElement.lang === "en";
@@ -33,8 +33,8 @@ async function bootstrap() {
   // Contenuti e navigazione sono indipendenti: un errore non blocca l'altro ramo.
   const [contentResult] = await Promise.all([
     loadPageContent({
-      contentEndpoint: "./data/content.json?v=20260827-3",
-      productsEndpoint: "./data/products.json?v=20260827-3",
+      contentEndpoint: "./data/content.json?v=20260827-4",
+      productsEndpoint: "./data/products.json?v=20260827-4",
       mainRoot: document.querySelector("[data-main-root]"),
       footerRoot: document.querySelector("[data-footer-root]"),
     }).catch((error) => {
@@ -42,7 +42,7 @@ async function bootstrap() {
       return null;
     }),
     loadNavigation({
-      endpoint: "./data/navigation.json?v=20260827-3",
+      endpoint: "./data/navigation.json?v=20260827-4",
       desktopRoot: document.querySelector("[data-desktop-menu]"),
       mobileRoot: document.querySelector("[data-mobile-menu]"),
       status: document.querySelector("[data-navigation-status]"),

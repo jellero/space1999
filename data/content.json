@@ -60,7 +60,12 @@
             "id": "catalogue-banner",
             "href": "https://space1999.com/it/shop/catalogues/57111",
             "image": "https://space1999.com/cache/c4a4f940edfafd4297fe3f44fbf60265.jpg",
-            "imageAlt": "Catalogo Space1999"
+            "imageAlt": "Catalogo Space1999",
+            "mobile": {
+              "eyebrow": "Catalogo in evidenza",
+              "title": "Le novità Space1999",
+              "ctaLabel": "Apri il catalogo"
+            }
           },
           {
             "type": "products",
@@ -77,7 +82,12 @@
             "id": "preorders-banner",
             "href": "https://space1999.com/it/shop/catalogues/104020",
             "image": "https://space1999.com/cache/2369032e4f0d21cdb2eff0be08d4c1d2.jpg",
-            "imageAlt": "Preordini Space1999"
+            "imageAlt": "Preordini Space1999",
+            "mobile": {
+              "eyebrow": "In arrivo",
+              "title": "Preordini e prossime uscite",
+              "ctaLabel": "Scopri i preordini"
+            }
           },
           {
             "type": "products",
@@ -251,7 +261,12 @@
             "id": "catalogue-banner",
             "href": "https://space1999.com/en/shop/catalogues/57111",
             "image": "https://space1999.com/cache/c4a4f940edfafd4297fe3f44fbf60265.jpg",
-            "imageAlt": "Space1999 catalogue"
+            "imageAlt": "Space1999 catalogue",
+            "mobile": {
+              "eyebrow": "Featured catalogue",
+              "title": "The latest from Space1999",
+              "ctaLabel": "Open catalogue"
+            }
           },
           {
             "type": "products",
@@ -268,7 +283,12 @@
             "id": "preorders-banner",
             "href": "https://space1999.com/en/shop/catalogues/104020",
             "image": "https://space1999.com/cache/2369032e4f0d21cdb2eff0be08d4c1d2.jpg",
-            "imageAlt": "Space1999 preorders"
+            "imageAlt": "Space1999 preorders",
+            "mobile": {
+              "eyebrow": "Coming soon",
+              "title": "Preorders and upcoming releases",
+              "ctaLabel": "Browse preorders"
+            }
           },
           {
             "type": "products",

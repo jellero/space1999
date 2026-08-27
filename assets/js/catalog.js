@@ -1,4 +1,4 @@
-import { createElement } from "./utils.js?v=20260827-3";
+import { createElement } from "./utils.js?v=20260827-4";
 
 /**
  * Restituisce la route prodotto per la lingua attiva, con fallback esplicito.

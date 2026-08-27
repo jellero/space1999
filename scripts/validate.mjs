@@ -87,6 +87,11 @@ for (const locale of content.supportedLocales) {
       for (const field of ["href", "image", "imageAlt"]) {
         if (!section[field]) throw new Error(`Campo ${field} mancante nel banner ${section.id}.`);
       }
+      for (const field of ["eyebrow", "title", "ctaLabel"]) {
+        if (!section.mobile?.[field]) {
+          throw new Error(`Campo mobile.${field} mancante nel banner ${section.id}.`);
+        }
+      }
     }
   }
 
