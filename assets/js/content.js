@@ -1,6 +1,6 @@
-import { createProductCard, getSectionProducts } from "./catalog.js?v=20260827-2";
-import { configureLocale, resolveLocale } from "./i18n.js?v=20260827-2";
-import { createElement, fetchJson } from "./utils.js?v=20260827-2";
+import { createProductCard, getSectionProducts } from "./catalog.js?v=20260827-3";
+import { configureLocale, resolveLocale } from "./i18n.js?v=20260827-3";
+import { createElement, fetchJson } from "./utils.js?v=20260827-3";
 
 const PRODUCT_LAYOUTS = new Set(["six", "four", "featured"]);
 

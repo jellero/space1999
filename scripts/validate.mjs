@@ -146,6 +146,27 @@ for (const relativePath of modules) {
   }
 }
 
+const versionedSources = await Promise.all([
+  Promise.resolve(html),
+  readText("assets/js/app.js"),
+  readText("assets/js/catalog.js"),
+  readText("assets/js/content.js"),
+  readText("assets/js/navigation.js"),
+  readText("assets/js/product-modal.js"),
+]);
+const releaseTokens = new Set(
+  versionedSources.flatMap((source) => [...source.matchAll(/\?v=(\d{8}-\d+)/g)].map((match) => match[1])),
+);
+if (releaseTokens.size !== 1) {
+  throw new Error(`Versionamento cache incoerente: ${[...releaseTokens].join(", ")}.`);
+}
+const appSource = versionedSources[1];
+for (const endpoint of ["content.json", "products.json", "navigation.json"]) {
+  if (!appSource.includes(`${endpoint}?v=`)) {
+    throw new Error(`L'endpoint ${endpoint} non contiene un identificatore di release.`);
+  }
+}
+
 console.log(
   `Validazione completata: ${productIds.size} prodotti reali, ${content.supportedLocales.length} lingue, ${navigation.menu.length} categorie.`,
 );
