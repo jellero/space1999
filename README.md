@@ -19,8 +19,6 @@ Prototipo statico, responsive e multilingue della home page Space1999. Il reposi
 
 Il progetto è un sito statico e non richiede build, dipendenze runtime o Node.js sul server. È sufficiente pubblicare il contenuto del repository su un normale server HTTP/HTTPS.
 
-L'apertura diretta di `index.html` tramite protocollo `file://` non è supportata: i browser applicano restrizioni ai moduli ES e alle richieste `fetch()` dei file JSON. Per un'anteprima locale serve quindi un qualsiasi server HTTP locale; questa limitazione riguarda soltanto l'ambiente di sviluppo, non il server di produzione.
-
 ## Struttura
 
 ```text
