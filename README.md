@@ -1,4 +1,4 @@
-# Space1999 — professional front-end handoff
+# Space1999
 
 Prototipo statico, responsive e multilingue della home page Space1999. Il repository è organizzato come riferimento tecnico per la società che realizzerà il software definitivo: contenuti, presentazione e comportamenti sono separati; non sono presenti dipendenze runtime o passaggi di build obbligatori.
 
@@ -13,29 +13,13 @@ Prototipo statico, responsive e multilingue della home page Space1999. Il reposi
 - interfaccia italiana e inglese selezionabile con `?lang=it` e `?lang=en`;
 - prodotti, copertine, cataloghi e link reali rilevati dal sito pubblico Space1999;
 - hover prodotto e quick view accessibile;
-- validazione automatica dei contratti dati e della sintassi JavaScript.
+- script facoltativi per validare i dati e rigenerare la navigazione durante la manutenzione.
 
-## Avvio locale
+## Pubblicazione
 
-I moduli ES e i file JSON richiedono HTTP. Dalla root:
+Il progetto è un sito statico e non richiede build, dipendenze runtime o Node.js sul server. È sufficiente pubblicare il contenuto del repository su un normale server HTTP/HTTPS.
 
-```bash
-python3 -m http.server 8080
-```
-
-Aprire `http://localhost:8080/?lang=it` oppure `http://localhost:8080/?lang=en`.
-
-## Comandi
-
-Il progetto non installa pacchetti e richiede Node.js 20 o superiore.
-
-```bash
-npm run build:navigation
-npm run validate
-```
-
-- `build:navigation` genera il payload runtime alleggerito da `data/menu.json`.
-- `validate` controlla lingue, sezioni, riferimenti prodotto, campi obbligatori, hook HTML e sintassi dei moduli.
+L'apertura diretta di `index.html` tramite protocollo `file://` non è supportata: i browser applicano restrizioni ai moduli ES e alle richieste `fetch()` dei file JSON. Per un'anteprima locale serve quindi un qualsiasi server HTTP locale; questa limitazione riguarda soltanto l'ambiente di sviluppo, non il server di produzione.
 
 ## Struttura
 
