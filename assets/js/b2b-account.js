@@ -48,25 +48,10 @@ function createViewLink(view, text, className = "") {
   return link;
 }
 
-function renderLanguageSwitch(root) {
-  root.replaceChildren();
-  root.append(element("span", { className: "visually-hidden", text: app.dictionary.common.language }));
-  for (const language of ["it", "en"]) {
-    const link = element("a", {
-      className: language === app.locale ? "is-active" : "",
-      text: language.toUpperCase(),
-      attributes: { href: "./account.html", lang: language, "aria-current": language === app.locale ? "page" : null },
-    });
-    setLocalizedQuery(link, { locale: language, client: app.config.clientId, view: app.view });
-    root.append(link);
-  }
-}
-
 function renderShell() {
   const { account, common } = app.dictionary;
   document.querySelector("[data-workspace-title]").textContent = account.workspace;
   document.querySelector("[data-demo-banner]").textContent = account.demoBanner;
-  renderLanguageSwitch(document.querySelector("[data-language-switch]"));
 
   const context = document.querySelector("[data-account-context]");
   context.replaceChildren(
@@ -74,16 +59,6 @@ function renderShell() {
     element("strong", { text: app.data.customer.displayName }),
     element("span", { text: `${app.config.priceList} · ${app.config.currency}` }),
   );
-
-  const initials = app.data.customer.contactName
-    .split(" ")
-    .map((part) => part[0])
-    .join("")
-    .slice(0, 2)
-    .toUpperCase();
-  document.querySelector("[data-avatar]").textContent = initials;
-  const profileLink = document.querySelector("[data-profile-link]");
-  setLocalizedQuery(profileLink, { locale: app.locale, client: app.config.clientId, view: "profile" });
 
   const navigation = document.querySelector("[data-account-navigation]");
   navigation.replaceChildren();
