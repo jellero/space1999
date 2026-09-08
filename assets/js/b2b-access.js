@@ -7,7 +7,7 @@ import {
   showStatus,
 } from "./b2b-utils.js?v=20260908-1";
 
-const CONTENT_ENDPOINT = "./data/b2b.json?v=20260908-1";
+const CONTENT_ENDPOINT = "./data/b2b.json?v=20260908-3";
 const MODES = new Set(["login", "request", "reset"]);
 
 const FORM_FIELDS = {
