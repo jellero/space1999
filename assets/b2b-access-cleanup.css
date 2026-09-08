@@ -1,0 +1,35 @@
+/* Access/request/reset: functional form only. No promotional or invented content. */
+
+.b2b-access-page .access-layout.access-layout--single {
+  display: block;
+  width: calc(100% - 56px);
+  max-width: 860px;
+  min-height: 0;
+  margin: 0 auto 86px;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  background: #fff;
+}
+
+.b2b-access-page .access-layout--single .access-panel {
+  display: block;
+  padding: 64px clamp(34px, 7vw, 92px) 70px;
+  background: #fff;
+}
+
+.b2b-access-page .access-layout--single .access-panel__inner {
+  width: 100%;
+  max-width: 620px;
+  margin-inline: auto;
+}
+
+@media (max-width: 800px) {
+  .b2b-access-page .access-layout.access-layout--single {
+    width: calc(100% - 32px);
+    margin-bottom: 55px;
+  }
+
+  .b2b-access-page .access-layout--single .access-panel {
+    padding: 38px 22px 55px;
+  }
+}
