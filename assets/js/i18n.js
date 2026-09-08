@@ -46,7 +46,7 @@ export function applyTranslations(dictionary) {
   }
 }
 
-/** Sincronizza lingua attiva, metadati e route esterne di header e ricerca. */
+/** Sincronizza lingua attiva e metadati senza creare route verso space1999.com. */
 export function configureLocale({ locale, localeContent }) {
   document.documentElement.lang = locale;
   document.title = localeContent.meta.title;
@@ -58,16 +58,5 @@ export function configureLocale({ locale, localeContent }) {
     link.classList.toggle("active", isActive);
     if (isActive) link.setAttribute("aria-current", "page");
     else link.removeAttribute("aria-current");
-  });
-
-  const shopBase = `https://space1999.com/${locale}/shop`;
-  document.querySelectorAll("[data-search-form]").forEach((form) => {
-    form.action = `${shopBase}/search`;
-  });
-  document.querySelectorAll("[data-advanced-search]").forEach((button) => {
-    button.dataset.url = `${shopBase}/searchadv`;
-  });
-  document.querySelectorAll("[data-localized-route]").forEach((link) => {
-    link.href = `https://space1999.com/${locale}${link.dataset.localizedRoute}`;
   });
 }
