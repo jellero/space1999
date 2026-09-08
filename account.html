@@ -9,11 +9,15 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap">
+    <link rel="stylesheet" href="./assets/styles.css?v=20260908-1">
     <link rel="stylesheet" href="./assets/b2b.css?v=20260908-1">
+    <link rel="stylesheet" href="./assets/b2b-chrome.css?v=20260908-2">
   </head>
 
   <body class="b2b-account-page">
-    <a class="b2b-skip-link" href="#account-main">Vai al contenuto</a>
+    <a class="skip-link" href="#account-main">Vai al contenuto principale</a>
+
+    <div data-site-header-root></div>
 
     <div class="account-shell" data-account-shell>
       <aside class="account-sidebar" data-account-sidebar aria-label="Area clienti">
@@ -48,6 +52,10 @@
       </div>
     </div>
 
+    <footer class="site-footer" data-site-footer-root aria-busy="true">
+      <p class="page-status container" role="status">Caricamento footer…</p>
+    </footer>
+
     <div class="b2b-dialog" data-b2b-dialog hidden aria-hidden="true">
       <button class="b2b-dialog__overlay" type="button" data-dialog-close tabindex="-1" aria-label="Chiudi"></button>
       <section class="b2b-dialog__panel" role="dialog" aria-modal="true" aria-labelledby="b2b-dialog-title">
@@ -56,6 +64,7 @@
       </section>
     </div>
 
+    <script type="module" src="./assets/js/b2b-chrome.js?v=20260908-2"></script>
     <script type="module" src="./assets/js/b2b-account.js?v=20260908-1"></script>
   </body>
 </html>
