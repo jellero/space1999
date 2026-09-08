@@ -1,8 +1,28 @@
-import { loadPageContent } from "./content.js?v=20260827-8";
-import { initNavigationDrawer, loadNavigation } from "./navigation.js?v=20260827-8";
-import { initProductModal } from "./product-modal.js?v=20260827-8";
-import { initSearch } from "./search.js?v=20260827-8";
-import { initSliders } from "./slider.js?v=20260827-8";
+import { loadPageContent } from "./content.js?v=20260908-1";
+import { initNavigationDrawer, loadNavigation } from "./navigation.js?v=20260908-1";
+import { initProductModal } from "./product-modal.js?v=20260908-1";
+import { initSearch } from "./search.js?v=20260908-1";
+import { initSliders } from "./slider.js?v=20260908-1";
+
+function initB2bEntryPoints(locale) {
+  const accessUrl = (mode) => `./access.html?lang=${locale}&mode=${mode}`;
+  const loginForm = document.querySelector("[data-b2b-login-form]");
+
+  loginForm?.addEventListener("submit", (event) => {
+    // Le credenziali non vengono trasmesse dal mockup pubblico: l'autenticazione
+    // reale, comprensiva di anti-bot, appartiene alla pagina di accesso dedicata.
+    event.preventDefault();
+    window.location.assign(accessUrl("login"));
+  });
+
+  document.querySelectorAll("[data-b2b-login-link]").forEach((link) => {
+    link.href = accessUrl("login");
+  });
+  document.querySelectorAll("[data-b2b-request-link]").forEach((control) => {
+    if (control instanceof HTMLAnchorElement) control.href = accessUrl("request");
+    else control.addEventListener("click", () => window.location.assign(accessUrl("request")));
+  });
+}
 
 function showContentError(error) {
   const isEnglish = document.documentElement.lang === "en";
@@ -33,8 +53,8 @@ async function bootstrap() {
   // Contenuti e navigazione sono indipendenti: un errore non blocca l'altro ramo.
   const [contentResult] = await Promise.all([
     loadPageContent({
-      contentEndpoint: "./data/content.json?v=20260827-8",
-      productsEndpoint: "./data/products.json?v=20260827-8",
+      contentEndpoint: "./data/content.json?v=20260908-1",
+      productsEndpoint: "./data/products.json?v=20260908-1",
       mainRoot: document.querySelector("[data-main-root]"),
       footerRoot: document.querySelector("[data-footer-root]"),
     }).catch((error) => {
@@ -42,7 +62,7 @@ async function bootstrap() {
       return null;
     }),
     loadNavigation({
-      endpoint: "./data/navigation.json?v=20260827-8",
+      endpoint: "./data/navigation.json?v=20260908-1",
       desktopRoot: document.querySelector("[data-desktop-menu]"),
       mobileRoot: document.querySelector("[data-mobile-menu]"),
       status: document.querySelector("[data-navigation-status]"),
@@ -56,6 +76,7 @@ async function bootstrap() {
   initSearch();
 
   if (contentResult) {
+    initB2bEntryPoints(contentResult.locale);
     initSliders();
     document.documentElement.dataset.contentSource = contentResult.source.mode;
   }

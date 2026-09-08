@@ -7,12 +7,18 @@ const projectRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "
 const readText = (relativePath) => readFile(path.join(projectRoot, relativePath), "utf8");
 const readJson = async (relativePath) => JSON.parse(await readText(relativePath));
 
-const [navigation, content, products, html, css] = await Promise.all([
+const [navigation, content, products, html, css, b2b, b2bDemo, clientConfig, accessHtml, accountHtml, b2bCss] = await Promise.all([
   readJson("data/navigation.json"),
   readJson("data/content.json"),
   readJson("data/products.json"),
   readText("index.html"),
   readText("assets/styles.css"),
+  readJson("data/b2b.json"),
+  readJson("data/b2b-demo.json"),
+  readJson("data/clients/demo-distributor.json"),
+  readText("access.html"),
+  readText("account.html"),
+  readText("assets/b2b.css"),
 ]);
 
 if (!Array.isArray(navigation.menu) || navigation.menu.length !== 7) {
@@ -25,6 +31,62 @@ if (!content.defaultLocale || !Array.isArray(content.supportedLocales)) {
 
 if (!content.supportedLocales.includes(content.defaultLocale)) {
   throw new Error("defaultLocale deve essere incluso in supportedLocales.");
+}
+
+if (b2b.defaultLocale !== content.defaultLocale || b2b.supportedLocales.join("|") !== content.supportedLocales.join("|")) {
+  throw new Error("Il B2B deve usare le stesse lingue e la stessa lingua predefinita del sito pubblico.");
+}
+
+const requiredB2bViews = new Set(["dashboard", "catalog", "cart", "orders", "shipments", "documents", "profile", "carriers"]);
+const configuredViews = new Set(clientConfig.navigation.map((item) => item.id));
+if (configuredViews.size !== clientConfig.navigation.length) {
+  throw new Error("La configurazione cliente contiene voci di navigazione duplicate.");
+}
+for (const view of requiredB2bViews) {
+  if (!configuredViews.has(view)) throw new Error(`Vista B2B mancante nella configurazione demo: ${view}.`);
+}
+if (clientConfig.features.returns !== false) {
+  throw new Error("I resi devono rimanere disabilitati finché il processo non è definito.");
+}
+
+for (const locale of b2b.supportedLocales) {
+  const localeContent = b2b.locales?.[locale];
+  for (const section of ["meta", "common", "access", "account"]) {
+    if (!localeContent?.[section]) throw new Error(`Sezione B2B ${section} mancante per ${locale}.`);
+  }
+  for (const mode of ["login", "request", "reset"]) {
+    if (!localeContent.access.modes?.[mode]?.title || !localeContent.access.success?.[mode]) {
+      throw new Error(`Flusso di accesso B2B ${mode} incompleto per ${locale}.`);
+    }
+  }
+  for (const view of ["dashboard", "cart", "orders", "shipments", "documents", "profile", "carriers"]) {
+    if (!localeContent.account?.[view]?.title && view !== "dashboard") {
+      throw new Error(`Copy della vista B2B ${view} mancante per ${locale}.`);
+    }
+  }
+}
+
+const demoCollections = ["addresses", "carriers", "orders", "shipments", "invoices", "payments"];
+for (const collection of demoCollections) {
+  if (!Array.isArray(b2bDemo[collection])) throw new Error(`Collezione demo B2B mancante: ${collection}.`);
+}
+if (!Array.isArray(b2bDemo.cart?.items) || b2bDemo.cart.items.length === 0) {
+  throw new Error("Il carrello B2B demo deve contenere almeno un prodotto.");
+}
+
+const demoEmails = [
+  b2bDemo.customer.email,
+  ...b2bDemo.carriers.map((carrier) => carrier.contact),
+].filter(Boolean);
+if (demoEmails.some((email) => !email.endsWith(".test"))) {
+  throw new Error("Gli indirizzi e-mail B2B dimostrativi devono usare il dominio riservato .test.");
+}
+
+const addressIds = new Set(b2bDemo.addresses.map((address) => address.id));
+for (const shipment of b2bDemo.shipments) {
+  if (!addressIds.has(shipment.addressId)) {
+    throw new Error(`La spedizione ${shipment.id} referenzia un indirizzo inesistente.`);
+  }
 }
 
 const supportedMainTypes = new Set(["slider", "banner", "products", "editorial", "features", "services"]);
@@ -139,8 +201,17 @@ for (const id of referencedProductIds) {
 for (const hook of ["data-main-root", "data-footer-root", "data-product-modal"]) {
   if (!html.includes(hook)) throw new Error(`Hook HTML mancante: ${hook}.`);
 }
+for (const hook of ["data-access-form-root", "data-access-tabs", "data-language-switch"]) {
+  if (!accessHtml.includes(hook)) throw new Error(`Hook accesso B2B mancante: ${hook}.`);
+}
+for (const hook of ["data-account-main", "data-account-navigation", "data-b2b-dialog"]) {
+  if (!accountHtml.includes(hook)) throw new Error(`Hook area privata B2B mancante: ${hook}.`);
+}
 if (css.includes(".hero__art") || css.includes(".hero__number")) {
   throw new Error("Il CSS contiene selettori legacy dell'hero precedente.");
+}
+if (!b2bCss.includes("@media (max-width: 800px)") || !b2bCss.includes(".responsive-table td::before")) {
+  throw new Error("La trasformazione responsive delle tabelle B2B non è presente.");
 }
 
 const modules = [
@@ -153,6 +224,9 @@ const modules = [
   "assets/js/search.js",
   "assets/js/slider.js",
   "assets/js/utils.js",
+  "assets/js/b2b-utils.js",
+  "assets/js/b2b-access.js",
+  "assets/js/b2b-account.js",
 ];
 
 for (const relativePath of modules) {
@@ -171,6 +245,11 @@ const versionedSources = await Promise.all([
   readText("assets/js/content.js"),
   readText("assets/js/navigation.js"),
   readText("assets/js/product-modal.js"),
+  Promise.resolve(accessHtml),
+  Promise.resolve(accountHtml),
+  readText("assets/js/b2b-utils.js"),
+  readText("assets/js/b2b-access.js"),
+  readText("assets/js/b2b-account.js"),
 ]);
 const releaseTokens = new Set(
   versionedSources.flatMap((source) => [...source.matchAll(/\?v=(\d{8}-\d+)/g)].map((match) => match[1])),
@@ -186,5 +265,5 @@ for (const endpoint of ["content.json", "products.json", "navigation.json"]) {
 }
 
 console.log(
-  `Validazione completata: ${productIds.size} prodotti reali, ${content.supportedLocales.length} lingue, ${navigation.menu.length} categorie.`,
+  `Validazione completata: ${productIds.size} prodotti reali, ${content.supportedLocales.length} lingue, ${navigation.menu.length} categorie e ${configuredViews.size} viste B2B.`,
 );

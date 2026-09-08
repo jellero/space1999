@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Prototipo dell’area privata clienti B2B Space1999." data-page-description>
+    <title>Area clienti B2B — Space1999</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap">
+    <link rel="stylesheet" href="./assets/b2b.css?v=20260908-1">
+  </head>
+
+  <body class="b2b-account-page">
+    <a class="b2b-skip-link" href="#account-main">Vai al contenuto</a>
+
+    <div class="account-shell" data-account-shell>
+      <aside class="account-sidebar" data-account-sidebar aria-label="Area clienti">
+        <div class="account-sidebar__brand">
+          <a class="b2b-brand" href="./index.html" aria-label="Space1999 home">
+            <img src="https://space1999.com/bundles/mercuriospace/shop/images/03_Marchio_Space.jpg" alt="Space1999" width="150" height="90">
+          </a>
+          <button class="icon-control account-sidebar__close" type="button" data-sidebar-close aria-label="Chiudi menu"></button>
+        </div>
+
+        <div class="account-context" data-account-context></div>
+        <nav class="account-navigation" data-account-navigation></nav>
+        <div class="account-sidebar__footer" data-sidebar-footer></div>
+      </aside>
+
+      <button class="account-overlay" type="button" data-account-overlay aria-label="Chiudi menu" hidden></button>
+
+      <div class="account-workspace">
+        <header class="account-topbar">
+          <button class="icon-control account-menu-button" type="button" data-sidebar-open aria-label="Apri menu"></button>
+          <div class="account-topbar__title" data-workspace-title>Area clienti</div>
+          <div class="account-topbar__actions">
+            <nav class="b2b-language" aria-label="Lingua" data-language-switch></nav>
+            <a class="account-avatar" href="?view=profile" data-profile-link aria-label="Profilo cliente" data-avatar>CD</a>
+          </div>
+        </header>
+
+        <div class="account-demo-banner" role="note" data-demo-banner></div>
+        <main class="account-main" id="account-main" data-account-main aria-busy="true">
+          <p class="b2b-loading">Caricamento…</p>
+        </main>
+      </div>
+    </div>
+
+    <div class="b2b-dialog" data-b2b-dialog hidden aria-hidden="true">
+      <button class="b2b-dialog__overlay" type="button" data-dialog-close tabindex="-1" aria-label="Chiudi"></button>
+      <section class="b2b-dialog__panel" role="dialog" aria-modal="true" aria-labelledby="b2b-dialog-title">
+        <button class="icon-control b2b-dialog__close" type="button" data-dialog-close aria-label="Chiudi"></button>
+        <div data-dialog-content></div>
+      </section>
+    </div>
+
+    <script type="module" src="./assets/js/b2b-account.js?v=20260908-1"></script>
+  </body>
+</html>

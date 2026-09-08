@@ -1329,6 +1329,32 @@ ul {
     font-weight: 400;
   }
 
+  .mobile-account-entry {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin: 18px 15px;
+    padding-top: 18px;
+    border-top: 1px solid var(--line);
+  }
+
+  .mobile-account-entry a {
+    min-height: 42px;
+    display: grid;
+    place-items: center;
+    border: 1px solid var(--orange);
+    color: var(--orange);
+    font-size: 11px;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  .mobile-account-entry a:last-child {
+    color: var(--white);
+    background: var(--orange);
+  }
+
   .home-slider {
     margin-top: 16px;
   }
@@ -1643,6 +1669,10 @@ ul {
   }
 
   .mobile-language {
+    margin-inline: 12px;
+  }
+
+  .mobile-account-entry {
     margin-inline: 12px;
   }
 

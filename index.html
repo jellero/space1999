@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://cover.space1999.com">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap">
-    <link rel="stylesheet" href="./assets/styles.css?v=20260827-8">
+    <link rel="stylesheet" href="./assets/styles.css?v=20260908-1">
   </head>
 
   <body>
@@ -40,12 +40,12 @@
             <a href="?lang=en" lang="en" data-language="en">EN</a>
           </nav>
 
-          <form class="login" aria-label="Accesso clienti" data-i18n-aria-label="header.loginLabel">
+          <form class="login" aria-label="Accesso clienti" data-i18n-aria-label="header.loginLabel" data-b2b-login-form>
             <input type="email" autocomplete="email" placeholder="e-Mail" aria-label="e-Mail">
             <input type="password" autocomplete="current-password" placeholder="Password" aria-label="Password">
             <div>
-              <button type="button" data-i18n="header.login">Log in</button>
-              <button type="button" data-i18n="header.register">Registrati</button>
+              <button type="submit" data-i18n="header.login">Log in</button>
+              <button type="button" data-b2b-request-link data-i18n="header.register">Richiedi accesso</button>
             </div>
           </form>
         </div>
@@ -185,6 +185,11 @@
         <ul class="mobile-menu" data-mobile-menu aria-busy="true"></ul>
       </nav>
 
+      <div class="mobile-account-entry">
+        <a href="./access.html?mode=login" data-b2b-login-link data-i18n="header.login">Log in</a>
+        <a href="./access.html?mode=request" data-b2b-request-link data-i18n="header.register">Richiedi accesso</a>
+      </div>
+
       <p class="navigation-status" data-navigation-status role="status" hidden></p>
     </aside>
 
@@ -236,6 +241,6 @@
       <p class="noscript-message">Per visualizzare il catalogo è necessario abilitare JavaScript.</p>
     </noscript>
 
-    <script type="module" src="./assets/js/app.js?v=20260827-8"></script>
+    <script type="module" src="./assets/js/app.js?v=20260908-1"></script>
   </body>
 </html>

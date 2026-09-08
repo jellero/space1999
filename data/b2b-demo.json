@@ -1,0 +1,169 @@
+{
+  "version": 1,
+  "customer": {
+    "displayName": "Northstar Music Distribution",
+    "contactName": "Cliente Demo",
+    "email": "buyer@example.test",
+    "phone": "+39 02 0000 0000",
+    "companyName": "Northstar Music Distribution S.r.l.",
+    "vatNumber": "IT00000000000",
+    "customerCode": "DEMO-001",
+    "accountStatus": "active",
+    "creditLimit": 15000,
+    "availableCredit": 8472.8
+  },
+  "addresses": [
+    {
+      "id": "address-main",
+      "label": "Sede e magazzino principale",
+      "recipient": "Northstar Music Distribution S.r.l.",
+      "street": "Via Esempio 19",
+      "postalCode": "20100",
+      "city": "Milano",
+      "country": "Italia",
+      "isDefault": true
+    },
+    {
+      "id": "address-store",
+      "label": "Punto vendita",
+      "recipient": "Northstar Music Store",
+      "street": "Corso Demo 99",
+      "postalCode": "10100",
+      "city": "Torino",
+      "country": "Italia",
+      "isDefault": false
+    }
+  ],
+  "carriers": [
+    {
+      "id": "carrier-dhl",
+      "name": "DHL Express",
+      "accountCode": "DHL-DEMO-01",
+      "service": "Express Domestic",
+      "contact": "logistica@example.test",
+      "isDefault": true
+    },
+    {
+      "id": "carrier-ups",
+      "name": "UPS",
+      "accountCode": "UPS-DEMO-22",
+      "service": "Standard",
+      "contact": "acquisti@example.test",
+      "isDefault": false
+    }
+  ],
+  "cart": {
+    "updatedAt": "2026-09-08T09:30:00Z",
+    "items": [
+      {
+        "id": "cart-1",
+        "ean": "5054197784262",
+        "artist": "Iron Maiden",
+        "title": "Iron Maiden",
+        "format": "LP Vinyl",
+        "unitPrice": 19.5,
+        "quantity": 3,
+        "availableQuantity": 3,
+        "availability": "available",
+        "image": "https://cover.space1999.com/cache/66437544-eaf38e320b9c26e1a136a1c3fdf1d8ce-1000x1000-C.jpg"
+      },
+      {
+        "id": "cart-2",
+        "ean": "5054197784286",
+        "artist": "Iron Maiden",
+        "title": "Killers",
+        "format": "LP Vinyl",
+        "unitPrice": 14.75,
+        "quantity": 8,
+        "availableQuantity": 5,
+        "availability": "limited",
+        "image": "https://cover.space1999.com/cache/66448365-4260af24ef3ef7081e683de897dddb4e-1000x1000-C.jpg"
+      },
+      {
+        "id": "cart-3",
+        "ean": "0720841304128",
+        "artist": "Idles",
+        "title": "Tangk",
+        "format": "CD Audio",
+        "unitPrice": 11.28,
+        "quantity": 2,
+        "availableQuantity": 2,
+        "availability": "available",
+        "image": "https://cover.space1999.com/cache/66458029-503b6dfcaf63e078118186a82d139f0e-1000x1000-C.jpg"
+      }
+    ]
+  },
+  "orders": [
+    {
+      "id": "SP-1639618",
+      "createdAt": "2026-09-04",
+      "status": "reserved",
+      "total": 168.25,
+      "lineCount": 4,
+      "reservedUnits": 9,
+      "shippableUnits": 9,
+      "shipmentStatus": "notRequested"
+    },
+    {
+      "id": "SP-1639563",
+      "createdAt": "2026-09-02",
+      "status": "partiallyReady",
+      "total": 142.7,
+      "lineCount": 4,
+      "reservedUnits": 8,
+      "shippableUnits": 6,
+      "shipmentStatus": "notRequested"
+    },
+    {
+      "id": "SP-1637211",
+      "createdAt": "2026-08-28",
+      "status": "processing",
+      "total": 51.11,
+      "lineCount": 1,
+      "reservedUnits": 2,
+      "shippableUnits": 0,
+      "shipmentStatus": "requested"
+    },
+    {
+      "id": "SP-1636108",
+      "createdAt": "2026-08-19",
+      "status": "completed",
+      "total": 86.6,
+      "lineCount": 3,
+      "reservedUnits": 0,
+      "shippableUnits": 0,
+      "shipmentStatus": "shipped"
+    }
+  ],
+  "shipments": [
+    {
+      "id": "SHP-80491",
+      "orderId": "SP-1636108",
+      "requestedAt": "2026-08-22",
+      "status": "inTransit",
+      "carrier": "DHL Express",
+      "tracking": "DEMO123456789",
+      "addressId": "address-main",
+      "units": 6
+    },
+    {
+      "id": "SHP-80372",
+      "orderId": "SP-1635801",
+      "requestedAt": "2026-08-12",
+      "status": "delivered",
+      "carrier": "UPS",
+      "tracking": "DEMO987654321",
+      "addressId": "address-store",
+      "units": 4
+    }
+  ],
+  "invoices": [
+    {"id": "INV-2026-0842", "date": "2026-08-31", "orderId": "SP-1636108", "amount": 86.6, "status": "paid", "documentAvailable": true},
+    {"id": "INV-2026-0814", "date": "2026-08-20", "orderId": "SP-1635801", "amount": 214.9, "status": "due", "documentAvailable": true},
+    {"id": "INV-2026-0788", "date": "2026-08-05", "orderId": "SP-1634220", "amount": 129.4, "status": "overdue", "documentAvailable": true}
+  ],
+  "payments": [
+    {"id": "PAY-20918", "date": "2026-09-01", "reference": "INV-2026-0842", "amount": 86.6, "status": "received"},
+    {"id": "PAY-20771", "date": "2026-08-10", "reference": "INV-2026-0741", "amount": 310.2, "status": "received"}
+  ]
+}

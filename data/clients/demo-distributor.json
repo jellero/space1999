@@ -1,0 +1,38 @@
+{
+  "version": 1,
+  "clientId": "demo-distributor",
+  "clientName": "Northstar Music Distribution S.r.l.",
+  "priceList": "B2B Italia",
+  "currency": "EUR",
+  "locale": "it",
+  "features": {
+    "catalog": true,
+    "cart": true,
+    "orders": true,
+    "shipments": true,
+    "documents": true,
+    "profile": true,
+    "carriers": true,
+    "returns": false,
+    "partialShipments": false,
+    "multipleShipmentsPerOrder": false
+  },
+  "navigation": [
+    {"id": "dashboard", "labelKey": "navigation.dashboard", "icon": "home"},
+    {"id": "catalog", "labelKey": "navigation.catalog", "icon": "catalog", "href": "./index.html"},
+    {"id": "cart", "labelKey": "navigation.cart", "icon": "cart", "badgeSource": "cart"},
+    {"id": "orders", "labelKey": "navigation.orders", "icon": "orders"},
+    {"id": "shipments", "labelKey": "navigation.shipments", "icon": "shipments"},
+    {"id": "documents", "labelKey": "navigation.documents", "icon": "documents"},
+    {"id": "profile", "labelKey": "navigation.profile", "icon": "profile"},
+    {"id": "carriers", "labelKey": "navigation.carriers", "icon": "carriers"}
+  ],
+  "dashboardWidgets": ["availabilityNotice", "metrics", "nextActions", "recentOrders"],
+  "permissions": {
+    "profile.editContact": true,
+    "profile.editCompany": false,
+    "profile.manageAddresses": true,
+    "carriers.manage": true,
+    "documents.download": true
+  }
+}

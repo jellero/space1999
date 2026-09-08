@@ -1,4 +1,4 @@
-import { trapFocus } from "./utils.js?v=20260827-8";
+import { trapFocus } from "./utils.js?v=20260908-1";
 
 const TRANSITION_DURATION = 180;
 const INERT_TARGETS = [".site-header", "main", ".site-footer", ".mobile-panel"];

@@ -1,7 +1,7 @@
 {
   "name": "space1999-prototype",
-  "version": "2.4.0",
-  "description": "Responsive multilingual Space1999 front-end prototype for software handoff",
+  "version": "3.0.0",
+  "description": "Responsive multilingual Space1999 public and B2B front-end prototype",
   "private": true,
   "type": "module",
   "scripts": {

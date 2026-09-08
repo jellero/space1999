@@ -1,0 +1,328 @@
+{
+  "version": 1,
+  "defaultLocale": "it",
+  "supportedLocales": ["it", "en"],
+  "locales": {
+    "it": {
+      "meta": {
+        "accessTitle": "Accesso clienti B2B — Space1999",
+        "accountTitle": "Area clienti B2B — Space1999",
+        "description": "Prototipo dell’area privata clienti B2B Space1999."
+      },
+      "common": {
+        "language": "Lingua",
+        "backToShop": "Torna al catalogo",
+        "close": "Chiudi",
+        "cancel": "Annulla",
+        "save": "Salva modifiche",
+        "edit": "Modifica",
+        "remove": "Rimuovi",
+        "add": "Aggiungi",
+        "details": "Dettagli",
+        "download": "Scarica PDF",
+        "default": "Predefinito",
+        "demo": "Prototipo",
+        "notAvailable": "Non disponibile",
+        "currency": "€",
+        "menu": "Menu",
+        "loading": "Caricamento…",
+        "loadError": "Impossibile caricare i dati. Riprova più tardi.",
+        "demoAction": "Azione dimostrativa completata. Collegare l’API SP19 in produzione."
+      },
+      "access": {
+        "eyebrow": "Area clienti professionali",
+        "intro": "Ordini, merce riservata, spedizioni e documenti in un unico spazio.",
+        "modes": {
+          "login": {
+            "nav": "Accedi",
+            "title": "Accedi alla tua area B2B",
+            "description": "L’accesso è riservato ai clienti già abilitati da Space1999.",
+            "submit": "Accedi",
+            "secondaryPrefix": "Non hai ancora un account?",
+            "secondaryLabel": "Richiedi accesso"
+          },
+          "request": {
+            "nav": "Richiedi accesso",
+            "title": "Richiedi l’accesso professionale",
+            "description": "Invia i dati della tua attività. La richiesta sarà verificata da Space1999 e non attiva automaticamente l’account.",
+            "submit": "Invia richiesta",
+            "secondaryPrefix": "Hai già ricevuto l’abilitazione?",
+            "secondaryLabel": "Accedi"
+          },
+          "reset": {
+            "nav": "Password dimenticata",
+            "title": "Recupera la password",
+            "description": "Inserisci l’e-mail associata al cliente. Le istruzioni dipenderanno dall’esito restituito dai sistemi SP19.",
+            "submit": "Richiedi il reset",
+            "secondaryPrefix": "Ricordi la password?",
+            "secondaryLabel": "Torna al login"
+          }
+        },
+        "fields": {
+          "email": "E-mail aziendale",
+          "password": "Password",
+          "firstName": "Nome",
+          "lastName": "Cognome",
+          "phone": "Telefono",
+          "vatNumber": "Partita IVA",
+          "companyName": "Ragione sociale"
+        },
+        "fieldHints": {
+          "vatNumber": "Inserisci anche il prefisso internazionale, ad esempio IT.",
+          "password": "Le regole definitive saranno fornite dal servizio di autenticazione SP19."
+        },
+        "antiBot": {
+          "title": "Verifica di sicurezza",
+          "description": "Il controllo anti-bot verrà eseguito prima dell’invio dei dati a SP19.",
+          "demoLabel": "Conferma verifica demo",
+          "required": "Completa la verifica di sicurezza prima di continuare."
+        },
+        "privacy": "I dati saranno utilizzati esclusivamente per valutare la richiesta e gestire il rapporto commerciale.",
+        "required": "Campo obbligatorio",
+        "invalidEmail": "Inserisci un indirizzo e-mail valido.",
+        "success": {
+          "login": "Credenziali validate nel prototipo. Apertura dell’area cliente demo…",
+          "request": "Richiesta presa in carico. L’account sarà attivato solo dopo la verifica di Space1999.",
+          "reset": "Se l’account esiste ed è abilitato, riceverai le istruzioni previste da SP19."
+        },
+        "securityNote": "Il mockup non effettua autenticazione reale e non invia dati. In produzione anti-bot e credenziali devono essere verificati lato server.",
+        "benefits": [
+          {"title": "Disponibilità controllata", "text": "Verifica finale prima dell’ordine, con alternative sempre confermate dal cliente."},
+          {"title": "Ordine e spedizione separati", "text": "La merce viene riservata con l’ordine e spedita soltanto su richiesta esplicita."},
+          {"title": "Dati sempre contestuali", "text": "Navigazione, documenti e operazioni dipendono dal cliente autenticato."}
+        ]
+      },
+      "account": {
+        "workspace": "Area clienti",
+        "signedInAs": "Accesso come",
+        "logout": "Esci",
+        "switchLanguage": "Cambia lingua",
+        "configuration": "Configurazione cliente",
+        "demoBanner": "Questa è una sessione dimostrativa: dati e azioni non vengono trasmessi a SP19.",
+        "navigation": {
+          "dashboard": "Dashboard",
+          "catalog": "Catalogo",
+          "cart": "Carrello",
+          "orders": "Ordini",
+          "shipments": "Spedizioni",
+          "documents": "Documenti e pagamenti",
+          "profile": "Profilo aziendale",
+          "carriers": "Corrieri"
+        },
+        "dashboard": {
+          "title": "Buongiorno, {name}",
+          "description": "Qui trovi priorità operative, merce riservata e situazione amministrativa.",
+          "metrics": {
+            "cart": "Articoli nel carrello",
+            "reserved": "Unità riservate",
+            "ready": "Unità pronte da spedire",
+            "openInvoices": "Fatture aperte"
+          },
+          "availabilityTitle": "Il carrello non riserva la merce",
+          "availabilityText": "La disponibilità viene controllata al momento della conferma. La merce diventa riservata soltanto dopo la creazione dell’ordine.",
+          "nextActions": "Azioni da completare",
+          "actionCart": "Rivedi 1 disponibilità cambiata",
+          "actionShipment": "Richiedi la spedizione di 9 unità",
+          "actionInvoice": "Controlla 1 fattura scaduta",
+          "recentOrders": "Ordini recenti",
+          "viewAll": "Vedi tutti gli ordini"
+        },
+        "cart": {
+          "title": "Carrello",
+          "description": "Controlla quantità e prezzi prima della verifica finale.",
+          "notReservedTitle": "Merce non ancora riservata",
+          "notReservedText": "La presenza nel carrello non garantisce disponibilità o prezzo fino alla creazione dell’ordine.",
+          "product": "Prodotto",
+          "ean": "EAN",
+          "quantity": "Quantità",
+          "availability": "Disponibilità",
+          "unitPrice": "Prezzo unitario",
+          "total": "Totale",
+          "available": "Disponibile",
+          "limited": "Disponibili {available} su {requested}",
+          "subtotal": "Subtotale",
+          "check": "Verifica disponibilità",
+          "checkTitle": "Esito della verifica finale",
+          "checkText": "Una quantità è cambiata. Conferma la riduzione proposta prima di creare l’ordine.",
+          "requested": "Richiesti",
+          "confirmed": "Confermati",
+          "acceptAlternative": "Accetto la quantità disponibile",
+          "createOrder": "Conferma e crea ordine",
+          "orderCreated": "Ordine demo creato. In produzione la conferma deve apparire soltanto dopo l’esito positivo dell’API SP19."
+        },
+        "orders": {
+          "title": "Ordini",
+          "description": "La creazione dell’ordine è il momento in cui la merce viene riservata.",
+          "search": "Cerca per numero ordine",
+          "filterStatus": "Filtra per stato",
+          "allStatuses": "Tutti gli stati",
+          "order": "Ordine",
+          "date": "Data",
+          "lines": "Righe",
+          "units": "Unità",
+          "amount": "Importo",
+          "status": "Stato",
+          "shipment": "Spedizione",
+          "requestShipment": "Richiedi spedizione",
+          "shipmentRequested": "Richiesta inviata",
+          "requestTitle": "Conferma richiesta di spedizione",
+          "requestText": "La richiesta è separata dall’ordine e deve essere confermata esplicitamente.",
+          "referenceOrder": "Ordine di riferimento",
+          "address": "Indirizzo",
+          "carrier": "Corriere",
+          "confirmShipment": "Conferma richiesta",
+          "confirmedMessage": "Richiesta demo registrata. In produzione lo stato cambierà solo dopo la conferma dell’API SP19."
+        },
+        "shipments": {
+          "title": "Spedizioni",
+          "description": "Consulta le richieste collegate agli ordini e il tracking disponibile.",
+          "shipment": "Spedizione",
+          "order": "Ordine",
+          "requestDate": "Data richiesta",
+          "carrier": "Corriere",
+          "units": "Unità",
+          "status": "Stato",
+          "tracking": "Tracking",
+          "track": "Segui spedizione"
+        },
+        "documents": {
+          "title": "Documenti e pagamenti",
+          "description": "Fatture, scadenze e movimenti riferiti al cliente autenticato.",
+          "invoices": "Fatture",
+          "payments": "Pagamenti",
+          "document": "Documento",
+          "reference": "Riferimento",
+          "date": "Data",
+          "amount": "Importo",
+          "status": "Stato",
+          "actions": "Azioni",
+          "accountBalance": "Situazione contabile",
+          "openAmount": "Totale aperto",
+          "overdueAmount": "Di cui scaduto",
+          "availableCredit": "Credito disponibile",
+          "demoDownload": "Download dimostrativo: collegare il document service SP19."
+        },
+        "profile": {
+          "title": "Profilo aziendale",
+          "description": "I campi modificabili dipendono dalle regole definite da SP19.",
+          "personal": "Referente",
+          "company": "Azienda",
+          "contacts": "Recapiti",
+          "addresses": "Indirizzi di spedizione",
+          "name": "Nome visualizzato",
+          "email": "E-mail",
+          "phone": "Telefono",
+          "companyName": "Ragione sociale",
+          "vatNumber": "Partita IVA",
+          "customerCode": "Codice cliente",
+          "readOnly": "Gestito da SP19",
+          "editable": "Modificabile",
+          "addAddress": "Aggiungi indirizzo",
+          "saved": "Modifiche demo salvate. In produzione confermare soltanto dopo la sincronizzazione SP19."
+        },
+        "carriers": {
+          "title": "Corrieri",
+          "description": "Gestisci i corrieri utilizzabili nelle richieste di spedizione.",
+          "addCarrier": "Aggiungi corriere",
+          "accountCode": "Codice cliente corriere",
+          "service": "Servizio",
+          "contact": "Contatto",
+          "empty": "Nessun corriere configurato.",
+          "demoMessage": "Operazione dimostrativa. Campi e regole saranno definiti con le API SP19."
+        },
+        "statuses": {
+          "active": "Attivo",
+          "reserved": "Riservato",
+          "partiallyReady": "Parzialmente pronto",
+          "processing": "In lavorazione",
+          "completed": "Completato",
+          "notRequested": "Non richiesta",
+          "requested": "Richiesta",
+          "shipped": "Spedito",
+          "inTransit": "In transito",
+          "delivered": "Consegnata",
+          "paid": "Pagata",
+          "due": "Da pagare",
+          "overdue": "Scaduta",
+          "received": "Ricevuto"
+        }
+      }
+    },
+    "en": {
+      "meta": {
+        "accessTitle": "B2B customer access — Space1999",
+        "accountTitle": "B2B customer area — Space1999",
+        "description": "Prototype of the Space1999 B2B customer area."
+      },
+      "common": {
+        "language": "Language",
+        "backToShop": "Back to catalogue",
+        "close": "Close",
+        "cancel": "Cancel",
+        "save": "Save changes",
+        "edit": "Edit",
+        "remove": "Remove",
+        "add": "Add",
+        "details": "Details",
+        "download": "Download PDF",
+        "default": "Default",
+        "demo": "Prototype",
+        "notAvailable": "Not available",
+        "currency": "€",
+        "menu": "Menu",
+        "loading": "Loading…",
+        "loadError": "Data could not be loaded. Please try again later.",
+        "demoAction": "Demo action completed. Connect the SP19 API in production."
+      },
+      "access": {
+        "eyebrow": "Professional customer area",
+        "intro": "Orders, reserved stock, shipments and documents in one place.",
+        "modes": {
+          "login": {"nav": "Sign in", "title": "Sign in to your B2B area", "description": "Access is reserved for customers already enabled by Space1999.", "submit": "Sign in", "secondaryPrefix": "No account yet?", "secondaryLabel": "Request access"},
+          "request": {"nav": "Request access", "title": "Request professional access", "description": "Send your business details. Space1999 will review the request; the account is not activated automatically.", "submit": "Send request", "secondaryPrefix": "Already enabled?", "secondaryLabel": "Sign in"},
+          "reset": {"nav": "Forgot password", "title": "Reset your password", "description": "Enter the e-mail linked to the customer. Instructions depend on the response returned by SP19 systems.", "submit": "Request reset", "secondaryPrefix": "Remember your password?", "secondaryLabel": "Back to sign in"}
+        },
+        "fields": {"email": "Business e-mail", "password": "Password", "firstName": "First name", "lastName": "Last name", "phone": "Phone", "vatNumber": "VAT number", "companyName": "Company name"},
+        "fieldHints": {"vatNumber": "Include the international prefix, for example IT.", "password": "Final rules will be provided by the SP19 authentication service."},
+        "antiBot": {"title": "Security check", "description": "The anti-bot check will run before data are sent to SP19.", "demoLabel": "Confirm demo check", "required": "Complete the security check before continuing."},
+        "privacy": "Data will be used only to assess the request and manage the business relationship.",
+        "required": "Required field",
+        "invalidEmail": "Enter a valid e-mail address.",
+        "success": {"login": "Credentials validated in the prototype. Opening the demo customer area…", "request": "Request received. The account will be activated only after Space1999 review.", "reset": "If the account exists and is enabled, you will receive the instructions provided by SP19."},
+        "securityNote": "The mockup does not authenticate or send data. In production, anti-bot tokens and credentials must be verified server-side.",
+        "benefits": [
+          {"title": "Checked availability", "text": "Final check before the order; alternatives always require customer approval."},
+          {"title": "Order and shipment are separate", "text": "Goods are reserved with the order and shipped only upon an explicit request."},
+          {"title": "Customer-scoped data", "text": "Navigation, documents and actions depend on the authenticated customer."}
+        ]
+      },
+      "account": {
+        "workspace": "Customer area",
+        "signedInAs": "Signed in as",
+        "logout": "Sign out",
+        "switchLanguage": "Switch language",
+        "configuration": "Customer configuration",
+        "demoBanner": "This is a demo session: data and actions are not sent to SP19.",
+        "navigation": {"dashboard": "Dashboard", "catalog": "Catalogue", "cart": "Cart", "orders": "Orders", "shipments": "Shipments", "documents": "Documents & payments", "profile": "Company profile", "carriers": "Carriers"},
+        "dashboard": {
+          "title": "Good morning, {name}", "description": "Find operational priorities, reserved stock and account status here.",
+          "metrics": {"cart": "Items in cart", "reserved": "Reserved units", "ready": "Units ready to ship", "openInvoices": "Open invoices"},
+          "availabilityTitle": "The cart does not reserve stock", "availabilityText": "Availability is checked on confirmation. Goods become reserved only after the order is created.",
+          "nextActions": "Next actions", "actionCart": "Review 1 availability change", "actionShipment": "Request shipment for 9 units", "actionInvoice": "Review 1 overdue invoice", "recentOrders": "Recent orders", "viewAll": "View all orders"
+        },
+        "cart": {
+          "title": "Cart", "description": "Review quantities and prices before the final check.", "notReservedTitle": "Goods are not reserved yet", "notReservedText": "Items in the cart are not guaranteed until the order is created.",
+          "product": "Product", "ean": "EAN", "quantity": "Quantity", "availability": "Availability", "unitPrice": "Unit price", "total": "Total", "available": "Available", "limited": "{available} of {requested} available", "subtotal": "Subtotal", "check": "Check availability", "checkTitle": "Final availability result", "checkText": "A quantity has changed. Approve the proposed reduction before creating the order.", "requested": "Requested", "confirmed": "Confirmed", "acceptAlternative": "I accept the available quantity", "createOrder": "Confirm and create order", "orderCreated": "Demo order created. In production, show confirmation only after a successful SP19 API response."
+        },
+        "orders": {
+          "title": "Orders", "description": "Creating an order is the point at which goods are reserved.", "search": "Search by order number", "filterStatus": "Filter by status", "allStatuses": "All statuses", "order": "Order", "date": "Date", "lines": "Lines", "units": "Units", "amount": "Amount", "status": "Status", "shipment": "Shipment", "requestShipment": "Request shipment", "shipmentRequested": "Request sent", "requestTitle": "Confirm shipment request", "requestText": "The request is separate from the order and requires explicit confirmation.", "referenceOrder": "Reference order", "address": "Address", "carrier": "Carrier", "confirmShipment": "Confirm request", "confirmedMessage": "Demo request recorded. In production, update the status only after SP19 API confirmation."
+        },
+        "shipments": {"title": "Shipments", "description": "Review requests linked to orders and available tracking.", "shipment": "Shipment", "order": "Order", "requestDate": "Request date", "carrier": "Carrier", "units": "Units", "status": "Status", "tracking": "Tracking", "track": "Track shipment"},
+        "documents": {"title": "Documents & payments", "description": "Invoices, due dates and transactions scoped to the authenticated customer.", "invoices": "Invoices", "payments": "Payments", "document": "Document", "reference": "Reference", "date": "Date", "amount": "Amount", "status": "Status", "actions": "Actions", "accountBalance": "Account summary", "openAmount": "Open amount", "overdueAmount": "Overdue amount", "availableCredit": "Available credit", "demoDownload": "Demo download: connect the SP19 document service."},
+        "profile": {"title": "Company profile", "description": "Editable fields depend on rules defined by SP19.", "personal": "Contact", "company": "Company", "contacts": "Contact details", "addresses": "Shipping addresses", "name": "Display name", "email": "E-mail", "phone": "Phone", "companyName": "Company name", "vatNumber": "VAT number", "customerCode": "Customer code", "readOnly": "Managed by SP19", "editable": "Editable", "addAddress": "Add address", "saved": "Demo changes saved. In production, confirm only after SP19 synchronization."},
+        "carriers": {"title": "Carriers", "description": "Manage carriers available for shipment requests.", "addCarrier": "Add carrier", "accountCode": "Carrier account code", "service": "Service", "contact": "Contact", "empty": "No carrier configured.", "demoMessage": "Demo action. Fields and rules will be defined with the SP19 APIs."},
+        "statuses": {"active": "Active", "reserved": "Reserved", "partiallyReady": "Partially ready", "processing": "Processing", "completed": "Completed", "notRequested": "Not requested", "requested": "Requested", "shipped": "Shipped", "inTransit": "In transit", "delivered": "Delivered", "paid": "Paid", "due": "Due", "overdue": "Overdue", "received": "Received"}
+      }
+    }
+  }
+}
