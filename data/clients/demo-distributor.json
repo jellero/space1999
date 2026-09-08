@@ -1,12 +1,11 @@
 {
-  "version": 1,
+  "version": 2,
   "clientId": "demo-distributor",
   "clientName": "Northstar Music Distribution S.r.l.",
   "priceList": "B2B Italia",
   "currency": "EUR",
   "locale": "it",
   "features": {
-    "catalog": true,
     "cart": true,
     "orders": true,
     "shipments": true,
@@ -19,7 +18,6 @@
   },
   "navigation": [
     {"id": "dashboard", "labelKey": "navigation.dashboard", "icon": "home"},
-    {"id": "catalog", "labelKey": "navigation.catalog", "icon": "catalog", "href": "./index.html"},
     {"id": "cart", "labelKey": "navigation.cart", "icon": "cart", "badgeSource": "cart"},
     {"id": "orders", "labelKey": "navigation.orders", "icon": "orders"},
     {"id": "shipments", "labelKey": "navigation.shipments", "icon": "shipments"},
