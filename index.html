@@ -30,9 +30,9 @@
         <p class="claim" data-i18n="header.claim">International distributor of media products</p>
 
         <div class="header-tools">
-          <a class="shipping" href="https://space1999.com/it/shop/shipping" data-localized-route="/shop/shipping">
+          <span class="shipping">
             <strong>INFO</strong> <span data-i18n="header.shipping">Spedizioni</span>
-          </a>
+          </span>
 
           <nav class="language" aria-label="Lingua" data-i18n-aria-label="header.languageLabel">
             <a href="?lang=it" lang="it" data-language="it">IT</a>
@@ -88,7 +88,6 @@
       <form
         class="container search"
         role="search"
-        action="https://space1999.com/it/shop/search"
         method="get"
         data-search-form
       >
@@ -114,7 +113,7 @@
             <span data-i18n="header.stockOnly">Solo disponibili</span>
           </label>
           <button type="submit" data-i18n="header.search">Cerca</button>
-          <button type="button" data-advanced-search data-url="https://space1999.com/it/shop/searchadv" data-i18n="header.advancedSearch">
+          <button type="button" data-advanced-search data-i18n="header.advancedSearch">
             Ricerca avanzata
           </button>
         </div>
@@ -145,7 +144,6 @@
       <form
         class="mobile-search"
         role="search"
-        action="https://space1999.com/it/shop/search"
         method="get"
         data-mobile-search
         data-search-form
@@ -241,6 +239,7 @@
       <p class="noscript-message">Per visualizzare il catalogo è necessario abilitare JavaScript.</p>
     </noscript>
 
+    <script type="module" src="./assets/js/space1999-link-guard.js?v=20260908-1"></script>
     <script type="module" src="./assets/js/app.js?v=20260908-1"></script>
   </body>
 </html>
