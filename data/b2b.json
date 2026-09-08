@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "defaultLocale": "it",
   "supportedLocales": ["it", "en"],
   "locales": {
@@ -30,8 +30,6 @@
         "demoAction": "Azione dimostrativa completata. Collegare l’API SP19 in produzione."
       },
       "access": {
-        "eyebrow": "Area clienti professionali",
-        "intro": "Ordini, merce riservata, spedizioni e documenti in un unico spazio.",
         "modes": {
           "login": {
             "nav": "Accedi",
@@ -85,12 +83,7 @@
           "request": "Richiesta presa in carico. L’account sarà attivato solo dopo la verifica di Space1999.",
           "reset": "Se l’account esiste ed è abilitato, riceverai le istruzioni previste da SP19."
         },
-        "securityNote": "Il mockup non effettua autenticazione reale e non invia dati. In produzione anti-bot e credenziali devono essere verificati lato server.",
-        "benefits": [
-          {"title": "Disponibilità controllata", "text": "Verifica finale prima dell’ordine, con alternative sempre confermate dal cliente."},
-          {"title": "Ordine e spedizione separati", "text": "La merce viene riservata con l’ordine e spedita soltanto su richiesta esplicita."},
-          {"title": "Dati sempre contestuali", "text": "Navigazione, documenti e operazioni dipendono dal cliente autenticato."}
-        ]
+        "securityNote": "Il mockup non effettua autenticazione reale e non invia dati. In produzione anti-bot e credenziali devono essere verificati lato server."
       },
       "account": {
         "workspace": "Area clienti",
@@ -275,12 +268,10 @@
         "demoAction": "Demo action completed. Connect the SP19 API in production."
       },
       "access": {
-        "eyebrow": "Professional customer area",
-        "intro": "Orders, reserved stock, shipments and documents in one place.",
         "modes": {
           "login": {"nav": "Sign in", "title": "Sign in to your B2B area", "description": "Access is reserved for customers already enabled by Space1999.", "submit": "Sign in", "secondaryPrefix": "No account yet?", "secondaryLabel": "Request access"},
           "request": {"nav": "Request access", "title": "Request professional access", "description": "Send your business details. Space1999 will review the request; the account is not activated automatically.", "submit": "Send request", "secondaryPrefix": "Already enabled?", "secondaryLabel": "Sign in"},
-          "reset": {"nav": "Forgot password", "title": "Reset your password", "description": "Enter the e-mail linked to the customer. Instructions depend on the response returned by SP19 systems.", "submit": "Request reset", "secondaryPrefix": "Remember your password?", "secondaryLabel": "Back to sign in"}
+          "reset": {"nav": "Forgot password", "title": "Reset your password", "description": "Enter the e-mail linked to the customer. Instructions depend on the response returned by SP19 systems.", "submit": "Request reset", "secondaryPrefix": "Remember the password?", "secondaryLabel": "Back to sign in"}
         },
         "fields": {"email": "Business e-mail", "password": "Password", "firstName": "First name", "lastName": "Last name", "phone": "Phone", "vatNumber": "VAT number", "companyName": "Company name"},
         "fieldHints": {"vatNumber": "Include the international prefix, for example IT.", "password": "Final rules will be provided by the SP19 authentication service."},
@@ -289,12 +280,7 @@
         "required": "Required field",
         "invalidEmail": "Enter a valid e-mail address.",
         "success": {"login": "Credentials validated in the prototype. Opening the demo customer area…", "request": "Request received. The account will be activated only after Space1999 review.", "reset": "If the account exists and is enabled, you will receive the instructions provided by SP19."},
-        "securityNote": "The mockup does not authenticate or send data. In production, anti-bot tokens and credentials must be verified server-side.",
-        "benefits": [
-          {"title": "Checked availability", "text": "Final check before the order; alternatives always require customer approval."},
-          {"title": "Order and shipment are separate", "text": "Goods are reserved with the order and shipped only upon an explicit request."},
-          {"title": "Customer-scoped data", "text": "Navigation, documents and actions depend on the authenticated customer."}
-        ]
+        "securityNote": "The mockup does not authenticate or send data. In production, anti-bot tokens and credentials must be verified server-side."
       },
       "account": {
         "workspace": "Customer area",
