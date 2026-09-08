@@ -22,6 +22,20 @@ export async function fetchJson(url, { timeout = 8000 } = {}) {
   }
 }
 
+export function isSpace1999NavigationTarget(value) {
+  if (!value) return false;
+  try {
+    const hostname = new URL(String(value), window.location.href).hostname.toLowerCase();
+    return hostname === "space1999.com" || hostname.endsWith(".space1999.com");
+  } catch {
+    return false;
+  }
+}
+
+function shouldSkipNavigationAttribute(name, value) {
+  return ["href", "action", "data-url"].includes(name) && isSpace1999NavigationTarget(value);
+}
+
 export function createElement(tagName, { className, text, attributes = {} } = {}) {
   const element = document.createElement(tagName);
 
@@ -29,7 +43,7 @@ export function createElement(tagName, { className, text, attributes = {} } = {}
   if (text !== undefined) element.textContent = text;
 
   for (const [name, value] of Object.entries(attributes)) {
-    if (value !== undefined && value !== null) {
+    if (value !== undefined && value !== null && !shouldSkipNavigationAttribute(name, value)) {
       element.setAttribute(name, String(value));
     }
   }
