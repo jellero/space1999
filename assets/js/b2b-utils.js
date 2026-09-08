@@ -1,4 +1,4 @@
-import { fetchJson } from "./utils.js?v=20260908-1";
+import { fetchJson, isSpace1999NavigationTarget } from "./utils.js?v=20260908-2";
 import { resolveLocale } from "./i18n.js?v=20260908-1";
 
 export { fetchJson, resolveLocale };
@@ -17,6 +17,10 @@ export function translate(dictionary, path, replacements = {}) {
   );
 }
 
+function shouldSkipNavigationAttribute(name, value) {
+  return ["href", "action", "data-url"].includes(name) && isSpace1999NavigationTarget(value);
+}
+
 export function element(tagName, options = {}, children = []) {
   const node = document.createElement(tagName);
   const { className, text, attributes = {}, dataset = {} } = options;
@@ -24,7 +28,9 @@ export function element(tagName, options = {}, children = []) {
   if (className) node.className = className;
   if (text !== undefined) node.textContent = text;
   for (const [name, value] of Object.entries(attributes)) {
-    if (value !== undefined && value !== null) node.setAttribute(name, String(value));
+    if (value !== undefined && value !== null && !shouldSkipNavigationAttribute(name, value)) {
+      node.setAttribute(name, String(value));
+    }
   }
   for (const [name, value] of Object.entries(dataset)) {
     if (value !== undefined && value !== null) node.dataset[name] = String(value);

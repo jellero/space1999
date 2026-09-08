@@ -1,5 +1,5 @@
-import { createElement, fetchJson } from "./utils.js?v=20260908-1";
-import { applyTranslations, resolveLocale } from "./i18n.js?v=20260908-1";
+import { createElement, fetchJson } from "./utils.js?v=20260908-2";
+import { applyTranslations, resolveLocale } from "./i18n.js?v=20260908-2";
 import { initNavigationDrawer, loadNavigation } from "./navigation.js?v=20260908-1";
 import { initSearch } from "./search.js?v=20260908-1";
 
@@ -28,9 +28,9 @@ function renderHeader(root) {
         <p class="claim" data-i18n="header.claim">International distributor of media products</p>
 
         <div class="header-tools">
-          <a class="shipping" href="https://space1999.com/it/shop/shipping" data-localized-route="/shop/shipping">
+          <span class="shipping">
             <strong>INFO</strong> <span data-i18n="header.shipping">Spedizioni</span>
-          </a>
+          </span>
 
           <nav class="language" aria-label="Lingua" data-i18n-aria-label="header.languageLabel">
             <a href="#" lang="it" data-language="it">IT</a>
@@ -86,7 +86,6 @@ function renderHeader(root) {
       <form
         class="container search"
         role="search"
-        action="https://space1999.com/it/shop/search"
         method="get"
         data-search-form
       >
@@ -112,7 +111,7 @@ function renderHeader(root) {
             <span data-i18n="header.stockOnly">Solo disponibili</span>
           </label>
           <button type="submit" data-i18n="header.search">Cerca</button>
-          <button type="button" data-advanced-search data-url="https://space1999.com/it/shop/searchadv" data-i18n="header.advancedSearch">
+          <button type="button" data-advanced-search data-i18n="header.advancedSearch">
             Ricerca avanzata
           </button>
         </div>
@@ -143,7 +142,6 @@ function renderHeader(root) {
       <form
         class="mobile-search"
         role="search"
-        action="https://space1999.com/it/shop/search"
         method="get"
         data-mobile-search
         data-search-form
@@ -261,17 +259,6 @@ function configureChromeLocale(locale, localeContent) {
     link.classList.toggle("active", isActive);
     if (isActive) link.setAttribute("aria-current", "page");
     else link.removeAttribute("aria-current");
-  });
-
-  const shopBase = `https://space1999.com/${locale}/shop`;
-  document.querySelectorAll("[data-search-form]").forEach((form) => {
-    form.action = `${shopBase}/search`;
-  });
-  document.querySelectorAll("[data-advanced-search]").forEach((button) => {
-    button.dataset.url = `${shopBase}/searchadv`;
-  });
-  document.querySelectorAll("[data-localized-route]").forEach((link) => {
-    link.href = `https://space1999.com/${locale}${link.dataset.localizedRoute}`;
   });
 
   const accessUrl = (mode) => `./access.html?lang=${locale}&mode=${mode}`;
