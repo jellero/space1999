@@ -9,18 +9,15 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap">
+    <link rel="stylesheet" href="./assets/styles.css?v=20260908-1">
     <link rel="stylesheet" href="./assets/b2b.css?v=20260908-1">
+    <link rel="stylesheet" href="./assets/b2b-chrome.css?v=20260908-2">
   </head>
 
   <body class="b2b-access-page">
-    <a class="b2b-skip-link" href="#access-main">Vai al contenuto</a>
+    <a class="skip-link" href="#access-main">Vai al contenuto principale</a>
 
-    <header class="access-header">
-      <a class="b2b-brand" href="./index.html" aria-label="Space1999 home">
-        <img src="https://space1999.com/bundles/mercuriospace/shop/images/03_Marchio_Space.jpg" alt="Space1999" width="150" height="90">
-      </a>
-      <nav class="b2b-language" aria-label="Lingua" data-language-switch></nav>
-    </header>
+    <div data-site-header-root></div>
 
     <main class="access-layout" id="access-main">
       <section class="access-story" aria-labelledby="access-story-title">
@@ -33,6 +30,7 @@
 
       <section class="access-panel" aria-live="polite">
         <div class="access-panel__inner">
+          <nav class="b2b-language b2b-local-language" aria-label="Lingua" data-language-switch hidden></nav>
           <nav class="access-tabs" aria-label="Accesso clienti" data-access-tabs></nav>
           <div data-access-form-root>
             <p class="b2b-loading">Caricamento…</p>
@@ -43,6 +41,11 @@
       </section>
     </main>
 
+    <footer class="site-footer" data-site-footer-root aria-busy="true">
+      <p class="page-status container" role="status">Caricamento footer…</p>
+    </footer>
+
+    <script type="module" src="./assets/js/b2b-chrome.js?v=20260908-2"></script>
     <script type="module" src="./assets/js/b2b-access.js?v=20260908-1"></script>
   </body>
 </html>
