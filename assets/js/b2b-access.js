@@ -111,7 +111,6 @@ function renderForm(root, dictionary, locale, mode) {
   const copy = dictionary.access.modes[mode];
   const form = element("form", { className: "access-form", attributes: { novalidate: "" } });
   form.append(
-    element("p", { className: "b2b-eyebrow", text: dictionary.access.eyebrow }),
     element("h2", { text: copy.title }),
     element("p", { className: "access-form__description", text: copy.description }),
   );
@@ -180,19 +179,6 @@ function handleSubmit(event, dictionary, locale, mode) {
   }
 }
 
-function renderBenefits(root, benefits) {
-  benefits.forEach((benefit, index) => {
-    const item = element("article", { className: "access-benefit" }, [
-      element("span", { className: "access-benefit__number", text: String(index + 1).padStart(2, "0") }),
-      element("div", {}, [
-        element("h2", { text: benefit.title }),
-        element("p", { text: benefit.text }),
-      ]),
-    ]);
-    root.append(item);
-  });
-}
-
 async function bootstrap() {
   const content = await fetchJson(CONTENT_ENDPOINT);
   const locale = resolveLocale({
@@ -205,13 +191,10 @@ async function bootstrap() {
   document.documentElement.lang = locale;
   document.title = dictionary.meta.accessTitle;
   document.querySelector("[data-page-description]")?.setAttribute("content", dictionary.meta.description);
-  document.querySelector("[data-access-eyebrow]").textContent = dictionary.access.eyebrow;
-  document.querySelector("[data-access-intro]").textContent = dictionary.access.intro;
   document.querySelector("[data-security-note]").textContent = dictionary.access.securityNote;
 
   renderLanguageSwitch(document.querySelector("[data-language-switch]"), locale, mode, dictionary.common.language);
   renderTabs(document.querySelector("[data-access-tabs]"), dictionary, locale, mode);
-  renderBenefits(document.querySelector("[data-access-benefits]"), dictionary.access.benefits);
   renderForm(document.querySelector("[data-access-form-root]"), dictionary, locale, mode);
 }
 
