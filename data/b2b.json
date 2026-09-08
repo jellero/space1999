@@ -271,7 +271,7 @@
         "modes": {
           "login": {"nav": "Sign in", "title": "Sign in to your B2B area", "description": "Access is reserved for customers already enabled by Space1999.", "submit": "Sign in", "secondaryPrefix": "No account yet?", "secondaryLabel": "Request access"},
           "request": {"nav": "Request access", "title": "Request professional access", "description": "Send your business details. Space1999 will review the request; the account is not activated automatically.", "submit": "Send request", "secondaryPrefix": "Already enabled?", "secondaryLabel": "Sign in"},
-          "reset": {"nav": "Forgot password", "title": "Reset your password", "description": "Enter the e-mail linked to the customer. Instructions depend on the response returned by SP19 systems.", "submit": "Request reset", "secondaryPrefix": "Remember the password?", "secondaryLabel": "Back to sign in"}
+          "reset": {"nav": "Forgot password", "title": "Reset your password", "description": "Enter the e-mail linked to the customer. Instructions depend on the response returned by SP19 systems.", "submit": "Request reset", "secondaryPrefix": "Remember your password?", "secondaryLabel": "Back to sign in"}
         },
         "fields": {"email": "Business e-mail", "password": "Password", "firstName": "First name", "lastName": "Last name", "phone": "Phone", "vatNumber": "VAT number", "companyName": "Company name"},
         "fieldHints": {"vatNumber": "Include the international prefix, for example IT.", "password": "Final rules will be provided by the SP19 authentication service."},
