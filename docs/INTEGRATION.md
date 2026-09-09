@@ -2,73 +2,103 @@
 
 ## Dal mockup al software definitivo
 
-Il prototipo fornisce un view model e comportamenti verificabili, non un'architettura backend. La società di sviluppo può riutilizzare CSS e markup oppure trasporli nel design system scelto mantenendo i contratti descritti in questa cartella.
+Il repository fornisce un front-end dimostrativo e alcuni view model. Non definisce l’architettura backend definitiva e non deve essere usato per dedurre automaticamente requisiti di business non approvati.
 
-## Mappatura consigliata
+## Mappatura indicativa
 
 | Prototipo | Sistema definitivo |
 |---|---|
-| `content.json` | CMS headless o endpoint contenuti |
+| `content.json` | CMS o endpoint contenuti |
 | `products.json` | PIM/catalog service |
-| `navigation.json` | category/taxonomy service |
+| `navigation.json` | taxonomy/category service |
+| `data/clients/*.json` | configurazione derivata dalla sessione/tenant |
 | `localStorage` lingua | preferenza account/cookie/router |
-| link assoluti Space1999 | route generate dal router |
-| `image.desktop/mobile` | media field CMS con due asset obbligatori |
-| `console.error` | piattaforma di observability |
-| form newsletter demo | marketing automation/CRM |
+| target esterni bloccati nel mockup | route interne generate dal router definitivo |
+| immagini remote demo | media/CDN autorizzato |
+| `console.error` | observability |
+| form newsletter demo | CRM/marketing automation |
+
+## Routing e link
+
+Nel mockup la navigazione verso `space1999.com` e relativi sottodomini è bloccata intenzionalmente.
+
+Il prodotto definitivo dovrà sostituire i riferimenti demo con route applicative approvate. Non va rimossa la protezione senza avere prima definito routing, destinazioni e responsabilità del sistema definitivo.
+
+La guardia client-side attuale non è un controllo di sicurezza sufficiente per la produzione: serve un router coerente e, dove opportuno, una Content Security Policy restrittiva.
+
+## Area privata
+
+La navigazione privata corrente comprende Dashboard, Carrello, Ordini, Spedizioni, Documenti e pagamenti, Profilo aziendale e Corrieri.
+
+Non sono presenti:
+
+- voce Catalogo;
+- link “Torna al catalogo”.
+
+Nell’header privato il login pubblico viene sostituito da `Carrello` con badge quantità e `Area riservata`.
 
 ## Strategia API
 
-1. Recuperare contenuto, catalogo e navigazione in parallelo.
-2. Validare le risposte lato server e, se utile, anche nel client con uno schema.
-3. Convertire i payload in un view model stabile.
-4. Renderizzare stati `loading`, `success`, `empty` ed `error` per ogni blocco.
-5. Applicare cache e invalidazione in base alla frequenza reale di aggiornamento.
+Una possibile integrazione tecnica dovrà definire almeno:
 
-L'interfaccia non deve dipendere direttamente dai nomi dei campi del database o del fornitore CMS.
+1. sessione e identità cliente;
+2. tenant e autorizzazioni;
+3. configurazione/feature effettive;
+4. catalogo e disponibilità;
+5. carrello e ordini;
+6. spedizioni;
+7. documenti/pagamenti;
+8. profilo e corrieri.
+
+Endpoint, payload, idempotenza, errori e transizioni devono essere concordati con SP19 e non sono definiti dal solo mockup.
 
 ## Immagini
 
-Nel mockup le copertine sono collegate ai domini pubblici Space1999. Per la produzione:
+Alcune immagini del prototipo possono essere ancora referenziate da domini Space1999. Sono asset remoti, non link di navigazione.
 
-- verificare diritti, hotlink policy e strategia CDN;
-- richiedere nel backoffice un asset desktop e uno mobile per slider e banner;
-- validare formato e proporzioni al caricamento, mostrando un'anteprima per entrambi;
-- generare formati moderni e varianti responsive dalla rispettiva sorgente;
-- fornire `width`, `height`, `srcset` e `sizes`;
-- mantenere fallback e placeholder per risorse mancanti;
-- evitare URL di cache considerati permanenti senza un contratto esplicito.
+Per la produzione:
+
+- verificare diritti e hotlink policy;
+- migrare gli asset su infrastruttura autorizzata;
+- definire CDN/cache;
+- produrre formati responsive e moderni;
+- mantenere dimensioni, fallback e placeholder coerenti.
 
 ## Funzioni da collegare
 
-- autenticazione e registrazione;
-- disponibilità e prezzi in tempo reale;
-- ricerca, filtri e ricerca avanzata;
-- pagina dettaglio e-commerce;
-- carrello e checkout;
-- newsletter con consenso e double opt-in;
-- analytics, consent management e monitoraggio errori.
+- autenticazione e richiesta accesso;
+- disponibilità/prezzi;
+- ricerca e filtri;
+- dettaglio prodotto;
+- carrello e ordini;
+- spedizioni;
+- documenti e pagamenti;
+- profilo e corrieri;
+- newsletter;
+- analytics/consent/monitoraggio errori.
 
-## Test minimi richiesti
+## Test minimi
 
-- unit test per adapter e risoluzione lingua;
-- contract test per CMS, PIM e tassonomia;
-- component test per card, hover, modal e drawer;
-- end-to-end per ricerca, lingua e navigazione;
-- audit automatici di accessibilità;
-- visual regression su desktop, tablet e mobile;
-- test di errore, timeout, immagini mancanti e catalogo vuoto.
+- unit test per adapter e lingua;
+- test del filtro URL e del router;
+- contract test per CMS/PIM/API;
+- component test per card, modal, drawer e chrome privata;
+- end-to-end per lingua, accesso, navigazione e area privata;
+- test specifico che verifichi l’assenza di navigazione verso domini bloccati;
+- audit accessibilità;
+- visual regression desktop/tablet/mobile;
+- test errori, timeout e dataset vuoti.
 
 ## Checklist pre-produzione
 
 - [ ] endpoint e route definitivi approvati;
+- [ ] permessi/tenant definiti server-side;
 - [ ] Content Security Policy configurata;
 - [ ] immagini migrate o autorizzate;
-- [ ] asset desktop/mobile di slider e banner verificati nei formati editoriali;
-- [ ] cookie e consensi verificati legalmente;
-- [ ] form collegati e protetti da abuso;
+- [ ] autenticazione e sessione implementate;
+- [ ] anti-bot/rate limiting definiti dove necessari;
+- [ ] cookie e consensi verificati;
 - [ ] traduzioni revisionate;
-- [ ] metriche Core Web Vitals entro budget;
-- [ ] logging privo di dati personali;
+- [ ] logging privo di dati personali non necessari;
 - [ ] test accessibilità e browser matrix completati;
-- [ ] fallback per indisponibilità di CMS/PIM verificati.
+- [ ] fallback per indisponibilità dei servizi verificati.
