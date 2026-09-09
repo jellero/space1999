@@ -2,26 +2,27 @@
 
 ## Separazione dei dati
 
-Il contenuto editoriale e il catalogo sono separati per riflettere due responsabilità tipiche:
+Il prototipo separa contenuti, catalogo, navigazione pubblica e configurazione B2B:
 
-- `data/content.json`: CMS, traduzioni, ordine delle sezioni e footer;
-- `data/products.json`: PIM/catalogo, schede prodotto e immagini;
-- `data/navigation.json`: tassonomia e-commerce ottimizzata per il browser.
+- `data/content.json`: UI, sezioni home e footer;
+- `data/products.json`: prodotti e immagini demo;
+- `data/navigation.json`: tassonomia pubblica;
+- `data/b2b.json`: stringhe UI B2B;
+- `data/b2b-demo.json`: dati dimostrativi area privata;
+- `data/clients/demo-distributor.json`: feature e navigazione cliente demo.
 
-## Risoluzione della lingua
+## Lingua
 
-Sono supportate `it` ed `en`, con fallback `it`. L'ordine di precedenza è:
+Sono supportate `it` ed `en`, con fallback `it`. La precedenza è:
 
-1. parametro URL `?lang=it|en`;
-2. preferenza in `localStorage`;
-3. lingua del browser;
+1. `?lang=it|en`;
+2. preferenza `localStorage`;
+3. lingua browser;
 4. `defaultLocale`.
-
-Il parametro URL rende ogni variante condivisibile e testabile. Il cambio lingua ricarica intenzionalmente la pagina per mantenere una navigazione progressivamente migliorabile anche senza router client-side.
 
 ## `content.json`
 
-Struttura principale:
+Struttura semplificata:
 
 ```json
 {
@@ -31,100 +32,99 @@ Struttura principale:
     "it": {
       "meta": {},
       "ui": {},
-      "main": {
-        "hero": {},
-        "sections": []
-      },
+      "main": { "sections": [] },
       "footer": {}
     }
   }
 }
 ```
 
-### Tipi di sezione
+Tipi di sezione attualmente renderizzati:
 
-| `type` | Campi specifici | Renderer |
-|---|---|---|
-| `slider` | `slides`, `autoplayMs`, `image.desktop/mobile`, etichette controlli | campagne art-directed; indicatori e swipe su mobile |
-| `banner` | `image.desktop/mobile`, `imageAlt`, `href`, `mobile` | banner desktop e scheda promozionale mobile |
-| `products` | `productIds`, `viewAllLabel`, `layout` | griglia di card |
-| `editorial` | `description`, `ctaLabel` | banner testuale |
-| `features` | `items[]`, `image`, `variant` | due promozioni visuali |
-| `services` | `items[].title/description` | fascia servizi |
-
-### Layout delle griglie prodotto
-
-| `layout` | Uso previsto |
+| `type` | Contenuto principale |
 |---|---|
-| `six` | cataloghi standard, fino a 6 colonne desktop |
-| `four` | selezioni compatte, 4 colonne desktop |
-| `featured` | prima card in evidenza e griglia densa |
-
-Il renderer applica soltanto valori presenti nella whitelist; un layout sconosciuto viene rifiutato dalla validazione.
-
-### Varianti mobile
-
-Slider e banner non vengono semplicemente ritagliati. Sotto `700px` lo slider usa una creatività mobile dedicata `4:5`; il banner usa una creatività dedicata `4:3`. Entrambe riempiono la superficie tramite `object-fit: cover`, senza fondali sfocati o veli opachi.
-
-Ogni creatività dichiara obbligatoriamente i due asset richiesti dal backoffice:
-
-```json
-{
-  "image": {
-    "desktop": "https://cdn.example/slider-desktop.jpg",
-    "mobile": "https://cdn.example/slider-mobile.jpg"
-  },
-  "imageAlt": "Descrizione della campagna"
-}
-```
-
-Il renderer produce un elemento `<picture>` con breakpoint `700px`: il browser scarica la risorsa adatta alla viewport. Formati editoriali consigliati: `1250 × 395px` per lo slider desktop, `1200 × 1500px` per lo slider mobile, `2000 × 430px` per il banner desktop e `1200 × 900px` per il banner mobile. La versione mobile deve essere ricomposta editorialmente, semplificando il testo e mantenendo gli elementi importanti lontani dai bordi.
-
-Il secondo campo `mobile` dei banner contiene invece il copy breve della scheda:
-
-```json
-{
-  "eyebrow": "Catalogo in evidenza",
-  "title": "Le novità Space1999",
-  "ctaLabel": "Apri il catalogo"
-}
-```
-
-La separazione consente al CMS di fornire sia un'immagine con art direction mobile sia un copy corto adatto a schermi stretti, senza duplicare URL e metadati della campagna.
-
-Gli ID e l'ordine delle sezioni devono coincidere in tutte le lingue. `npm run validate` applica questa regola.
+| `slider` | `slides`, immagini desktop/mobile, autoplay |
+| `banner` | immagine desktop/mobile e copy mobile |
+| `products` | `productIds`, layout e label sezione |
+| `editorial` | titolo, descrizione e CTA |
+| `features` | card visuali |
+| `services` | elementi testuali |
 
 ## `products.json`
 
-Ogni prodotto ha un ID stabile e URL espliciti per lingua:
+Ogni prodotto ha un ID stabile, dati descrittivi, immagine e un campo `href` demo.
+
+Esempio strutturale:
 
 ```json
 {
-  "id": "airbourne-airbourne",
-  "artist": "Airbourne",
-  "title": "Airbourne",
+  "id": "example-product",
+  "artist": "Artist",
+  "title": "Title",
   "format": "LP Vinyl",
-  "label": "Spinefarm",
-  "image": "https://cover.space1999.com/...jpg",
+  "label": "Label",
+  "image": "https://cdn.example/image.jpg",
   "href": {
-    "it": "https://space1999.com/it/shop/item/99438756",
-    "en": "https://space1999.com/en/shop/item/99438756"
+    "it": "https://legacy.example.invalid/it/item/123",
+    "en": "https://legacy.example.invalid/en/item/123"
   }
 }
 ```
 
-Le sezioni referenziano i prodotti tramite `productIds`; in questo modo una scheda può essere riutilizzata senza duplicare i dati di catalogo.
+Gli URL presenti nei dataset storici non implicano che siano navigabili nel frontend.
 
-## Provenienza e aggiornamento
+## Blocco dei target Space1999
 
-Il blocco `source` dichiara provenienza, data di acquisizione e natura dello snapshot. I dati inclusi sono stati rilevati dalla home pubblica Space1999 il 26 agosto 2026 e servono soltanto per il mockup.
+Il prototipo non deve creare navigazione verso `space1999.com` o relativi sottodomini, anche quando questi URL sono ancora presenti come dati di snapshot.
 
-In produzione sostituire lo snapshot con una risposta API versionata. Se il backend restituisce un modello differente, introdurre un adapter che produca lo stesso view model invece di accoppiare i componenti direttamente alla risposta di rete.
+La regola viene applicata durante la costruzione DOM:
+
+- `utils.js` scarta `href`, `action` e `data-url` bloccati;
+- `b2b-utils.js` applica lo stesso filtro ai componenti B2B;
+- `space1999-link-guard.js` rimuove gli stessi attributi anche se vengono aggiunti successivamente.
+
+Questa policy non rimuove URL usati come `src`/`srcset` delle immagini.
+
+## Configurazione B2B
+
+La configurazione cliente demo contiene feature e navigazione privata. La navigazione corrente comprende:
+
+- `dashboard`
+- `cart`
+- `orders`
+- `shipments`
+- `documents`
+- `profile`
+- `carriers`
+
+`catalog` non fa parte della configurazione privata corrente.
+
+Esempio:
+
+```json
+{
+  "features": {
+    "cart": true,
+    "orders": true,
+    "returns": false
+  },
+  "navigation": [
+    {"id": "dashboard", "labelKey": "navigation.dashboard", "icon": "home"},
+    {"id": "cart", "labelKey": "navigation.cart", "icon": "cart", "badgeSource": "cart"}
+  ]
+}
+```
+
+## Provenienza dei dati
+
+I dataset pubblici e B2B sono dimostrativi. Non sono feed e non devono essere interpretati come dati aggiornati o requisiti definitivi.
+
+Nel prodotto reale i dati dovranno arrivare da CMS/PIM/API autorizzati e passare attraverso adapter che producano un view model stabile.
 
 ## Regole di evoluzione
 
-- Incrementare `version` per cambi incompatibili.
-- Non riutilizzare un `id` per contenuti semanticamente diversi.
-- Aggiungere prima il renderer, poi il nuovo `type` ai JSON.
-- Mantenere le stesse sezioni per tutte le lingue oppure definire esplicitamente una policy di fallback.
-- Non inserire HTML nei campi testuali.
+- incrementare `version` per cambi incompatibili;
+- non riutilizzare un ID per contenuti semanticamente diversi;
+- mantenere allineate le strutture IT/EN;
+- non inserire HTML nei campi testuali;
+- trattare URL e permessi come dati da validare, non come valori implicitamente affidabili.
