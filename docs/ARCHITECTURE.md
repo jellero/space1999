@@ -2,74 +2,113 @@
 
 ## Obiettivo
 
-Il prototipo è volutamente framework-agnostic. La struttura mostra i confini da preservare anche in React, Vue, Angular, Twig o in un'altra piattaforma: shell HTML, contenuti editoriali, catalogo, navigazione e comportamenti interattivi rimangono moduli indipendenti.
+Il progetto è framework-agnostic e separa shell HTML, contenuti JSON e comportamenti JavaScript. La documentazione descrive lo stato corrente del prototipo; non definisce da sola i requisiti backend o di business del prodotto definitivo.
 
-## Flusso di inizializzazione
+## Flusso home pubblica
 
 ```mermaid
 flowchart TD
-    A[app.js] --> B[Drawer e modal]
-    A --> C[content.json + products.json]
-    A --> D[navigation.json]
-    C --> E[i18n.js]
-    E --> F[Sezioni main dinamiche]
-    E --> G[Footer dinamico]
-    D --> H[Mega-menu e menu mobile]
-    F --> I[slider.js]
+    A[index.html] --> B[space1999-link-guard.js]
+    A --> C[app.js]
+    C --> D[content.json + products.json]
+    C --> E[navigation.json]
+    D --> F[i18n.js]
+    D --> G[content.js]
+    E --> H[navigation.js]
+    G --> I[slider.js]
+    G --> J[product-modal.js]
 ```
 
-`app.js` inizializza subito i controlli che non dipendono dai dati. Contenuti e navigazione vengono poi caricati in parallelo. Un errore in un ramo viene segnalato senza impedire all'altro ramo di completare il rendering.
+`space1999-link-guard.js` viene caricato prima del bootstrap principale e rimuove target navigabili verso `space1999.com` o relativi sottodomini. Il resto del frontend continua poi con caricamento contenuti, prodotti e navigazione.
+
+## Flusso pagine B2B
+
+```mermaid
+flowchart TD
+    A[access.html/account.html] --> B[space1999-link-guard.js]
+    A --> C[b2b-chrome.js]
+    C --> D[header/footer condivisi]
+    C --> E[navigation.json]
+    F[access.html] --> G[b2b-access.js]
+    H[account.html] --> I[b2b-private-chrome.js]
+    H --> J[b2b-account.js]
+```
+
+Su `account.html`, `b2b-private-chrome.js` sostituisce il login pubblico con `Carrello` e `Area riservata`, sincronizzando il badge quantità con la navigazione privata.
 
 ## Responsabilità dei moduli
 
-| Modulo | Responsabilità | Non deve fare |
-|---|---|---|
-| `app.js` | bootstrap, dipendenze DOM, isolamento errori | generare markup di sezione |
-| `content.js` | comporre main/footer e media art-directed dai contratti JSON | gestire menu o focus del modal |
-| `catalog.js` | creare card e risolvere route prodotto | effettuare fetch autonomi |
-| `i18n.js` | scegliere lingua e tradurre la shell | contenere testi editoriali hardcoded |
-| `navigation.js` | mega-menu, accordion e drawer | conoscere i prodotti |
-| `product-modal.js` | quick view e accessibilità dialog | recuperare dati remoti |
-| `search.js` | validazione e route ricerca | eseguire logica e-commerce |
-| `slider.js` | autoplay, frecce, tastiera, swipe e pausa | conoscere contenuti o catalogo |
-| `utils.js` | primitive condivise | conoscere componenti applicativi |
+| Modulo | Responsabilità |
+|---|---|
+| `app.js` | bootstrap home e isolamento errori |
+| `content.js` | rendering main/footer |
+| `catalog.js` | card prodotto e href di catalogo |
+| `i18n.js` | lingua e traduzioni UI |
+| `navigation.js` | mega-menu e drawer mobile |
+| `product-modal.js` | quick view e focus dialog |
+| `search.js` | comportamento dei form ricerca |
+| `slider.js` | autoplay, controlli e swipe |
+| `utils.js` | fetch, DOM, focus e filtro target Space1999 |
+| `space1999-link-guard.js` | sanificazione globale di `href`, `action`, `data-url` |
+| `b2b-utils.js` | primitive DOM/formati B2B e filtro target Space1999 |
+| `b2b-chrome.js` | header/footer condivisi nelle pagine B2B |
+| `b2b-private-chrome.js` | variante header autenticata e badge carrello |
+| `b2b-access.js` | login/request/reset dimostrativi |
+| `b2b-account.js` | shell e viste private |
 
-## Sicurezza del rendering
+## Politica URL
 
-I valori provenienti dai JSON vengono inseriti tramite `textContent` e attributi DOM. Non viene usato `innerHTML`; questo riduce il rischio di introdurre markup non attendibile quando il mockup verrà collegato a un CMS.
+Il mockup non deve navigare verso `space1999.com` o suoi sottodomini.
 
-Gli URL sono comunque dati sensibili: nel software definitivo devono essere prodotti dal router applicativo o validati lato server. La Content Security Policy deve consentire soltanto le origini realmente necessarie.
+La protezione è ridondante intenzionalmente:
+
+- gli URL hardcoded di navigazione sono rimossi dalle shell;
+- `createElement()` in `utils.js` scarta `href`, `action` e `data-url` bloccati;
+- le primitive B2B applicano lo stesso criterio;
+- `space1999-link-guard.js` osserva il DOM e ripulisce target aggiunti dinamicamente.
+
+La regola non blocca `src` o `srcset` di immagini remote.
+
+## Rendering e sicurezza
+
+I testi provenienti dai JSON vengono inseriti con `textContent` o attributi DOM. I dati demo non devono essere considerati fidati nel prodotto reale: il backend dovrà validare payload, permessi, tenant e URL.
+
+L’uso di una guardia client-side non sostituisce Content Security Policy, routing applicativo e controlli server-side.
+
+## Area privata
+
+La configurazione cliente demo espone `dashboard`, `cart`, `orders`, `shipments`, `documents`, `profile` e `carriers`.
+
+Non esistono più nella navigazione privata:
+
+- voce `Catalogo`;
+- link “Torna al catalogo”.
+
+Il form login è una funzione della chrome pubblica. Nell’area privata viene sostituito dalla chrome autenticata.
 
 ## Gestione errori
 
-- `fetchJson` applica timeout e verifica lo stato HTTP.
-- La navigazione espone un messaggio locale nel drawer.
-- Main/footer mantengono una shell semantica e mostrano uno stato leggibile se i dati non arrivano.
-- Gli errori vengono inviati a `console.error` come punto di sostituzione per Sentry, Datadog o la soluzione scelta.
+- `fetchJson` applica timeout e controllo dello stato HTTP;
+- contenuti e navigazione vengono caricati in rami separati;
+- gli errori sono esposti con stati leggibili e `console.error` come placeholder per observability reale.
 
 ## Accessibilità
 
-- landmark e gerarchia titoli coerente;
-- skip link al main;
-- `aria-busy` durante il caricamento;
-- lingua documento aggiornata con `html[lang]`;
-- selettore lingua duplicato nel drawer e sincronizzato sullo stesso stato attivo;
-- drawer e modal con focus trap, ripristino del focus e chiusura con `Esc`;
-- sfondo reso `inert` durante il quick view;
-- hover prodotto equivalente anche con focus da tastiera;
-- slider controllabile con frecce e tastiera, in pausa durante l’interazione;
-- supporto a `prefers-reduced-motion`.
+- landmark semantici e skip link;
+- `aria-busy` durante i caricamenti;
+- lingua documento sincronizzata;
+- drawer e modal con gestione focus e `Esc`;
+- supporto a `prefers-reduced-motion`;
+- controlli slider utilizzabili da tastiera.
 
 ## Responsive
 
-I breakpoint principali sono:
-
 | Soglia | Comportamento |
 |---|---|
-| `> 1360px` | header completo, griglia fino a 6 colonne |
-| `1181–1360px` | header compatto, griglia a 4 colonne |
-| `≤ 1180px` | drawer mobile, header essenziale |
-| `≤ 700px` | slider mobile `4:5`, banner mobile `4:3`, griglie a 2 colonne |
+| `> 1360px` | header desktop completo, griglie ampie |
+| `1181–1360px` | header compatto |
+| `≤ 1180px` | drawer mobile e header essenziale |
+| `≤ 700px` | slider/banner mobile e griglie a 2 colonne |
 | `≤ 600px` | modal a colonna singola |
 
-Nessun prodotto viene nascosto ai breakpoint: cambia soltanto il numero di colonne.
+La chrome privata segue gli stessi breakpoint principali del sito pubblico, con sidebar/drawer dedicati all’account.
